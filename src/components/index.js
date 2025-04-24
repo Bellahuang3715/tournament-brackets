@@ -17,3 +17,11 @@ export { default as Expanded10 } from './10-Player/Expanded10';
 export { default as CollapsedLeft11 } from './11-Player/CollapsedLeft11';
 export { default as CollapsedRight11 } from './11-Player/CollapsedRight11';
 export { default as Expanded11 } from './11-Player/Expanded11';
+
+export { default as CollapsedLeft12 } from './12-Player/CollapsedLeft12';
+export { default as CollapsedRight12 } from './12-Player/CollapsedRight12';
+export { default as Expanded12 } from './12-Player/Expanded12';
+
+export { default as CollapsedLeft13 } from './13-Player/CollapsedLeft13';
+export { default as CollapsedRight13 } from './13-Player/CollapsedRight13';
+export { default as Expanded13 } from './13-Player/Expanded13';
