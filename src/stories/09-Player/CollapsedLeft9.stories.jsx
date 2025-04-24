@@ -1,8 +1,8 @@
 import React from 'react';
-import CollapsedLeft9 from '../../components/9-Player/CollapsedLeft9';
+import CollapsedLeft9 from '../../components/09-Player/CollapsedLeft9';
 
 export default {
-  title: 'Individuals/9-Player/CollapsedLeft',
+  title: 'Individuals/09-Player/CollapsedLeft',
   component: CollapsedLeft9,
 };
 

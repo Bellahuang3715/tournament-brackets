@@ -1,8 +1,8 @@
 import React from 'react';
-import Expanded9 from '../../components/9-Player/Expanded9';
+import Expanded9 from '../../components/09-Player/Expanded9';
 
 export default {
-  title: 'Individuals/9-Player/Expanded',
+  title: 'Individuals/09-Player/Expanded',
   component: Expanded9,
 };
 

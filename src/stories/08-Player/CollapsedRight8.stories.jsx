@@ -1,8 +1,8 @@
 import React from 'react';
-import CollapsedRight8 from '../../components/8-Player/CollapsedRight8';
+import CollapsedRight8 from '../../components/08-Player/CollapsedRight8';
 
 export default {
-  title: 'Individuals/8-Player/CollapsedRight',
+  title: 'Individuals/08-Player/CollapsedRight',
   component: CollapsedRight8,
 };
 
