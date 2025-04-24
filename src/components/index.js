@@ -9,3 +9,11 @@ export { default as Expanded8 } from './8-Player/Expanded8';
 export { default as CollapsedLeft9 } from './9-Player/CollapsedLeft9';
 export { default as CollapsedRight9 } from './9-Player/CollapsedRight9';
 export { default as Expanded9 } from './9-Player/Expanded9';
+
+export { default as CollapsedLeft10 } from './10-Player/CollapsedLeft10';
+export { default as CollapsedRight10 } from './10-Player/CollapsedRight10';
+export { default as Expanded10 } from './10-Player/Expanded10';
+
+export { default as CollapsedLeft11 } from './11-Player/CollapsedLeft11';
+export { default as CollapsedRight11 } from './11-Player/CollapsedRight11';
+export { default as Expanded11 } from './11-Player/Expanded11';
