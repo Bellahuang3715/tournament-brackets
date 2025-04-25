@@ -1,6 +1,6 @@
 import React from 'react';
 import Expanded8 from '../../components/08-Player/Expanded8';
-import { samplePlayers8 } from './players';
+import { samplePlayers8 } from '../players';
 
 export default {
   title: 'Individuals/08-Player/Expanded',
