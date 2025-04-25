@@ -1,5 +1,6 @@
-export { default as Bracket14 } from './Bracket14';
 export { default as CollapsedLeft8Ex } from './Examples/08-Player/CollapsedLeft8Ex';
+export { default as CollapsedRightEx08 } from './Examples/08-Player/CollapsedRightEx08';
+export { default as ExpandedEx08 } from './Examples/08-Player/ExpandedEx08';
 
 export { default as CollapsedLeft8 } from './08-Player/CollapsedLeft8';
 export { default as CollapsedRight8 } from './08-Player/CollapsedRight8';
