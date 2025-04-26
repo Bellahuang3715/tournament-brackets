@@ -1,12 +1,24 @@
 export const samplePlayers8 = [
-  { id: "E12", name: "Mami Ito", club: "TKC" },
-  { id: "E01", name: "Olivia Lin", club: "ETO" },
-  { id: "E02", name: "Joyce Lin", club: "TMU" },
-  { id: "E03", name: "Mindy Choe", club: "JKO" },
-  { id: "E04", name: "Natasha Fracassi", club: "TC" },
-  { id: "E05", name: "Joanna Asare", club: "JCC" },
-  { id: "E06", name: "Jennifer Kim", club: "REN" },
-  { id: "E07", name: "Gem Geronimo", club: "UOT" },
+  { id: "E01", name: "Amira Hassan", club: "NFC" },
+  { id: "E02", name: "Jinwoo Park", club: "SJU" },
+  { id: "E03", name: "Carlos Méndez", club: "TRL" },
+  { id: "E04", name: "Lakshmi Rao", club: "SPC" },
+  { id: "E05", name: "Eva Müller", club: "DYN" },
+  { id: "E06", name: "Kwame Mensah", club: "GRT" },
+  { id: "E07", name: "Sofia Rossi", club: "AZZ" },
+  { id: "E08", name: "Oluwaseun Adeyemi", club: "BLU" },
+];
+
+export const samplePlayers9 = [
+  { id: "E01", name: "Avery Brooks", club: "ARC" },
+  { id: "E02", name: "Blake Henderson", club: "BOW" },
+  { id: "E03", name: "Camila Reyes", club: "CLB" },
+  { id: "E04", name: "Darius Chen", club: "DRN" },
+  { id: "E05", name: "Elena Petrova", club: "ECO" },
+  { id: "E06", name: "Fabian Scott", club: "FLT" },
+  { id: "E07", name: "Greta Olsen", club: "GRO" },
+  { id: "E08", name: "Hassan Malik", club: "HZN" },
+  { id: "E09", name: "Isla Montgomery", club: "ISL" },
 ];
 
 export const samplePlayers12 = [
@@ -22,4 +34,23 @@ export const samplePlayers12 = [
   { id: "B13", name: "Abe Patricio", club: "ETO" },
   { id: "B33", name: "Travis Chan", club: "MAR" },
   { id: "B41", name: "Camus Lam", club: "REN" },
+];
+
+const samplePlayers16 = [
+  { id: "E01", name: "Alice Johnson", club: "RED" },
+  { id: "E02", name: "Bob Martinez", club: "BLU" },
+  { id: "E03", name: "Charlie Davis", club: "GRN" },
+  { id: "E04", name: "Dana Smith", club: "YEL" },
+  { id: "E05", name: "Evan Clark", club: "PUR" },
+  { id: "E06", name: "Fiona Lewis", club: "ORA" },
+  { id: "E07", name: "George Walker", club: "BLK" },
+  { id: "E08", name: "Hannah Hall", club: "WHT" },
+  { id: "E09", name: "Ian Allen", club: "GOL" },
+  { id: "E10", name: "Julia Young", club: "SIL" },
+  { id: "E11", name: "Kevin King", club: "PIN" },
+  { id: "E12", name: "Laura Scott", club: "BRZ" },
+  { id: "E13", name: "Michael Turner", club: "TAN" },
+  { id: "E14", name: "Natalie Perez", club: "TEA" },
+  { id: "E15", name: "Oscar Ramirez", club: "SKY" },
+  { id: "E16", name: "Patricia Torres", club: "LAV" },
 ];

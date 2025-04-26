@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './stylesheet.module.css';
 
-export default function CollapsedLeft9() {
+export default function CollapsedLeft9({ players }) {
   return (
     <>
       <table border={0} cellPadding={0} cellSpacing={0} width={1343} style={{borderCollapse: 'collapse', tableLayout: 'fixed', width: '1007pt'}}>
@@ -31,7 +31,7 @@ export default function CollapsedLeft9() {
             <td className={styles.xl00} width={101} style={{width: '76pt'}} />
           </tr>
           <tr height={21} style={{height: '16.0pt'}}>
-            <td rowSpan={2} height={42} className={styles.playerID} style={{borderBottom: '.5pt solid black', height: '32.0pt'}}>E12</td>
+            <td rowSpan={2} height={42} className={styles.playerID} style={{borderBottom: '.5pt solid black', height: '32.0pt'}}>{players[0].id}</td>
             <td rowSpan={2} className={styles.borderTopRight} style={{borderBottom: '.5pt solid black'}}>&nbsp;</td>
           </tr>
           <tr height={21} style={{height: '16.0pt'}}>
@@ -45,8 +45,7 @@ export default function CollapsedLeft9() {
             <td colSpan={2} style={{msoIgnore: 'colspan'}} />
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} className={styles.playerName} colSpan={2} style={{height: '15.75pt', msoIgnore: 'colspan'}}>Alex
-              Lau (REN)</td>
+            <td height={20} className={styles.playerName} colSpan={2} style={{height: '15.75pt', msoIgnore: 'colspan'}}>{`${players[0].name} (${players[0].club})`}</td>
             <td rowSpan={2} className={styles.xl01}>2</td>
             <td className={styles.borderBottomLeft}>&nbsp;</td>
             <td className={styles.xl01} />
@@ -63,7 +62,7 @@ export default function CollapsedLeft9() {
             <td className={styles.borderTopRight}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td rowSpan={2} height={40} className={styles.playerID} style={{borderBottom: '.5pt solid black', height: '31.5pt', borderTop: 'none'}}>E12</td>
+            <td rowSpan={2} height={40} className={styles.playerID} style={{borderBottom: '.5pt solid black', height: '31.5pt', borderTop: 'none'}}>{players[1].id}</td>
             <td rowSpan={2} className={styles.borderTopRight} style={{borderBottom: '.5pt solid black', borderTop: 'none'}}>&nbsp;</td>
             <td className={styles.borderRightBottom}>&nbsp;</td>
             <td className={styles.xl01} />
@@ -81,8 +80,7 @@ export default function CollapsedLeft9() {
             <td colSpan={4} style={{msoIgnore: 'colspan'}} />
           </tr>
           <tr height={21} style={{height: '16.0pt'}}>
-            <td height={21} className={styles.playerName} colSpan={2} style={{height: '16.0pt', msoIgnore: 'colspan'}}>Alex
-              Lau (REN)</td>
+            <td height={21} className={styles.playerName} colSpan={2} style={{height: '16.0pt', msoIgnore: 'colspan'}}>{`${players[1].name} (${players[1].club})`}</td>
             <td className={styles.xl01} />
             <td className={styles.xl01} />
             <td rowSpan={2} className={styles.xl01}>6</td>
@@ -100,7 +98,7 @@ export default function CollapsedLeft9() {
             <td colSpan={4} style={{msoIgnore: 'colspan'}} />
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td rowSpan={2} height={40} className={styles.playerID} style={{borderBottom: '.5pt solid black', height: '31.5pt'}}>E12</td>
+            <td rowSpan={2} height={40} className={styles.playerID} style={{borderBottom: '.5pt solid black', height: '31.5pt'}}>{players[2].id}</td>
             <td rowSpan={2} className={styles.borderTopRight} style={{borderBottom: '.5pt solid black'}}>&nbsp;</td>
             <td className={styles.xl00} />
             <td className={styles.xl01} />
@@ -118,8 +116,7 @@ export default function CollapsedLeft9() {
             <td colSpan={4} style={{msoIgnore: 'colspan'}} />
           </tr>
           <tr height={21} style={{height: '16.0pt'}}>
-            <td height={21} className={styles.playerName} colSpan={2} style={{height: '16.0pt', msoIgnore: 'colspan'}}>Alex
-              Lau (REN)</td>
+            <td height={21} className={styles.playerName} colSpan={2} style={{height: '16.0pt', msoIgnore: 'colspan'}}>{`${players[2].name} (${players[2].club})`}</td>
             <td rowSpan={2} className={styles.xl01}>3</td>
             <td className={styles.borderBottomLeft}>&nbsp;</td>
             <td className={styles.borderRightBottom}>&nbsp;</td>
@@ -133,7 +130,7 @@ export default function CollapsedLeft9() {
             <td className={styles.borderRight}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td rowSpan={2} height={40} className={styles.playerID} style={{borderBottom: '.5pt solid black', height: '31.5pt', borderTop: 'none'}}>E12</td>
+            <td rowSpan={2} height={40} className={styles.playerID} style={{borderBottom: '.5pt solid black', height: '31.5pt', borderTop: 'none'}}>{players[3].id}</td>
             <td rowSpan={2} className={styles.borderTopRight} style={{borderBottom: '.5pt solid black', borderTop: 'none'}}>&nbsp;</td>
             <td className={styles.borderRightBottom}>&nbsp;</td>
             <td className={styles.xl01} />
@@ -147,8 +144,7 @@ export default function CollapsedLeft9() {
             <td className={styles.borderRight}>&nbsp;</td>
           </tr>
           <tr height={21} style={{height: '16.0pt'}}>
-            <td height={21} className={styles.playerName} colSpan={2} style={{height: '16.0pt', msoIgnore: 'colspan'}}>Alex
-              Lau (REN)</td>
+            <td height={21} className={styles.playerName} colSpan={2} style={{height: '16.0pt', msoIgnore: 'colspan'}}>{`${players[3].name} (${players[3].club})`}</td>
             <td className={styles.xl01} />
             <td className={styles.xl01} />
             <td className={styles.xl01} />
@@ -185,7 +181,7 @@ export default function CollapsedLeft9() {
             <td colSpan={3} style={{msoIgnore: 'colspan'}} />
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td rowSpan={2} height={40} className={styles.playerID} style={{borderBottom: '.5pt solid black', height: '31.5pt'}}>E12</td>
+            <td rowSpan={2} height={40} className={styles.playerID} style={{borderBottom: '.5pt solid black', height: '31.5pt'}}>{players[4].id}</td>
             <td rowSpan={2} className={styles.borderTopRight} style={{borderBottom: '.5pt solid black'}}>&nbsp;</td>
             <td className={styles.xl00} />
             <td className={styles.xl01} />
@@ -199,8 +195,7 @@ export default function CollapsedLeft9() {
             <td className={styles.borderRight}>&nbsp;</td>
           </tr>
           <tr height={21} style={{height: '16.0pt'}}>
-            <td height={21} className={styles.playerName} colSpan={2} style={{height: '16.0pt', msoIgnore: 'colspan'}}>Alex
-              Lau (REN)</td>
+            <td height={21} className={styles.playerName} colSpan={2} style={{height: '16.0pt', msoIgnore: 'colspan'}}>{`${players[4].name} (${players[4].club})`}</td>
             <td rowSpan={2} className={styles.xl01}>4</td>
             <td className={styles.borderBottomLeft}>&nbsp;</td>
             <td className={styles.xl01} />
@@ -214,7 +209,7 @@ export default function CollapsedLeft9() {
             <td className={styles.borderRight}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td rowSpan={2} height={40} className={styles.playerID} style={{borderBottom: '.5pt solid black', height: '31.5pt', borderTop: 'none'}}>E12</td>
+            <td rowSpan={2} height={40} className={styles.playerID} style={{borderBottom: '.5pt solid black', height: '31.5pt', borderTop: 'none'}}>{players[5].id}</td>
             <td rowSpan={2} className={styles.borderTopRight} style={{borderBottom: '.5pt solid black', borderTop: 'none'}}>&nbsp;</td>
             <td className={styles.borderRightBottom}>&nbsp;</td>
             <td className={styles.xl01} />
@@ -228,8 +223,7 @@ export default function CollapsedLeft9() {
             <td className={styles.borderRight}>&nbsp;</td>
           </tr>
           <tr height={24} style={{height: '18.0pt'}}>
-            <td height={24} className={styles.playerName} colSpan={2} style={{height: '18.0pt', msoIgnore: 'colspan'}}>Alex
-              Lau (REN)</td>
+            <td height={24} className={styles.playerName} colSpan={2} style={{height: '18.0pt', msoIgnore: 'colspan'}}>{`${players[5].name} (${players[5].club})`}</td>
             <td className={styles.xl00} />
             <td className={styles.xl01} />
             <td className={styles.borderRight}>&nbsp;</td>
@@ -263,7 +257,7 @@ export default function CollapsedLeft9() {
             <td colSpan={3} style={{msoIgnore: 'colspan'}} />
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td rowSpan={2} height={40} className={styles.playerID} style={{borderBottom: '.5pt solid black', height: '31.5pt'}}>E12</td>
+            <td rowSpan={2} height={40} className={styles.playerID} style={{borderBottom: '.5pt solid black', height: '31.5pt'}}>{players[6].id}</td>
             <td rowSpan={2} className={styles.borderTopRight} style={{borderBottom: '.5pt solid black'}}>&nbsp;</td>
             <td className={styles.borderBottom}>&nbsp;</td>
             <td className={styles.xl01} />
@@ -280,8 +274,7 @@ export default function CollapsedLeft9() {
             <td colSpan={4} style={{msoIgnore: 'colspan'}} />
           </tr>
           <tr height={21} style={{height: '16.0pt'}}>
-            <td height={21} className={styles.playerName} colSpan={2} style={{height: '16.0pt', msoIgnore: 'colspan'}}>Alex
-              Lau (REN)</td>
+            <td height={21} className={styles.playerName} colSpan={2} style={{height: '16.0pt', msoIgnore: 'colspan'}}>{`${players[6].name} (${players[6].club})`}</td>
             <td rowSpan={2} className={styles.borderRight}>1</td>
             <td className={styles.borderBottom}>&nbsp;</td>
             <td className={styles.borderRight}>&nbsp;</td>
@@ -301,7 +294,7 @@ export default function CollapsedLeft9() {
             <td colSpan={2} style={{msoIgnore: 'colspan'}} />
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td rowSpan={2} height={40} className={styles.playerID} style={{borderBottom: '.5pt solid black', height: '31.5pt', borderTop: 'none'}}>E12</td>
+            <td rowSpan={2} height={40} className={styles.playerID} style={{borderBottom: '.5pt solid black', height: '31.5pt', borderTop: 'none'}}>{players[7].id}</td>
             <td rowSpan={2} className={styles.borderTopRight} style={{borderBottom: '.5pt solid black', borderTop: 'none'}}>&nbsp;</td>
             <td className={styles.borderRightBottom}>&nbsp;</td>
             <td className={styles.borderRight}>&nbsp;</td>
@@ -313,8 +306,7 @@ export default function CollapsedLeft9() {
             <td className={styles.borderRightBottom}>&nbsp;</td>
           </tr>
           <tr height={21} style={{height: '16.0pt'}}>
-            <td height={21} className={styles.playerName} colSpan={2} style={{height: '16.0pt', msoIgnore: 'colspan'}}>Alex
-              Lau (REN)</td>
+            <td height={21} className={styles.playerName} colSpan={2} style={{height: '16.0pt', msoIgnore: 'colspan'}}>{`${players[7].name} (${players[7].club})`}</td>
             <td className={styles.xl01} />
             <td />
             <td className={styles.xl01} />
@@ -331,7 +323,7 @@ export default function CollapsedLeft9() {
             <td className={styles.borderRight}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td rowSpan={2} height={40} className={styles.playerID} style={{borderBottom: '.5pt solid black', height: '31.5pt'}}>E12</td>
+            <td rowSpan={2} height={40} className={styles.playerID} style={{borderBottom: '.5pt solid black', height: '31.5pt'}}>{players[8].id}</td>
             <td rowSpan={2} className={styles.borderTopRight} style={{borderBottom: '.5pt solid black'}}>&nbsp;</td>
             <td className={styles.borderBottomLeft} style={{borderLeft: 'none'}}>&nbsp;</td>
             <td className={styles.borderRightBottom}>&nbsp;</td>
@@ -340,8 +332,7 @@ export default function CollapsedLeft9() {
             <td height={20} className={styles.xl01} style={{height: '15.75pt'}} />
           </tr>
           <tr height={21} style={{height: '16.0pt'}}>
-            <td height={21} className={styles.playerName} colSpan={2} style={{height: '16.0pt', msoIgnore: 'colspan'}}>Alex
-              Lau (REN)</td>
+            <td height={21} className={styles.playerName} colSpan={2} style={{height: '16.0pt', msoIgnore: 'colspan'}}>{`${players[8].name} (${players[8].club})`}</td>
             <td className={styles.xl01} />
             <td className={styles.xl01} />
             <td className={styles.xl01} />
