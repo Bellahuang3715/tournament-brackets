@@ -21,6 +21,19 @@ export const samplePlayers9 = [
   { id: "E09", name: "Isla Montgomery", club: "ISL" },
 ];
 
+export const samplePlayers10 = [
+  { id: "E01", name: "Amina Yusuf",        club: "TAM" },
+  { id: "E02", name: "Hiroki Tanaka",      club: "RYU" },
+  { id: "E03", name: "Lucas Oliveira",     club: "CAP" },
+  { id: "E04", name: "Priya Singh",        club: "KTK" },
+  { id: "E05", name: "Li Wei",             club: "KLB" },
+  { id: "E06", name: "Elena Petrova",      club: "ZVE" },
+  { id: "E07", name: "Jamal Thompson",     club: "SST" },
+  { id: "E08", name: "Sofia García",       club: "VAL" },
+  { id: "E09", name: "Viktor Johansson",   club: "MJK" },
+  { id: "E10", name: "Zuri Ndlovu",        club: "EAG" },
+];
+
 export const samplePlayers12 = [
   { id: "B01", name: "Keith Atiyota", club: "UOT" },
   { id: "B29", name: "Hwarang Kim", club: "MAR" },
