@@ -49,18 +49,18 @@ export const samplePlayers11 = [
 ];
 
 export const samplePlayers12 = [
-  { id: "B01", name: "Keith Atiyota", club: "UOT" },
-  { id: "B29", name: "Hwarang Kim", club: "MAR" },
-  { id: "B15", name: "Mario Rojas", club: "ETO" },
-  { id: "B21", name: "Qi Qi", club: "FIOR" },
-  { id: "B36", name: "Hank Le", club: "MIS" },
-  { id: "B26", name: "Rahmil Mustafa", club: "JCCC" },
-  { id: "B08", name: "Yiming Han", club: "UOT" },
-  { id: "B22", name: "Martin Bouthillier", club: "ISS" },
-  { id: "B35", name: "William Wong", club: "MCG" },
-  { id: "B13", name: "Abe Patricio", club: "ETO" },
-  { id: "B33", name: "Travis Chan", club: "MAR" },
-  { id: "B41", name: "Camus Lam", club: "REN" },
+  { id: "E01", name: "Zainab Ahmed", club: "RAI" },
+  { id: "E02", name: "Takeshi Nakamura", club: "TOK" },
+  { id: "E03", name: "Elena Ivanova", club: "SPT" },
+  { id: "E04", name: "Juan Camacho", club: "BLU" },
+  { id: "E05", name: "Priya Menon", club: "GEM" },
+  { id: "E06", name: "Theo Müller", club: "DYN" },
+  { id: "E07", name: "Chinedu Okeke", club: "TRI" },
+  { id: "E08", name: "Dmitri Orlov", club: "ICE" },
+  { id: "E09", name: "Maya Rodríguez", club: "SOL" },
+  { id: "E10", name: "Ahmed El-Sherif", club: "FAL" },
+  { id: "E11", name: "Sara Novak", club: "LAV" },
+  { id: "E12", name: "Luca Bianchi", club: "AZZ" },
 ];
 
 export const samplePlayers13 = [
@@ -96,7 +96,7 @@ export const samplePlayers14 = [
   { id: "E14", name: "Kwame Boateng", club: "EAG" },
 ];
 
-const samplePlayers16 = [
+export const samplePlayers16 = [
   { id: "E01", name: "Alice Johnson", club: "RED" },
   { id: "E02", name: "Bob Martinez", club: "BLU" },
   { id: "E03", name: "Charlie Davis", club: "GRN" },
