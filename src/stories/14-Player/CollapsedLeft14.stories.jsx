@@ -1,9 +1,18 @@
 import React from 'react';
 import CollapsedLeft14 from '../../components/14-Player/CollapsedLeft14';
+import { samplePlayers14 } from '../players';
 
 export default {
   title: 'Individuals/14-Player/CollapsedLeft',
   component: CollapsedLeft14,
+  argTypes: {
+    players: { control: 'object' },
+  },
 };
 
-export const Default = () => <CollapsedLeft14 />;
+const Template = (args) => <CollapsedLeft14 {...args} />;
+
+export const Default = Template.bind({});
+Default.args = {
+  players: samplePlayers14,
+};
