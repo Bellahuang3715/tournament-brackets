@@ -9,373 +9,373 @@ export default function CollapsedRight() {
           <col width={163} style={{msoWidthSource: 'userset', msoWidthAlt: 5205, width: '122pt'}} />
           <col width={101} span={6} style={{width: '76pt'}} />
         </colgroup><tbody><tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} className={styles.xl65} width={35} style={{height: '15.75pt', width: '26pt'}} />
-            <td className={styles.xl84} width={35} style={{width: '26pt'}} />
-            <td className={styles.xl84} width={35} style={{width: '26pt'}} />
-            <td className={styles.xl84} width={35} style={{width: '26pt'}} />
-            <td className={styles.xl84} width={35} style={{width: '26pt'}} />
-            <td className={styles.xl66} width={163} style={{width: '122pt'}} />
-            <td className={styles.xl66} width={101} style={{width: '76pt'}} />
-            <td className={styles.xl66} width={101} style={{width: '76pt'}} />
-            <td className={styles.xl66} width={101} style={{width: '76pt'}} />
-            <td className={styles.xl66} width={101} style={{width: '76pt'}} />
-            <td className={styles.xl66} width={101} style={{width: '76pt'}} />
-            <td className={styles.xl66} width={101} style={{width: '76pt'}} />
+            <td height={20} className={styles.xl00} width={35} style={{height: '15.75pt', width: '26pt'}} />
+            <td className={styles.xl01} width={35} style={{width: '26pt'}} />
+            <td className={styles.xl01} width={35} style={{width: '26pt'}} />
+            <td className={styles.xl01} width={35} style={{width: '26pt'}} />
+            <td className={styles.xl01} width={35} style={{width: '26pt'}} />
+            <td className={styles.xl00} width={163} style={{width: '122pt'}} />
+            <td className={styles.xl00} width={101} style={{width: '76pt'}} />
+            <td className={styles.xl00} width={101} style={{width: '76pt'}} />
+            <td className={styles.xl00} width={101} style={{width: '76pt'}} />
+            <td className={styles.xl00} width={101} style={{width: '76pt'}} />
+            <td className={styles.xl00} width={101} style={{width: '76pt'}} />
+            <td className={styles.xl00} width={101} style={{width: '76pt'}} />
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} className={styles.xl65} style={{height: '15.75pt'}} />
-            <td className={styles.xl84} />
-            <td className={styles.xl84} />
-            <td className={styles.xl84} />
-            <td className={styles.xl87}>&nbsp;</td>
-            <td rowSpan={2} className={styles.xl108} style={{borderBottom: '.5pt solid black'}}>TKC A</td>
+            <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
+            <td className={styles.xl01} />
+            <td className={styles.xl01} />
+            <td className={styles.xl01} />
+            <td className={styles.borderBottom}>&nbsp;</td>
+            <td rowSpan={2} className={styles.teamID} style={{borderBottom: '.5pt solid black'}}>TKC A</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} className={styles.xl65} style={{height: '15.75pt'}} />
-            <td className={styles.xl84} />
-            <td className={styles.xl84} />
-            <td className={styles.xl88}>&nbsp;</td>
-            <td className={styles.xl88}>&nbsp;</td>
+            <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
+            <td className={styles.xl01} />
+            <td className={styles.xl01} />
+            <td className={styles.borderRight}>&nbsp;</td>
+            <td className={styles.borderRight}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} className={styles.xl65} style={{height: '15.75pt'}} />
-            <td className={styles.xl84} />
-            <td className={styles.xl84} />
-            <td className={styles.xl88}>&nbsp;</td>
-            <td rowSpan={2} className={styles.xl84}>1</td>
+            <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
+            <td className={styles.xl01} />
+            <td className={styles.xl01} />
+            <td className={styles.borderRight}>&nbsp;</td>
+            <td rowSpan={2} className={styles.xl01}>1</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} className={styles.xl65} style={{height: '15.75pt'}} />
-            <td className={styles.xl84} />
-            <td className={styles.xl84} />
-            <td className={styles.xl102}>&nbsp;</td>
-            <td className={styles.xl76}>&nbsp;</td>
+            <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
+            <td className={styles.xl01} />
+            <td className={styles.xl01} />
+            <td className={styles.borderTRL}>&nbsp;</td>
+            <td className={styles.borderBottom}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} className={styles.xl65} style={{height: '15.75pt'}} />
-            <td className={styles.xl84} />
-            <td className={styles.xl84} />
-            <td className={styles.xl93}>&nbsp;</td>
-            <td className={styles.xl89}>&nbsp;</td>
-            <td rowSpan={2} className={styles.xl108} style={{borderBottom: '.5pt solid black', borderTop: 'none'}}>TKC A</td>
+            <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
+            <td className={styles.xl01} />
+            <td className={styles.xl01} />
+            <td className={styles.borderRightLeft}>&nbsp;</td>
+            <td className={styles.borderRightBottom}>&nbsp;</td>
+            <td rowSpan={2} className={styles.teamID} style={{borderBottom: '.5pt solid black', borderTop: 'none'}}>TKC A</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} className={styles.xl65} style={{height: '15.75pt'}} />
-            <td className={styles.xl84} />
-            <td className={styles.xl84} />
-            <td className={styles.xl103}>&nbsp;</td>
+            <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
+            <td className={styles.xl01} />
+            <td className={styles.xl01} />
+            <td className={styles.borderLeft}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} className={styles.xl65} style={{height: '15.75pt'}} />
-            <td className={styles.xl84} />
-            <td className={styles.xl87}>&nbsp;</td>
-            <td rowSpan={2} className={styles.xl103}>7</td>
+            <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
+            <td className={styles.xl01} />
+            <td className={styles.borderBottom}>&nbsp;</td>
+            <td rowSpan={2} className={styles.borderLeft}>7</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} className={styles.xl65} style={{height: '15.75pt'}} />
-            <td className={styles.xl88}>&nbsp;</td>
-            <td className={styles.xl84} />
-            <td className={styles.xl84} />
-            <td className={styles.xl76}>&nbsp;</td>
+            <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
+            <td className={styles.borderRight}>&nbsp;</td>
+            <td className={styles.xl01} />
+            <td className={styles.xl01} />
+            <td className={styles.borderBottom}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} className={styles.xl66} style={{height: '15.75pt'}} />
-            <td className={styles.xl92}>&nbsp;</td>
-            <td className={styles.xl85} />
-            <td className={styles.xl104}>&nbsp;</td>
-            <td className={styles.xl91}>&nbsp;</td>
-            <td rowSpan={2} className={styles.xl108} style={{borderBottom: '.5pt solid black', borderTop: 'none'}}>TKC A</td>
+            <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
+            <td className={styles.borderRight}>&nbsp;</td>
+            <td className={styles.xl01} />
+            <td className={styles.borderLeft}>&nbsp;</td>
+            <td className={styles.borderBottom}>&nbsp;</td>
+            <td rowSpan={2} className={styles.teamID} style={{borderBottom: '.5pt solid black', borderTop: 'none'}}>TKC A</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} className={styles.xl66} style={{height: '15.75pt'}} />
-            <td className={styles.xl92}>&nbsp;</td>
-            <td className={styles.xl85} />
-            <td className={styles.xl101}>&nbsp;</td>
+            <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
+            <td className={styles.borderRight}>&nbsp;</td>
+            <td className={styles.xl01} />
+            <td className={styles.borderRightLeft}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} className={styles.xl65} style={{height: '15.75pt'}} />
-            <td className={styles.xl88}>&nbsp;</td>
-            <td className={styles.xl84} />
-            <td className={styles.xl105}>&nbsp;</td>
-            <td rowSpan={2} className={styles.xl84}>2</td>
+            <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
+            <td className={styles.borderRight}>&nbsp;</td>
+            <td className={styles.xl01} />
+            <td className={styles.borderRBL}>&nbsp;</td>
+            <td rowSpan={2} className={styles.xl01}>2</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} className={styles.xl65} style={{height: '15.75pt'}} />
-            <td className={styles.xl88}>&nbsp;</td>
-            <td className={styles.xl84} />
-            <td className={styles.xl88}>&nbsp;</td>
-            <td className={styles.xl76}>&nbsp;</td>
+            <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
+            <td className={styles.borderRight}>&nbsp;</td>
+            <td className={styles.xl01} />
+            <td className={styles.borderRight}>&nbsp;</td>
+            <td className={styles.borderBottom}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} className={styles.xl66} style={{height: '15.75pt'}} />
-            <td className={styles.xl92}>&nbsp;</td>
-            <td className={styles.xl85} />
-            <td className={styles.xl92}>&nbsp;</td>
-            <td className={styles.xl94}>&nbsp;</td>
-            <td rowSpan={2} className={styles.xl108} style={{borderBottom: '.5pt solid black', borderTop: 'none'}}>TKC A</td>
+            <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
+            <td className={styles.borderRight}>&nbsp;</td>
+            <td className={styles.xl01} />
+            <td className={styles.borderRight}>&nbsp;</td>
+            <td className={styles.borderRightBottom}>&nbsp;</td>
+            <td rowSpan={2} className={styles.teamID} style={{borderBottom: '.5pt solid black', borderTop: 'none'}}>TKC A</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} className={styles.xl66} style={{height: '15.75pt'}} />
-            <td className={styles.xl92}>&nbsp;</td>
+            <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
+            <td className={styles.borderRight}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} className={styles.xl65} style={{height: '15.75pt'}} />
-            <td className={styles.xl89}>&nbsp;</td>
-            <td rowSpan={2} className={styles.xl84}>11</td>
+            <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
+            <td className={styles.borderRightBottom}>&nbsp;</td>
+            <td rowSpan={2} className={styles.xl01}>11</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} className={styles.xl65} style={{height: '15.75pt'}} />
-            <td className={styles.xl102} style={{borderTop: 'none'}}>&nbsp;</td>
+            <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
+            <td className={styles.borderTRL} style={{borderTop: 'none'}}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} className={styles.xl65} style={{height: '15.75pt'}} />
-            <td className={styles.xl93}>&nbsp;</td>
-            <td className={styles.xl84} />
-            <td className={styles.xl84} />
-            <td className={styles.xl87}>&nbsp;</td>
-            <td rowSpan={2} className={styles.xl108} style={{borderBottom: '.5pt solid black'}}>TKC A</td>
+            <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
+            <td className={styles.borderRightLeft}>&nbsp;</td>
+            <td className={styles.xl01} />
+            <td className={styles.xl01} />
+            <td className={styles.borderBottom}>&nbsp;</td>
+            <td rowSpan={2} className={styles.teamID} style={{borderBottom: '.5pt solid black'}}>TKC A</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} className={styles.xl65} style={{height: '15.75pt'}} />
-            <td className={styles.xl93}>&nbsp;</td>
-            <td className={styles.xl84} />
-            <td className={styles.xl88}>&nbsp;</td>
-            <td className={styles.xl88}>&nbsp;</td>
+            <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
+            <td className={styles.borderRightLeft}>&nbsp;</td>
+            <td className={styles.xl01} />
+            <td className={styles.borderRight}>&nbsp;</td>
+            <td className={styles.borderRight}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} className={styles.xl65} style={{height: '15.75pt'}} />
-            <td className={styles.xl93}>&nbsp;</td>
-            <td className={styles.xl84} />
-            <td className={styles.xl88}>&nbsp;</td>
-            <td rowSpan={2} className={styles.xl84}>3</td>
+            <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
+            <td className={styles.borderRightLeft}>&nbsp;</td>
+            <td className={styles.xl01} />
+            <td className={styles.borderRight}>&nbsp;</td>
+            <td rowSpan={2} className={styles.xl01}>3</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} className={styles.xl65} style={{height: '15.75pt'}} />
-            <td className={styles.xl93}>&nbsp;</td>
-            <td className={styles.xl84} />
-            <td className={styles.xl102}>&nbsp;</td>
-            <td className={styles.xl76}>&nbsp;</td>
+            <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
+            <td className={styles.borderRightLeft}>&nbsp;</td>
+            <td className={styles.xl01} />
+            <td className={styles.borderTRL}>&nbsp;</td>
+            <td className={styles.borderBottom}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} className={styles.xl65} style={{height: '15.75pt'}} />
-            <td className={styles.xl93}>&nbsp;</td>
-            <td className={styles.xl84} />
-            <td className={styles.xl93}>&nbsp;</td>
-            <td className={styles.xl89}>&nbsp;</td>
-            <td rowSpan={2} className={styles.xl108} style={{borderBottom: '.5pt solid black', borderTop: 'none'}}>TKC A</td>
+            <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
+            <td className={styles.borderRightLeft}>&nbsp;</td>
+            <td className={styles.xl01} />
+            <td className={styles.borderRightLeft}>&nbsp;</td>
+            <td className={styles.borderRightBottom}>&nbsp;</td>
+            <td rowSpan={2} className={styles.teamID} style={{borderBottom: '.5pt solid black', borderTop: 'none'}}>TKC A</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} className={styles.xl65} style={{height: '15.75pt'}} />
-            <td className={styles.xl93}>&nbsp;</td>
-            <td className={styles.xl87}>&nbsp;</td>
-            <td rowSpan={2} className={styles.xl103}>8</td>
+            <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
+            <td className={styles.borderRightLeft}>&nbsp;</td>
+            <td className={styles.borderBottom}>&nbsp;</td>
+            <td rowSpan={2} className={styles.borderLeft}>8</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} className={styles.xl65} style={{height: '15.75pt'}} />
-            <td className={styles.xl103}>&nbsp;</td>
+            <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
+            <td className={styles.borderLeft}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} className={styles.xl96} style={{height: '15.75pt'}} />
-            <td className={styles.xl106}>&nbsp;</td>
-            <td className={styles.xl97} />
-            <td className={styles.xl106}>&nbsp;</td>
+            <td height={20} className={styles.xl01} style={{height: '15.75pt'}} />
+            <td className={styles.borderLeft}>&nbsp;</td>
+            <td className={styles.xl01} />
+            <td className={styles.borderLeft}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} className={styles.xl65} style={{height: '15.75pt'}} />
-            <td className={styles.xl103}>&nbsp;</td>
-            <td className={styles.xl84} />
-            <td className={styles.xl107}>&nbsp;</td>
-            <td className={styles.xl84} />
-            <td rowSpan={2} className={styles.xl108} style={{borderBottom: '.5pt solid black'}}>TKC A</td>
+            <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
+            <td className={styles.borderLeft}>&nbsp;</td>
+            <td className={styles.xl01} />
+            <td className={styles.borderBottomLeft}>&nbsp;</td>
+            <td className={styles.xl01} />
+            <td rowSpan={2} className={styles.teamID} style={{borderBottom: '.5pt solid black'}}>TKC A</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} className={styles.xl65} style={{height: '15.75pt'}} />
-            <td className={styles.xl103}>&nbsp;</td>
-            <td className={styles.xl84} />
-            <td className={styles.xl84} />
-            <td className={styles.xl98}>&nbsp;</td>
+            <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
+            <td className={styles.borderLeft}>&nbsp;</td>
+            <td className={styles.xl01} />
+            <td className={styles.xl01} />
+            <td className={styles.borderTop}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} className={styles.xl68} style={{height: '15.75pt'}}>&nbsp;</td>
-            <td rowSpan={2} className={styles.xl103}>13</td>
+            <td height={20} className={styles.borderBottom} style={{height: '15.75pt'}}>&nbsp;</td>
+            <td rowSpan={2} className={styles.borderLeft}>13</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} className={styles.xl65} style={{height: '15.75pt'}} />
+            <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} className={styles.xl65} style={{height: '15.75pt'}} />
-            <td className={styles.xl103}>&nbsp;</td>
-            <td className={styles.xl84} />
-            <td className={styles.xl84} />
-            <td className={styles.xl87}>&nbsp;</td>
-            <td rowSpan={2} className={styles.xl108} style={{borderBottom: '.5pt solid black'}}>TKC A</td>
+            <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
+            <td className={styles.borderLeft}>&nbsp;</td>
+            <td className={styles.xl01} />
+            <td className={styles.xl01} />
+            <td className={styles.borderBottom}>&nbsp;</td>
+            <td rowSpan={2} className={styles.teamID} style={{borderBottom: '.5pt solid black'}}>TKC A</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} className={styles.xl65} style={{height: '15.75pt'}} />
-            <td className={styles.xl103}>&nbsp;</td>
-            <td className={styles.xl84} />
-            <td className={styles.xl88}>&nbsp;</td>
-            <td className={styles.xl88}>&nbsp;</td>
+            <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
+            <td className={styles.borderLeft}>&nbsp;</td>
+            <td className={styles.xl01} />
+            <td className={styles.borderRight}>&nbsp;</td>
+            <td className={styles.borderRight}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} className={styles.xl65} style={{height: '15.75pt'}} />
-            <td className={styles.xl103}>&nbsp;</td>
-            <td className={styles.xl84} />
-            <td className={styles.xl88}>&nbsp;</td>
-            <td rowSpan={2} className={styles.xl84}>4</td>
+            <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
+            <td className={styles.borderLeft}>&nbsp;</td>
+            <td className={styles.xl01} />
+            <td className={styles.borderRight}>&nbsp;</td>
+            <td rowSpan={2} className={styles.xl01}>4</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} className={styles.xl65} style={{height: '15.75pt'}} />
-            <td className={styles.xl103}>&nbsp;</td>
-            <td className={styles.xl84} />
-            <td className={styles.xl102}>&nbsp;</td>
-            <td className={styles.xl76}>&nbsp;</td>
+            <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
+            <td className={styles.borderLeft}>&nbsp;</td>
+            <td className={styles.xl01} />
+            <td className={styles.borderTRL}>&nbsp;</td>
+            <td className={styles.borderBottom}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} className={styles.xl65} style={{height: '15.75pt'}} />
-            <td className={styles.xl103}>&nbsp;</td>
-            <td className={styles.xl84} />
-            <td className={styles.xl93}>&nbsp;</td>
-            <td className={styles.xl89}>&nbsp;</td>
-            <td rowSpan={2} className={styles.xl108} style={{borderBottom: '.5pt solid black', borderTop: 'none'}}>TKC A</td>
+            <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
+            <td className={styles.borderLeft}>&nbsp;</td>
+            <td className={styles.xl01} />
+            <td className={styles.borderRightLeft}>&nbsp;</td>
+            <td className={styles.borderRightBottom}>&nbsp;</td>
+            <td rowSpan={2} className={styles.teamID} style={{borderBottom: '.5pt solid black', borderTop: 'none'}}>TKC A</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} className={styles.xl65} style={{height: '15.75pt'}} />
-            <td className={styles.xl103}>&nbsp;</td>
-            <td className={styles.xl84} />
-            <td className={styles.xl103}>&nbsp;</td>
+            <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
+            <td className={styles.borderLeft}>&nbsp;</td>
+            <td className={styles.xl01} />
+            <td className={styles.borderLeft}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} className={styles.xl65} style={{height: '15.75pt'}} />
-            <td className={styles.xl103}>&nbsp;</td>
-            <td className={styles.xl87}>&nbsp;</td>
-            <td rowSpan={2} className={styles.xl103}>9</td>
+            <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
+            <td className={styles.borderLeft}>&nbsp;</td>
+            <td className={styles.borderBottom}>&nbsp;</td>
+            <td rowSpan={2} className={styles.borderLeft}>9</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} className={styles.xl65} style={{height: '15.75pt'}} />
-            <td className={styles.xl93}>&nbsp;</td>
-            <td className={styles.xl84} />
-            <td className={styles.xl84} />
-            <td className={styles.xl76}>&nbsp;</td>
+            <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
+            <td className={styles.borderRightLeft}>&nbsp;</td>
+            <td className={styles.xl01} />
+            <td className={styles.xl01} />
+            <td className={styles.borderBottom}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} className={styles.xl66} style={{height: '15.75pt'}} />
-            <td className={styles.xl101}>&nbsp;</td>
-            <td className={styles.xl85} />
-            <td className={styles.xl104}>&nbsp;</td>
-            <td className={styles.xl91}>&nbsp;</td>
-            <td rowSpan={2} className={styles.xl108} style={{borderBottom: '.5pt solid black', borderTop: 'none'}}>TKC A</td>
+            <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
+            <td className={styles.borderRightLeft}>&nbsp;</td>
+            <td className={styles.xl01} />
+            <td className={styles.borderLeft}>&nbsp;</td>
+            <td className={styles.borderBottom}>&nbsp;</td>
+            <td rowSpan={2} className={styles.teamID} style={{borderBottom: '.5pt solid black', borderTop: 'none'}}>TKC A</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} className={styles.xl66} style={{height: '15.75pt'}} />
-            <td className={styles.xl101}>&nbsp;</td>
-            <td className={styles.xl85} />
-            <td className={styles.xl101}>&nbsp;</td>
+            <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
+            <td className={styles.borderRightLeft}>&nbsp;</td>
+            <td className={styles.xl01} />
+            <td className={styles.borderRightLeft}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} className={styles.xl65} style={{height: '15.75pt'}} />
-            <td className={styles.xl93}>&nbsp;</td>
-            <td className={styles.xl84} />
-            <td className={styles.xl105}>&nbsp;</td>
-            <td rowSpan={2} className={styles.xl84}>5</td>
+            <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
+            <td className={styles.borderRightLeft}>&nbsp;</td>
+            <td className={styles.xl01} />
+            <td className={styles.borderRBL}>&nbsp;</td>
+            <td rowSpan={2} className={styles.xl01}>5</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} className={styles.xl65} style={{height: '15.75pt'}} />
-            <td className={styles.xl93}>&nbsp;</td>
-            <td className={styles.xl84} />
-            <td className={styles.xl88}>&nbsp;</td>
-            <td className={styles.xl76}>&nbsp;</td>
+            <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
+            <td className={styles.borderRightLeft}>&nbsp;</td>
+            <td className={styles.xl01} />
+            <td className={styles.borderRight}>&nbsp;</td>
+            <td className={styles.borderBottom}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} className={styles.xl66} style={{height: '15.75pt'}} />
-            <td className={styles.xl101}>&nbsp;</td>
-            <td className={styles.xl85} />
-            <td className={styles.xl92}>&nbsp;</td>
-            <td className={styles.xl94}>&nbsp;</td>
-            <td rowSpan={2} className={styles.xl108} style={{borderBottom: '.5pt solid black', borderTop: 'none'}}>TKC A</td>
+            <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
+            <td className={styles.borderRightLeft}>&nbsp;</td>
+            <td className={styles.xl01} />
+            <td className={styles.borderRight}>&nbsp;</td>
+            <td className={styles.borderRightBottom}>&nbsp;</td>
+            <td rowSpan={2} className={styles.teamID} style={{borderBottom: '.5pt solid black', borderTop: 'none'}}>TKC A</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} className={styles.xl66} style={{height: '15.75pt'}} />
-            <td className={styles.xl101}>&nbsp;</td>
+            <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
+            <td className={styles.borderRightLeft}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} className={styles.xl65} style={{height: '15.75pt'}} />
-            <td className={styles.xl105}>&nbsp;</td>
-            <td rowSpan={2} className={styles.xl84}>12</td>
+            <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
+            <td className={styles.borderRBL}>&nbsp;</td>
+            <td rowSpan={2} className={styles.xl01}>12</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} className={styles.xl65} style={{height: '15.75pt'}} />
-            <td className={styles.xl88}>&nbsp;</td>
+            <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
+            <td className={styles.borderRight}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} className={styles.xl65} style={{height: '15.75pt'}} />
-            <td className={styles.xl88}>&nbsp;</td>
-            <td className={styles.xl84} />
-            <td className={styles.xl84} />
-            <td className={styles.xl87}>&nbsp;</td>
-            <td rowSpan={2} className={styles.xl108} style={{borderBottom: '.5pt solid black'}}>TKC A</td>
+            <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
+            <td className={styles.borderRight}>&nbsp;</td>
+            <td className={styles.xl01} />
+            <td className={styles.xl01} />
+            <td className={styles.borderBottom}>&nbsp;</td>
+            <td rowSpan={2} className={styles.teamID} style={{borderBottom: '.5pt solid black'}}>TKC A</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} className={styles.xl65} style={{height: '15.75pt'}} />
-            <td className={styles.xl88}>&nbsp;</td>
-            <td className={styles.xl84} />
-            <td className={styles.xl88}>&nbsp;</td>
-            <td className={styles.xl88}>&nbsp;</td>
+            <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
+            <td className={styles.borderRight}>&nbsp;</td>
+            <td className={styles.xl01} />
+            <td className={styles.borderRight}>&nbsp;</td>
+            <td className={styles.borderRight}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} className={styles.xl65} style={{height: '15.75pt'}} />
-            <td className={styles.xl88}>&nbsp;</td>
-            <td className={styles.xl84} />
-            <td className={styles.xl88}>&nbsp;</td>
-            <td rowSpan={2} className={styles.xl84}>6</td>
+            <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
+            <td className={styles.borderRight}>&nbsp;</td>
+            <td className={styles.xl01} />
+            <td className={styles.borderRight}>&nbsp;</td>
+            <td rowSpan={2} className={styles.xl01}>6</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} className={styles.xl65} style={{height: '15.75pt'}} />
-            <td className={styles.xl88}>&nbsp;</td>
-            <td className={styles.xl84} />
-            <td className={styles.xl102}>&nbsp;</td>
-            <td className={styles.xl76}>&nbsp;</td>
+            <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
+            <td className={styles.borderRight}>&nbsp;</td>
+            <td className={styles.xl01} />
+            <td className={styles.borderTRL}>&nbsp;</td>
+            <td className={styles.borderBottom}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} className={styles.xl65} style={{height: '15.75pt'}} />
-            <td className={styles.xl88}>&nbsp;</td>
-            <td className={styles.xl84} />
-            <td className={styles.xl93}>&nbsp;</td>
-            <td className={styles.xl89}>&nbsp;</td>
-            <td rowSpan={2} className={styles.xl108} style={{borderBottom: '.5pt solid black', borderTop: 'none'}}>TKC A</td>
+            <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
+            <td className={styles.borderRight}>&nbsp;</td>
+            <td className={styles.xl01} />
+            <td className={styles.borderRightLeft}>&nbsp;</td>
+            <td className={styles.borderRightBottom}>&nbsp;</td>
+            <td rowSpan={2} className={styles.teamID} style={{borderBottom: '.5pt solid black', borderTop: 'none'}}>TKC A</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} className={styles.xl65} style={{height: '15.75pt'}} />
-            <td className={styles.xl88}>&nbsp;</td>
-            <td className={styles.xl87}>&nbsp;</td>
-            <td rowSpan={2} className={styles.xl103}>10</td>
+            <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
+            <td className={styles.borderRight}>&nbsp;</td>
+            <td className={styles.borderBottom}>&nbsp;</td>
+            <td rowSpan={2} className={styles.borderLeft}>10</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} className={styles.xl65} style={{height: '15.75pt'}} />
+            <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} className={styles.xl96} style={{height: '15.75pt'}} />
-            <td className={styles.xl97} />
-            <td className={styles.xl97} />
-            <td className={styles.xl106}>&nbsp;</td>
+            <td height={20} className={styles.xl01} style={{height: '15.75pt'}} />
+            <td className={styles.xl01} />
+            <td className={styles.xl01} />
+            <td className={styles.borderLeft}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} className={styles.xl65} style={{height: '15.75pt'}} />
-            <td className={styles.xl84} />
-            <td className={styles.xl84} />
-            <td className={styles.xl107}>&nbsp;</td>
-            <td className={styles.xl84} />
-            <td rowSpan={2} className={styles.xl108} style={{borderBottom: '.5pt solid black'}}>TKC A</td>
+            <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
+            <td className={styles.xl01} />
+            <td className={styles.xl01} />
+            <td className={styles.borderBottomLeft}>&nbsp;</td>
+            <td className={styles.xl01} />
+            <td rowSpan={2} className={styles.teamID} style={{borderBottom: '.5pt solid black'}}>TKC A</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} className={styles.xl65} style={{height: '15.75pt'}} />
-            <td className={styles.xl84} />
-            <td className={styles.xl84} />
-            <td className={styles.xl84} />
-            <td className={styles.xl98}>&nbsp;</td>
+            <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
+            <td className={styles.xl01} />
+            <td className={styles.xl01} />
+            <td className={styles.xl01} />
+            <td className={styles.borderTop}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} className={styles.xl65} style={{height: '15.75pt'}} />
+            <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
           </tr>
         </tbody></table>
     </>
