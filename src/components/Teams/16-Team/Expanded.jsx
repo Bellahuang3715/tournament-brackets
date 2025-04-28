@@ -37,7 +37,7 @@ export default function Expanded() {
             <td className={styles.xl66} width={101} style={{width: '76pt'}} />
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td rowSpan={2} height={40} className={styles.xl113} style={{borderBottom: '.5pt solid black', height: '31.5pt'}}>REN B</td>
+            <td rowSpan={2} height={40} className={styles.xl109} style={{borderBottom: '.5pt solid black', height: '31.5pt'}}>REN B</td>
             <td className={styles.xl68}>&nbsp;</td>
             <td className={styles.xl69} />
             <td className={styles.xl65} />
@@ -61,7 +61,7 @@ export default function Expanded() {
             <td height={20} style={{height: '15.75pt'}} />
             <td rowSpan={2} className={styles.xl70}>1</td>
             <td className={styles.xl71}>&nbsp;</td>
-            <td rowSpan={2} className={styles.xl113} style={{borderBottom: '.5pt solid black'}}>REN B</td>
+            <td rowSpan={2} className={styles.xl109} style={{borderBottom: '.5pt solid black'}}>REN B</td>
             <td className={styles.xl65} />
             <td className={styles.xl66} />
             <td className={styles.xl66} />
@@ -74,7 +74,7 @@ export default function Expanded() {
             <td className={styles.xl74}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td rowSpan={2} height={40} className={styles.xl113} style={{borderBottom: '.5pt solid black', height: '31.5pt', borderTop: 'none'}}>REN B</td>
+            <td rowSpan={2} height={40} className={styles.xl109} style={{borderBottom: '.5pt solid black', height: '31.5pt', borderTop: 'none'}}>REN B</td>
             <td className={styles.xl75}>&nbsp;</td>
             <td className={styles.xl69} />
             <td className={styles.xl66} />
@@ -93,7 +93,7 @@ export default function Expanded() {
             <td className={styles.xl66} />
             <td rowSpan={2} className={styles.xl70}>9</td>
             <td className={styles.xl76}>&nbsp;</td>
-            <td rowSpan={2} className={styles.xl113} style={{borderBottom: '.5pt solid black'}}>REN B</td>
+            <td rowSpan={2} className={styles.xl109} style={{borderBottom: '.5pt solid black'}}>REN B</td>
             <td className={styles.xl65} />
             <td />
             <td className={styles.xl66} />
@@ -123,7 +123,7 @@ export default function Expanded() {
             <td colSpan={2} style={{msoIgnore: 'colspan'}} />
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td rowSpan={2} height={40} className={styles.xl113} style={{borderBottom: '.5pt solid black', height: '31.5pt'}}>REN B</td>
+            <td rowSpan={2} height={40} className={styles.xl109} style={{borderBottom: '.5pt solid black', height: '31.5pt'}}>REN B</td>
             <td className={styles.xl68}>&nbsp;</td>
             <td className={styles.xl69} />
             <td className={styles.xl66} />
@@ -147,7 +147,7 @@ export default function Expanded() {
             <td height={20} style={{height: '15.75pt'}} />
             <td rowSpan={2} className={styles.xl70}>2</td>
             <td className={styles.xl71}>&nbsp;</td>
-            <td rowSpan={2} className={styles.xl113} style={{borderBottom: '.5pt solid black'}}>REN B</td>
+            <td rowSpan={2} className={styles.xl109} style={{borderBottom: '.5pt solid black'}}>REN B</td>
             <td className={styles.xl75}>&nbsp;</td>
             <td className={styles.xl66} />
             <td className={styles.xl66} />
@@ -161,9 +161,10 @@ export default function Expanded() {
             <td className={styles.xl66} />
             <td className={styles.xl66} />
             <td className={styles.xl70}>&nbsp;</td>
+            <td colSpan={2} style={{msoIgnore: 'colspan'}} />
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td rowSpan={2} height={40} className={styles.xl113} style={{borderBottom: '.5pt solid black', height: '31.5pt', borderTop: 'none'}}>REN B</td>
+            <td rowSpan={2} height={40} className={styles.xl109} style={{borderBottom: '.5pt solid black', height: '31.5pt', borderTop: 'none'}}>REN B</td>
             <td className={styles.xl75}>&nbsp;</td>
             <td className={styles.xl69} />
             <td />
@@ -179,10 +180,8 @@ export default function Expanded() {
             <td className={styles.xl65} />
             <td className={styles.xl66} />
             <td className={styles.xl66} />
-            <td rowSpan={2} className={styles.xl65}>13</td>
-            <td className={styles.xl78}>&nbsp;</td>
-            <td rowSpan={2} className={styles.xl113} style={{borderBottom: '.5pt solid black'}}>REN B</td>
-            <td className={styles.xl79} style={{borderLeft: 'none'}}>&nbsp;</td>
+            <td className={styles.xl70}>&nbsp;</td>
+            <td colSpan={3} style={{msoIgnore: 'colspan'}} />
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             <td height={20} style={{height: '15.75pt'}} />
@@ -192,9 +191,10 @@ export default function Expanded() {
             <td className={styles.xl65} />
             <td className={styles.xl66} />
             <td className={styles.xl66} />
-            <td className={styles.xl80}>&nbsp;</td>
-            <td className={styles.xl81} style={{borderLeft: 'none'}}>&nbsp;</td>
-            <td className={styles.xl82}>&nbsp;</td>
+            <td rowSpan={2} className={styles.xl65}>13</td>
+            <td className={styles.xl78}>&nbsp;</td>
+            <td rowSpan={2} className={styles.xl109} style={{borderBottom: '.5pt solid black'}}>REN B</td>
+            <td className={styles.xl79} style={{borderLeft: 'none'}}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             <td height={20} style={{height: '15.75pt'}} />
@@ -203,11 +203,9 @@ export default function Expanded() {
             <td className={styles.xl65} />
             <td className={styles.xl66} />
             <td className={styles.xl66} />
+            <td className={styles.xl80}>&nbsp;</td>
             <td className={styles.xl65} />
-            <td className={styles.xl78}>&nbsp;</td>
-            <td className={styles.xl65} />
-            <td className={styles.xl65} />
-            <td className={styles.xl82}>&nbsp;</td>
+            <td className={styles.xl81}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             <td height={20} style={{height: '15.75pt'}} />
@@ -219,10 +217,10 @@ export default function Expanded() {
             <td />
             <td className={styles.xl65} />
             <td className={styles.xl65} />
-            <td className={styles.xl82}>&nbsp;</td>
+            <td className={styles.xl81}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td rowSpan={2} height={40} className={styles.xl113} style={{borderBottom: '.5pt solid black', height: '31.5pt'}}>REN B</td>
+            <td rowSpan={2} height={40} className={styles.xl109} style={{borderBottom: '.5pt solid black', height: '31.5pt'}}>REN B</td>
             <td className={styles.xl68}>&nbsp;</td>
             <td className={styles.xl69} />
             <td className={styles.xl65} />
@@ -231,7 +229,7 @@ export default function Expanded() {
             <td className={styles.xl70}>&nbsp;</td>
             <td colSpan={2} style={{msoIgnore: 'colspan'}} />
             <td className={styles.xl65} />
-            <td className={styles.xl82}>&nbsp;</td>
+            <td className={styles.xl81}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             <td height={20} className={styles.xl70} style={{height: '15.75pt'}}>&nbsp;</td>
@@ -243,20 +241,20 @@ export default function Expanded() {
             <td className={styles.xl70}>&nbsp;</td>
             <td colSpan={2} style={{msoIgnore: 'colspan'}} />
             <td className={styles.xl65} />
-            <td className={styles.xl82}>&nbsp;</td>
+            <td className={styles.xl81}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             <td height={20} style={{height: '15.75pt'}} />
             <td rowSpan={2} className={styles.xl70}>3</td>
             <td className={styles.xl71}>&nbsp;</td>
-            <td rowSpan={2} className={styles.xl113} style={{borderBottom: '.5pt solid black'}}>REN B</td>
+            <td rowSpan={2} className={styles.xl109} style={{borderBottom: '.5pt solid black'}}>REN B</td>
             <td className={styles.xl65} />
             <td className={styles.xl66} />
             <td className={styles.xl66} />
             <td className={styles.xl70}>&nbsp;</td>
             <td colSpan={2} style={{msoIgnore: 'colspan'}} />
             <td className={styles.xl65} />
-            <td className={styles.xl82}>&nbsp;</td>
+            <td className={styles.xl81}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             <td height={20} className={styles.xl72} style={{height: '15.75pt'}}>&nbsp;</td>
@@ -267,10 +265,10 @@ export default function Expanded() {
             <td className={styles.xl70}>&nbsp;</td>
             <td colSpan={2} style={{msoIgnore: 'colspan'}} />
             <td className={styles.xl65} />
-            <td className={styles.xl82}>&nbsp;</td>
+            <td className={styles.xl81}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td rowSpan={2} height={40} className={styles.xl113} style={{borderBottom: '.5pt solid black', height: '31.5pt', borderTop: 'none'}}>REN B</td>
+            <td rowSpan={2} height={40} className={styles.xl109} style={{borderBottom: '.5pt solid black', height: '31.5pt', borderTop: 'none'}}>REN B</td>
             <td className={styles.xl75}>&nbsp;</td>
             <td className={styles.xl69} />
             <td className={styles.xl66} />
@@ -300,7 +298,7 @@ export default function Expanded() {
             <td className={styles.xl66} />
             <td rowSpan={2} className={styles.xl70}>10</td>
             <td className={styles.xl76}>&nbsp;</td>
-            <td rowSpan={2} className={styles.xl113} style={{borderBottom: '.5pt solid black'}}>REN B</td>
+            <td rowSpan={2} className={styles.xl109} style={{borderBottom: '.5pt solid black'}}>REN B</td>
             <td className={styles.xl75}>&nbsp;</td>
             <td />
             <td className={styles.xl65} />
@@ -334,7 +332,7 @@ export default function Expanded() {
             <td className={styles.xl78}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td rowSpan={2} height={40} className={styles.xl113} style={{borderBottom: '.5pt solid black', height: '31.5pt'}}>REN B</td>
+            <td rowSpan={2} height={40} className={styles.xl109} style={{borderBottom: '.5pt solid black', height: '31.5pt'}}>REN B</td>
             <td className={styles.xl68}>&nbsp;</td>
             <td className={styles.xl69} />
             <td className={styles.xl66} />
@@ -362,7 +360,7 @@ export default function Expanded() {
             <td height={20} style={{height: '15.75pt'}} />
             <td rowSpan={2} className={styles.xl70}>4</td>
             <td className={styles.xl71}>&nbsp;</td>
-            <td rowSpan={2} className={styles.xl113} style={{borderBottom: '.5pt solid black'}}>REN B</td>
+            <td rowSpan={2} className={styles.xl109} style={{borderBottom: '.5pt solid black'}}>REN B</td>
             <td className={styles.xl75}>&nbsp;</td>
             <td colSpan={2} style={{msoIgnore: 'colspan'}} />
             <td className={styles.xl65} />
@@ -381,10 +379,10 @@ export default function Expanded() {
             <td className={styles.xl65} />
             <td className={styles.xl66} />
             <td className={styles.xl65} />
-            <td className={styles.xl82}>&nbsp;</td>
+            <td className={styles.xl81}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td rowSpan={2} height={40} className={styles.xl113} style={{borderBottom: '.5pt solid black', height: '31.5pt', borderTop: 'none'}}>REN B</td>
+            <td rowSpan={2} height={40} className={styles.xl109} style={{borderBottom: '.5pt solid black', height: '31.5pt', borderTop: 'none'}}>REN B</td>
             <td className={styles.xl75}>&nbsp;</td>
             <td className={styles.xl69} />
             <td />
@@ -395,7 +393,7 @@ export default function Expanded() {
             <td className={styles.xl65} />
             <td className={styles.xl66} />
             <td className={styles.xl65} />
-            <td className={styles.xl82}>&nbsp;</td>
+            <td className={styles.xl81}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             <td height={20} className={styles.xl65} style={{height: '15.75pt'}} />
@@ -407,24 +405,24 @@ export default function Expanded() {
             <td className={styles.xl65} />
             <td className={styles.xl65} />
             <td className={styles.xl66} />
+            <td />
+            <td className={styles.xl81}>&nbsp;</td>
+          </tr>
+          <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
+            <td height={20} colSpan={10} style={{height: '15.75pt', msoIgnore: 'colspan'}} />
             <td rowSpan={2} className={styles.xl70}>15</td>
-            <td className={styles.xl83} style={{borderLeft: 'none'}}>&nbsp;</td>
-            <td rowSpan={2} className={styles.xl113} style={{borderBottom: '.5pt solid black'}}>REN B</td>
-          </tr>
-          <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} colSpan={10} style={{height: '15.75pt', msoIgnore: 'colspan'}} />
             <td className={styles.xl82} style={{borderLeft: 'none'}}>&nbsp;</td>
+            <td rowSpan={2} className={styles.xl109} style={{borderBottom: '.5pt solid black'}}>REN B</td>
+          </tr>
+          <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
+            <td height={20} colSpan={10} style={{height: '15.75pt', msoIgnore: 'colspan'}} />
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             <td height={20} colSpan={10} style={{height: '15.75pt', msoIgnore: 'colspan'}} />
             <td className={styles.xl73}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} colSpan={10} style={{height: '15.75pt', msoIgnore: 'colspan'}} />
-            <td className={styles.xl73}>&nbsp;</td>
-          </tr>
-          <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td rowSpan={2} height={40} className={styles.xl113} style={{borderBottom: '.5pt solid black', height: '31.5pt'}}>REN B</td>
+            <td rowSpan={2} height={40} className={styles.xl109} style={{borderBottom: '.5pt solid black', height: '31.5pt'}}>REN B</td>
             <td className={styles.xl68}>&nbsp;</td>
             <td className={styles.xl69} />
             <td className={styles.xl65} />
@@ -432,8 +430,8 @@ export default function Expanded() {
             <td className={styles.xl66} />
             <td className={styles.xl66} />
             <td className={styles.xl65} />
-            <td colSpan={2} style={{msoIgnore: 'colspan'}} />
-            <td rowSpan={2} className={styles.xl70}>&nbsp;</td>
+            <td colSpan={3} style={{msoIgnore: 'colspan'}} />
+            <td className={styles.xl81}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             <td height={20} className={styles.xl70} style={{height: '15.75pt'}}>&nbsp;</td>
@@ -443,21 +441,21 @@ export default function Expanded() {
             <td className={styles.xl66} />
             <td className={styles.xl66} />
             <td className={styles.xl65} />
-            <td colSpan={2} style={{msoIgnore: 'colspan'}} />
-            <td className={styles.xl82} style={{borderLeft: 'none'}}>&nbsp;</td>
+            <td colSpan={3} style={{msoIgnore: 'colspan'}} />
+            <td className={styles.xl81}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             <td height={20} style={{height: '15.75pt'}} />
             <td rowSpan={2} className={styles.xl70}>5</td>
             <td className={styles.xl71}>&nbsp;</td>
-            <td rowSpan={2} className={styles.xl113} style={{borderBottom: '.5pt solid black'}}>REN B</td>
+            <td rowSpan={2} className={styles.xl109} style={{borderBottom: '.5pt solid black'}}>REN B</td>
             <td className={styles.xl65} />
             <td className={styles.xl66} />
             <td className={styles.xl66} />
             <td className={styles.xl65} />
             <td colSpan={2} style={{msoIgnore: 'colspan'}} />
             <td className={styles.xl70}>&nbsp;</td>
-            <td className={styles.xl82} style={{borderLeft: 'none'}}>&nbsp;</td>
+            <td className={styles.xl81} style={{borderLeft: 'none'}}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             <td height={20} className={styles.xl72} style={{height: '15.75pt'}}>&nbsp;</td>
@@ -469,10 +467,10 @@ export default function Expanded() {
             <td />
             <td className={styles.xl66} />
             <td className={styles.xl70}>&nbsp;</td>
-            <td className={styles.xl82} style={{borderLeft: 'none'}}>&nbsp;</td>
+            <td className={styles.xl81} style={{borderLeft: 'none'}}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td rowSpan={2} height={40} className={styles.xl113} style={{borderBottom: '.5pt solid black', height: '31.5pt', borderTop: 'none'}}>REN B</td>
+            <td rowSpan={2} height={40} className={styles.xl109} style={{borderBottom: '.5pt solid black', height: '31.5pt', borderTop: 'none'}}>REN B</td>
             <td className={styles.xl75}>&nbsp;</td>
             <td className={styles.xl69} />
             <td className={styles.xl66} />
@@ -483,7 +481,7 @@ export default function Expanded() {
             <td />
             <td className={styles.xl66} />
             <td className={styles.xl70}>&nbsp;</td>
-            <td className={styles.xl82} style={{borderLeft: 'none'}}>&nbsp;</td>
+            <td className={styles.xl81} style={{borderLeft: 'none'}}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             <td height={20} className={styles.xl65} style={{height: '15.75pt'}} />
@@ -496,7 +494,7 @@ export default function Expanded() {
             <td />
             <td className={styles.xl66} />
             <td className={styles.xl70}>&nbsp;</td>
-            <td className={styles.xl82} style={{borderLeft: 'none'}}>&nbsp;</td>
+            <td className={styles.xl81} style={{borderLeft: 'none'}}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             <td height={20} style={{height: '15.75pt'}} />
@@ -505,12 +503,12 @@ export default function Expanded() {
             <td className={styles.xl66} />
             <td rowSpan={2} className={styles.xl70}>11</td>
             <td className={styles.xl76}>&nbsp;</td>
-            <td rowSpan={2} className={styles.xl113} style={{borderBottom: '.5pt solid black'}}>REN B</td>
+            <td rowSpan={2} className={styles.xl109} style={{borderBottom: '.5pt solid black'}}>REN B</td>
             <td className={styles.xl65} />
             <td />
             <td className={styles.xl66} />
             <td className={styles.xl70}>&nbsp;</td>
-            <td className={styles.xl82} style={{borderLeft: 'none'}}>&nbsp;</td>
+            <td className={styles.xl81} style={{borderLeft: 'none'}}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             <td height={20} style={{height: '15.75pt'}} />
@@ -535,7 +533,7 @@ export default function Expanded() {
             <td className={styles.xl70}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td rowSpan={2} height={40} className={styles.xl113} style={{borderBottom: '.5pt solid black', height: '31.5pt'}}>REN B</td>
+            <td rowSpan={2} height={40} className={styles.xl109} style={{borderBottom: '.5pt solid black', height: '31.5pt'}}>REN B</td>
             <td className={styles.xl68}>&nbsp;</td>
             <td className={styles.xl69} />
             <td className={styles.xl66} />
@@ -561,7 +559,7 @@ export default function Expanded() {
             <td height={20} style={{height: '15.75pt'}} />
             <td rowSpan={2} className={styles.xl70}>6</td>
             <td className={styles.xl71}>&nbsp;</td>
-            <td rowSpan={2} className={styles.xl113} style={{borderBottom: '.5pt solid black'}}>REN B</td>
+            <td rowSpan={2} className={styles.xl109} style={{borderBottom: '.5pt solid black'}}>REN B</td>
             <td className={styles.xl75}>&nbsp;</td>
             <td className={styles.xl66} />
             <td className={styles.xl66} />
@@ -576,12 +574,11 @@ export default function Expanded() {
             <td className={styles.xl66} />
             <td className={styles.xl66} />
             <td className={styles.xl70}>&nbsp;</td>
-            <td />
-            <td className={styles.xl65} />
+            <td colSpan={2} style={{msoIgnore: 'colspan'}} />
             <td className={styles.xl70}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td rowSpan={2} height={40} className={styles.xl113} style={{borderBottom: '.5pt solid black', height: '31.5pt', borderTop: 'none'}}>REN B</td>
+            <td rowSpan={2} height={40} className={styles.xl109} style={{borderBottom: '.5pt solid black', height: '31.5pt', borderTop: 'none'}}>REN B</td>
             <td className={styles.xl75}>&nbsp;</td>
             <td className={styles.xl69} />
             <td />
@@ -600,9 +597,9 @@ export default function Expanded() {
             <td className={styles.xl65} />
             <td className={styles.xl66} />
             <td className={styles.xl66} />
-            <td rowSpan={2} className={styles.xl65}>14</td>
+            <td />
             <td className={styles.xl78}>&nbsp;</td>
-            <td rowSpan={2} className={styles.xl113} style={{borderBottom: '.5pt solid black'}}>REN B</td>
+            <td />
             <td className={styles.xl70}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
@@ -613,8 +610,10 @@ export default function Expanded() {
             <td className={styles.xl65} />
             <td className={styles.xl66} />
             <td className={styles.xl66} />
-            <td className={styles.xl80}>&nbsp;</td>
-            <td className={styles.xl84}>&nbsp;</td>
+            <td rowSpan={2} className={styles.xl65}>14</td>
+            <td className={styles.xl78}>&nbsp;</td>
+            <td rowSpan={2} className={styles.xl109} style={{borderBottom: '.5pt solid black'}}>REN B</td>
+            <td className={styles.xl70}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             <td height={20} style={{height: '15.75pt'}} />
@@ -623,8 +622,8 @@ export default function Expanded() {
             <td className={styles.xl65} />
             <td className={styles.xl66} />
             <td className={styles.xl66} />
-            <td className={styles.xl65} />
-            <td className={styles.xl78}>&nbsp;</td>
+            <td className={styles.xl80}>&nbsp;</td>
+            <td className={styles.xl83}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             <td height={20} style={{height: '15.75pt'}} />
@@ -633,9 +632,10 @@ export default function Expanded() {
             <td className={styles.xl65} />
             <td colSpan={2} style={{msoIgnore: 'colspan'}} />
             <td className={styles.xl70}>&nbsp;</td>
+            <td colSpan={2} style={{msoIgnore: 'colspan'}} />
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td rowSpan={2} height={40} className={styles.xl113} style={{borderBottom: '.5pt solid black', height: '31.5pt'}}>REN B</td>
+            <td rowSpan={2} height={40} className={styles.xl109} style={{borderBottom: '.5pt solid black', height: '31.5pt'}}>REN B</td>
             <td className={styles.xl68}>&nbsp;</td>
             <td className={styles.xl69} />
             <td className={styles.xl65} />
@@ -658,7 +658,7 @@ export default function Expanded() {
             <td height={20} style={{height: '15.75pt'}} />
             <td rowSpan={2} className={styles.xl70}>7</td>
             <td className={styles.xl71}>&nbsp;</td>
-            <td rowSpan={2} className={styles.xl113} style={{borderBottom: '.5pt solid black'}}>REN B</td>
+            <td rowSpan={2} className={styles.xl109} style={{borderBottom: '.5pt solid black'}}>REN B</td>
             <td className={styles.xl65} />
             <td className={styles.xl66} />
             <td className={styles.xl66} />
@@ -675,7 +675,7 @@ export default function Expanded() {
             <td colSpan={2} style={{msoIgnore: 'colspan'}} />
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td rowSpan={2} height={40} className={styles.xl113} style={{borderBottom: '.5pt solid black', height: '31.5pt', borderTop: 'none'}}>REN B</td>
+            <td rowSpan={2} height={40} className={styles.xl109} style={{borderBottom: '.5pt solid black', height: '31.5pt', borderTop: 'none'}}>REN B</td>
             <td className={styles.xl75}>&nbsp;</td>
             <td className={styles.xl69} />
             <td className={styles.xl66} />
@@ -699,7 +699,7 @@ export default function Expanded() {
             <td className={styles.xl66} />
             <td rowSpan={2} className={styles.xl70}>12</td>
             <td className={styles.xl76}>&nbsp;</td>
-            <td rowSpan={2} className={styles.xl113} style={{borderBottom: '.5pt solid black'}}>REN B</td>
+            <td rowSpan={2} className={styles.xl109} style={{borderBottom: '.5pt solid black'}}>REN B</td>
             <td className={styles.xl75}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
@@ -713,7 +713,7 @@ export default function Expanded() {
             <td className={styles.xl70}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td rowSpan={2} height={40} className={styles.xl113} style={{borderBottom: '.5pt solid black', height: '31.5pt'}}>REN B</td>
+            <td rowSpan={2} height={40} className={styles.xl109} style={{borderBottom: '.5pt solid black', height: '31.5pt'}}>REN B</td>
             <td className={styles.xl68}>&nbsp;</td>
             <td className={styles.xl69} />
             <td className={styles.xl66} />
@@ -731,7 +731,7 @@ export default function Expanded() {
             <td height={20} style={{height: '15.75pt'}} />
             <td rowSpan={2} className={styles.xl70}>8</td>
             <td className={styles.xl71}>&nbsp;</td>
-            <td rowSpan={2} className={styles.xl113} style={{borderBottom: '.5pt solid black'}}>REN B</td>
+            <td rowSpan={2} className={styles.xl109} style={{borderBottom: '.5pt solid black'}}>REN B</td>
             <td className={styles.xl75}>&nbsp;</td>
             <td colSpan={2} style={{msoIgnore: 'colspan'}} />
           </tr>
@@ -740,7 +740,7 @@ export default function Expanded() {
             <td className={styles.xl73}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td rowSpan={2} height={40} className={styles.xl113} style={{borderBottom: '.5pt solid black', height: '31.5pt', borderTop: 'none'}}>REN B</td>
+            <td rowSpan={2} height={40} className={styles.xl109} style={{borderBottom: '.5pt solid black', height: '31.5pt', borderTop: 'none'}}>REN B</td>
             <td className={styles.xl75}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
