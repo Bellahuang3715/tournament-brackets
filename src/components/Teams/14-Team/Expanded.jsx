@@ -1,7 +1,16 @@
 import React from 'react';
 import styles from '../stylesheet.module.css';
 
-export default function Expanded() {
+export default function Expanded({
+  teamIDFontFamily,
+  teamIDColor,
+  teamIDFontSize,
+}) {
+  const teamIDStyle = {
+    fontFamily: teamIDFontFamily,
+    color:      teamIDColor,
+    fontSize:   teamIDFontSize ? `${teamIDFontSize}pt` : undefined,
+  };
   return (
     <>
       <table border={0} cellPadding={0} cellSpacing={0} width={1903} style={{borderCollapse: 'collapse', tableLayout: 'fixed', width: '1426pt'}}>
@@ -36,7 +45,18 @@ export default function Expanded() {
             <td className={styles.xl00} width={101} style={{width: '76pt'}} />
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td rowSpan={2} height={40} className={styles.teamIDExpanded} style={{borderBottom: '.5pt solid black', height: '31.5pt'}}>REN B</td>
+            <td 
+              rowSpan={2}
+              height={40}
+              className={styles.teamIDExpanded}
+              style={{
+                borderBottom: '.5pt solid black',
+                height: '31.5pt',
+                ...teamIDStyle
+              }}
+            >
+              TKC A
+            </td>
             <td className={styles.borderBottom}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
@@ -54,7 +74,19 @@ export default function Expanded() {
             <td className={styles.borderTopRight}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td rowSpan={2} height={40} className={styles.teamIDExpanded} style={{borderBottom: '.5pt solid black', height: '31.5pt', borderTop: 'none'}}>REN B</td>
+            <td 
+              rowSpan={2}
+              height={40}
+              className={styles.teamIDExpanded}
+              style={{
+                borderBottom: '.5pt solid black',
+                height: '31.5pt',
+                borderTop: 'none',
+                ...teamIDStyle
+              }}
+            >
+              TKC A
+            </td>
             <td className={styles.borderRightBottom}>&nbsp;</td>
             <td className={styles.xl00} />
             <td className={styles.xl00} />
@@ -102,7 +134,18 @@ export default function Expanded() {
             <td className={styles.borderRight}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td rowSpan={2} height={40} className={styles.teamIDExpanded} style={{borderBottom: '.5pt solid black', height: '31.5pt'}}>REN B</td>
+            <td 
+              rowSpan={2}
+              height={40}
+              className={styles.teamIDExpanded}
+              style={{
+                borderBottom: '.5pt solid black',
+                height: '31.5pt',
+                ...teamIDStyle
+              }}
+            >
+              TKC A
+            </td>
             <td className={styles.borderBottom}>&nbsp;</td>
             <td className={styles.xl00} />
             <td className={styles.xl00} />
@@ -143,7 +186,19 @@ export default function Expanded() {
             <td colSpan={2} style={{msoIgnore: 'colspan'}} />
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td rowSpan={2} height={40} className={styles.teamIDExpanded} style={{borderBottom: '.5pt solid black', height: '31.5pt', borderTop: 'none'}}>REN B</td>
+            <td 
+              rowSpan={2}
+              height={40}
+              className={styles.teamIDExpanded}
+              style={{
+                borderBottom: '.5pt solid black',
+                height: '31.5pt',
+                borderTop: 'none',
+                ...teamIDStyle
+              }}
+            >
+              TKC A
+            </td>
             <td className={styles.borderRightBottom}>&nbsp;</td>
             <td className={styles.xl00} />
             <td />
@@ -202,7 +257,18 @@ export default function Expanded() {
             <td className={styles.borderLeft}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td rowSpan={2} height={40} className={styles.teamIDExpanded} style={{borderBottom: '.5pt solid black', height: '31.5pt'}}>REN B</td>
+            <td 
+              rowSpan={2}
+              height={40}
+              className={styles.teamIDExpanded}
+              style={{
+                borderBottom: '.5pt solid black',
+                height: '31.5pt',
+                ...teamIDStyle
+              }}
+            >
+              TKC A
+            </td>
             <td className={styles.borderBottom}>&nbsp;</td>
             <td className={styles.xl00} />
             <td className={styles.xl00} />
@@ -254,7 +320,19 @@ export default function Expanded() {
             <td className={styles.borderLeft}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td rowSpan={2} height={40} className={styles.teamIDExpanded} style={{borderBottom: '.5pt solid black', height: '31.5pt', borderTop: 'none'}}>REN B</td>
+            <td 
+              rowSpan={2}
+              height={40}
+              className={styles.teamIDExpanded}
+              style={{
+                borderBottom: '.5pt solid black',
+                height: '31.5pt',
+                borderTop: 'none',
+                ...teamIDStyle
+              }}
+            >
+              TKC A
+            </td>
             <td className={styles.borderRightBottom}>&nbsp;</td>
             <td className={styles.xl00} />
             <td className={styles.xl00} />
@@ -282,7 +360,16 @@ export default function Expanded() {
             <td height={20} style={{height: '15.75pt'}} />
             <td className={styles.xl00} />
             <td className={styles.xl00} />
-            <td rowSpan={2} className={styles.teamIDExpanded} style={{borderBottom: '.5pt solid black'}}>REN B</td>
+            <td 
+              rowSpan={2}
+              className={styles.teamIDExpanded}
+              style={{
+                borderBottom: '.5pt solid black',
+                ...teamIDStyle
+              }}
+            >
+              TKC A
+            </td>
             <td className={styles.borderRightBottom}>&nbsp;</td>
             <td colSpan={2} style={{msoIgnore: 'colspan'}} />
             <td className={styles.xl00} />
@@ -332,7 +419,18 @@ export default function Expanded() {
             <td className={styles.borderLeft}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td rowSpan={2} height={40} className={styles.teamIDExpanded} style={{borderBottom: '.5pt solid black', height: '31.5pt'}}>REN B</td>
+            <td 
+              rowSpan={2}
+              height={40}
+              className={styles.teamIDExpanded}
+              style={{
+                borderBottom: '.5pt solid black',
+                height: '31.5pt',
+                ...teamIDStyle
+              }}
+            >
+              TKC A
+            </td>
             <td className={styles.borderBottom}>&nbsp;</td>
             <td className={styles.xl00} />
             <td className={styles.xl00} />
@@ -382,7 +480,19 @@ export default function Expanded() {
             <td className={styles.borderLeft} style={{borderLeft: 'none'}}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td rowSpan={2} height={40} className={styles.teamIDExpanded} style={{borderBottom: '.5pt solid black', height: '31.5pt', borderTop: 'none'}}>REN B</td>
+            <td 
+              rowSpan={2}
+              height={40}
+              className={styles.teamIDExpanded}
+              style={{
+                borderBottom: '.5pt solid black',
+                height: '31.5pt',
+                borderTop: 'none',
+                ...teamIDStyle
+              }}
+            >
+              TKC A
+            </td>
             <td className={styles.borderRightBottom}>&nbsp;</td>
             <td className={styles.xl00} />
             <td className={styles.xl00} />
@@ -444,7 +554,18 @@ export default function Expanded() {
             <td className={styles.borderRight}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td rowSpan={2} height={40} className={styles.teamIDExpanded} style={{borderBottom: '.5pt solid black', height: '31.5pt'}}>REN B</td>
+            <td 
+              rowSpan={2}
+              height={40}
+              className={styles.teamIDExpanded}
+              style={{
+                borderBottom: '.5pt solid black',
+                height: '31.5pt',
+                ...teamIDStyle
+              }}
+            >
+              TKC A
+            </td>
             <td className={styles.borderBottom}>&nbsp;</td>
             <td className={styles.xl00} />
             <td className={styles.xl00} />
@@ -491,7 +612,19 @@ export default function Expanded() {
             <td className={styles.borderLeft}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td rowSpan={2} height={40} className={styles.teamIDExpanded} style={{borderBottom: '.5pt solid black', height: '31.5pt', borderTop: 'none'}}>REN B</td>
+            <td 
+              rowSpan={2}
+              height={40}
+              className={styles.teamIDExpanded}
+              style={{
+                borderBottom: '.5pt solid black',
+                height: '31.5pt',
+                borderTop: 'none',
+                ...teamIDStyle
+              }}
+            >
+              TKC A
+            </td>
             <td className={styles.borderRightBottom}>&nbsp;</td>
             <td className={styles.xl00} />
             <td />
@@ -547,7 +680,18 @@ export default function Expanded() {
             <td className={styles.borderRight}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td rowSpan={2} height={40} className={styles.teamIDExpanded} style={{borderBottom: '.5pt solid black', height: '31.5pt'}}>REN B</td>
+            <td 
+              rowSpan={2}
+              height={40}
+              className={styles.teamIDExpanded}
+              style={{
+                borderBottom: '.5pt solid black',
+                height: '31.5pt',
+                ...teamIDStyle
+              }}
+            >
+              TKC A
+            </td>
             <td className={styles.borderBottom}>&nbsp;</td>
             <td className={styles.xl00} />
             <td className={styles.xl00} />
@@ -587,7 +731,19 @@ export default function Expanded() {
             <td colSpan={2} style={{msoIgnore: 'colspan'}} />
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td rowSpan={2} height={40} className={styles.teamIDExpanded} style={{borderBottom: '.5pt solid black', height: '31.5pt', borderTop: 'none'}}>REN B</td>
+            <td 
+              rowSpan={2}
+              height={40}
+              className={styles.teamIDExpanded}
+              style={{
+                borderBottom: '.5pt solid black',
+                height: '31.5pt',
+                borderTop: 'none',
+                ...teamIDStyle
+              }}
+            >
+              TKC A
+            </td>
             <td className={styles.borderRightBottom}>&nbsp;</td>
             <td className={styles.xl00} />
             <td className={styles.xl00} />
@@ -604,7 +760,16 @@ export default function Expanded() {
             <td height={20} style={{height: '15.75pt'}} />
             <td className={styles.xl00} />
             <td className={styles.xl00} />
-            <td rowSpan={2} className={styles.teamIDExpanded} style={{borderBottom: '.5pt solid black'}}>REN B</td>
+            <td 
+              rowSpan={2}
+              className={styles.teamIDExpanded}
+              style={{
+                borderBottom: '.5pt solid black',
+                ...teamIDStyle
+              }}
+            >
+              TKC A
+            </td>
             <td className={styles.borderRightBottom}>&nbsp;</td>
             <td colSpan={2} style={{msoIgnore: 'colspan'}} />
           </tr>
