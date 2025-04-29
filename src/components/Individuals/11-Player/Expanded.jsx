@@ -1,7 +1,20 @@
 import React from 'react';
 import styles from '../stylesheet.module.css';
 
-export default function Expanded({ players }) {
+export default function Expanded({
+  players,
+  fontFamily = 'Arial, sans-serif',
+  playerIDFontSize = 14,
+  playerNameFontSize = 12,
+}) {
+  const playerIDStyle = {
+    fontSize:  `${playerIDFontSize}pt`,
+    fontFamily,
+  };
+  const playerNameStyle = {
+    fontSize:  `${playerNameFontSize}pt`,
+    fontFamily,
+  };
   return (
     <>
       <table border={0} cellPadding={0} cellSpacing={0} width={2162} style={{borderCollapse: 'collapse', tableLayout: 'fixed', width: '1621pt'}}>
@@ -51,7 +64,18 @@ export default function Expanded({ players }) {
             <td height={20} colSpan={3} style={{height: '15.75pt', msoIgnore: 'colspan'}} />
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td rowSpan={2} height={40} className={styles.playerIDExpanded} style={{borderBottom: '.5pt solid black', height: '31.5pt'}}>{players[0].id}</td>
+            <td
+              rowSpan={2}
+              height={40}
+              className={styles.playerIDExpanded}
+              style={{
+                borderBottom: '.5pt solid black',
+                height: '31.5pt',
+                ...playerIDStyle
+              }}
+            >
+                {players[0].id}
+            </td>
             <td rowSpan={2} className={styles.borderTopRight} style={{borderBottom: '.5pt solid black'}}>Score</td>
             <td className={styles.borderBottom}>&nbsp;</td>
             <td colSpan={4} style={{msoIgnore: 'colspan'}} />
@@ -59,8 +83,18 @@ export default function Expanded({ players }) {
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             <td height={20} className={styles.borderRight} style={{height: '15.75pt'}}>&nbsp;</td>
           </tr>
-          <tr height={21} style={{height: '16.0pt'}}>
-            <td colSpan={2} height={21} className={styles.playerNameExpanded} style={{height: '16.0pt'}}>{`${players[0].name} (${players[0].club})`}</td>
+          <tr height={20} style={{height: '15.75pt'}}>
+            <td
+              colSpan={2}
+              height={20}
+              className={styles.playerNameExpanded}
+              style={{
+                height: '15.75pt',
+                ...playerNameStyle
+              }}
+            >
+              {`${players[0].name} (${players[0].club})`}
+            </td>
             <td rowSpan={2} className={styles.borderRightExpanded}>1</td>
             <td className={styles.borderRightBottom}>&nbsp;</td>
             <td rowSpan={2} className={styles.playerIDExpanded} style={{borderBottom: '.5pt solid black'}}>1</td>
@@ -81,7 +115,19 @@ export default function Expanded({ players }) {
             <td colSpan={4} style={{msoIgnore: 'colspan'}} />
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td rowSpan={2} height={40} className={styles.playerIDExpanded} style={{borderBottom: '.5pt solid black', height: '31.5pt', borderTop: 'none'}}>{players[1].id}</td>
+            <td
+              rowSpan={2}
+              height={40}
+              className={styles.playerIDExpanded}
+              style={{
+                borderBottom: '.5pt solid black',
+                height: '31.5pt',
+                borderTop: 'none',
+                ...playerIDStyle
+              }}
+            >
+                {players[1].id}
+            </td>
             <td rowSpan={2} className={styles.borderTopRight} style={{borderBottom: '.5pt solid black', borderTop: 'none'}}>Score</td>
             <td className={styles.borderRightBottom}>&nbsp;</td>
             <td className={styles.xl00} />
@@ -104,11 +150,30 @@ export default function Expanded({ players }) {
             <td className={styles.borderTopLeft} style={{borderTop: 'none'}}>&nbsp;</td>
             <td className={styles.borderTopRight}>&nbsp;</td>
           </tr>
-          <tr height={21} style={{msoHeightSource: 'userset', height: '16.0pt'}}>
-            <td colSpan={2} height={21} className={styles.playerNameExpanded} style={{height: '16.0pt'}}>{`${players[1].name} (${players[1].club})`}</td>
+          <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
+            <td
+              colSpan={2}
+              height={20}
+              className={styles.playerNameExpanded}
+              style={{
+                height: '15.75pt',
+                ...playerNameStyle
+              }}
+            >
+              {`${players[1].name} (${players[1].club})`}
+            </td>
             <td className={styles.xl00} />
             <td className={styles.xl00} />
-            <td rowSpan={2} className={styles.playerIDExpanded} style={{borderBottom: '.5pt solid black'}}>{players[2].id}</td>
+            <td
+              rowSpan={2}
+              className={styles.playerIDExpanded}
+              style={{
+                borderBottom: '.5pt solid black',
+                ...playerIDStyle
+              }}
+            >
+                {players[2].id}
+            </td>
             <td rowSpan={2} className={styles.borderTopRight} style={{borderBottom: '.5pt solid black'}}>Score</td>
             <td className={styles.borderRightBottom}>&nbsp;</td>
             <td className={styles.xl00} />
@@ -126,12 +191,20 @@ export default function Expanded({ players }) {
             <td className={styles.borderRight}>&nbsp;</td>
             <td colSpan={5} style={{msoIgnore: 'colspan'}} />
           </tr>
-          <tr height={21} style={{height: '16.0pt'}}>
-            <td height={21} className={styles.xl00} style={{height: '16.0pt'}} />
+          <tr height={20} style={{height: '15.75pt'}}>
+            <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
             <td className={styles.xl00} />
             <td className={styles.xl00} />
             <td className={styles.xl00} />
-            <td colSpan={2} className={styles.playerNameExpanded}>{`${players[2].name} (${players[2].club})`}</td>
+            <td
+              colSpan={2}
+              className={styles.playerNameExpanded}
+              style={{
+                ...playerNameStyle
+              }}
+            >
+              {`${players[2].name} (${players[2].club})`}
+            </td>
             <td className={styles.xl00} />
             <td className={styles.xl00} />
             <td className={styles.xl00} />
@@ -155,7 +228,18 @@ export default function Expanded({ players }) {
             <td rowSpan={2} className={styles.borderTopRight} style={{borderBottom: '.5pt solid black'}}>Score</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td rowSpan={2} height={40} className={styles.playerIDExpanded} style={{borderBottom: '.5pt solid black', height: '31.5pt'}}>{players[3].id}</td>
+            <td
+              rowSpan={2}
+              height={40}
+              className={styles.playerIDExpanded}
+              style={{
+                borderBottom: '.5pt solid black',
+                height: '31.5pt',
+                ...playerIDStyle
+              }}
+            >
+                {players[3].id}
+            </td>
             <td rowSpan={2} className={styles.borderTopRight} style={{borderBottom: '.5pt solid black'}}>Score</td>
             <td className={styles.borderBottom}>&nbsp;</td>
             <td className={styles.xl00} />
@@ -184,8 +268,18 @@ export default function Expanded({ players }) {
             <td />
             <td className={styles.borderLeft}>&nbsp;</td>
           </tr>
-          <tr height={21} style={{msoHeightSource: 'userset', height: '16.0pt'}}>
-            <td colSpan={2} height={21} className={styles.playerNameExpanded} style={{height: '16.0pt'}}>{`${players[3].name} (${players[3].club})`}</td>
+          <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
+            <td
+              colSpan={2}
+              height={20}
+              className={styles.playerNameExpanded}
+              style={{
+                height: '15.75pt',
+                ...playerNameStyle
+              }}
+            >
+              {`${players[3].name} (${players[3].club})`}
+            </td>
             <td rowSpan={2} className={styles.borderRightExpanded}>2</td>
             <td className={styles.borderRightBottom}>&nbsp;</td>
             <td rowSpan={2} className={styles.playerIDExpanded} style={{borderBottom: '.5pt solid black'}}>2</td>
@@ -217,7 +311,19 @@ export default function Expanded({ players }) {
             <td className={styles.borderLeft}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td rowSpan={2} height={40} className={styles.playerIDExpanded} style={{borderBottom: '.5pt solid black', height: '31.5pt', borderTop: 'none'}}>{players[4].id}</td>
+            <td
+              rowSpan={2}
+              height={40}
+              className={styles.playerIDExpanded}
+              style={{
+                borderBottom: '.5pt solid black',
+                height: '31.5pt',
+                borderTop: 'none',
+                ...playerIDStyle
+              }}
+            >
+                {players[4].id}
+            </td>
             <td rowSpan={2} className={styles.borderTopRight} style={{borderBottom: '.5pt solid black', borderTop: 'none'}}>Score</td>
             <td className={styles.borderRightBottom}>&nbsp;</td>
             <td className={styles.xl00} />
@@ -246,11 +352,31 @@ export default function Expanded({ players }) {
             <td className={styles.xl00} />
             <td className={styles.borderLeft}>&nbsp;</td>
           </tr>
-          <tr height={21} style={{msoHeightSource: 'userset', height: '16.0pt'}}>
-            <td colSpan={2} height={21} className={styles.playerNameExpanded} style={{height: '16.0pt'}}>{`${players[4].name} (${players[4].club})`}</td>
+          <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
+            <td
+              colSpan={2}
+              height={20}
+              className={styles.playerNameExpanded}
+              style={{
+                height: '15.75pt',
+                ...playerNameStyle
+              }}
+            >
+              {`${players[4].name} (${players[4].club})`}
+            </td>
             <td className={styles.xl00} />
             <td className={styles.xl00} />
-            <td rowSpan={2} className={styles.playerIDExpanded} style={{borderBottom: '.5pt solid black', borderTop: 'none'}}>{players[5].id}</td>
+            <td
+              rowSpan={2}
+              className={styles.playerIDExpanded}
+              style={{
+                borderBottom: '.5pt solid black',
+                borderTop: 'none',
+                ...playerIDStyle
+              }}
+            >
+                {players[5].id}
+            </td>
             <td rowSpan={2} className={styles.borderTopRight} style={{borderBottom: '.5pt solid black', borderTop: 'none'}}>Score</td>
             <td className={styles.borderRight}>&nbsp;</td>
             <td className={styles.xl00} />
@@ -278,12 +404,20 @@ export default function Expanded({ players }) {
             <td className={styles.xl00} />
             <td className={styles.borderLeft}>&nbsp;</td>
           </tr>
-          <tr height={21} style={{height: '16.0pt'}}>
-            <td height={21} className={styles.xl00} style={{height: '16.0pt'}} />
+          <tr height={20} style={{height: '15.75pt'}}>
+            <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
             <td className={styles.xl00} />
             <td className={styles.xl00} />
             <td className={styles.xl00} />
-            <td colSpan={2} className={styles.playerNameExpanded}>{`${players[5].name} (${players[5].club})`}</td>
+            <td
+              colSpan={2}
+              className={styles.playerNameExpanded}
+              style={{
+                ...playerNameStyle
+              }}
+            >
+              {`${players[5].name} (${players[5].club})`}
+            </td>
             <td className={styles.xl00} />
             <td className={styles.xl00} />
             <td className={styles.xl00} />
@@ -329,7 +463,18 @@ export default function Expanded({ players }) {
             <td className={styles.borderTopLeft} style={{borderTop: 'none'}}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td rowSpan={2} height={40} className={styles.playerIDExpanded} style={{borderBottom: '.5pt solid black', height: '31.5pt'}}>{players[6].id}</td>
+            <td
+              rowSpan={2}
+              height={40}
+              className={styles.playerIDExpanded}
+              style={{
+                borderBottom: '.5pt solid black',
+                height: '31.5pt',
+                ...playerIDStyle
+              }}
+            >
+                {players[6].id}
+            </td>
             <td rowSpan={2} className={styles.borderTopRight} style={{borderBottom: '.5pt solid black'}}>Score</td>
             <td className={styles.borderBottom}>&nbsp;</td>
             <td className={styles.xl00} />
@@ -363,8 +508,18 @@ export default function Expanded({ players }) {
             <td className={styles.xl00} />
             <td className={styles.borderLeft}>&nbsp;</td>
           </tr>
-          <tr height={21} style={{msoHeightSource: 'userset', height: '16.0pt'}}>
-            <td colSpan={2} height={21} className={styles.playerNameExpanded} style={{height: '16.0pt'}}>{`${players[6].name} (${players[6].club})`}</td>
+          <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
+            <td
+              colSpan={2}
+              height={20}
+              className={styles.playerNameExpanded}
+              style={{
+                height: '15.75pt',
+                ...playerNameStyle
+              }}
+            >
+              {`${players[6].name} (${players[6].club})`}
+            </td>
             <td rowSpan={2} className={styles.borderRightExpanded}>3</td>
             <td className={styles.borderRightBottom}>&nbsp;</td>
             <td rowSpan={2} className={styles.playerIDExpanded} style={{borderBottom: '.5pt solid black'}}>3</td>
@@ -396,7 +551,19 @@ export default function Expanded({ players }) {
             <td colSpan={3} style={{msoIgnore: 'colspan'}} />
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td rowSpan={2} height={40} className={styles.playerIDExpanded} style={{borderBottom: '.5pt solid black', height: '31.5pt', borderTop: 'none'}}>{players[7].id}</td>
+            <td
+              rowSpan={2}
+              height={40}
+              className={styles.playerIDExpanded}
+              style={{
+                borderBottom: '.5pt solid black',
+                height: '31.5pt',
+                borderTop: 'none',
+                ...playerIDStyle
+              }}
+            >
+                {players[7].id}
+            </td>
             <td rowSpan={2} className={styles.borderTopRight} style={{borderBottom: '.5pt solid black', borderTop: 'none'}}>Score</td>
             <td className={styles.borderRightBottom}>&nbsp;</td>
             <td className={styles.xl00} />
@@ -426,11 +593,31 @@ export default function Expanded({ players }) {
             <td className={styles.borderLeft}>&nbsp;</td>
             <td colSpan={2} style={{msoIgnore: 'colspan'}} />
           </tr>
-          <tr height={21} style={{msoHeightSource: 'userset', height: '16.0pt'}}>
-            <td colSpan={2} height={21} className={styles.playerNameExpanded} style={{height: '16.0pt'}}>{`${players[7].name} (${players[7].club})`}</td>
+          <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
+            <td
+              colSpan={2}
+              height={20}
+              className={styles.playerNameExpanded}
+              style={{
+                height: '15.75pt',
+                ...playerNameStyle
+              }}
+            >
+              {`${players[7].name} (${players[7].club})`}
+            </td>
             <td className={styles.xl00} />
             <td className={styles.xl00} />
-            <td rowSpan={2} className={styles.playerIDExpanded} style={{borderBottom: '.5pt solid black', borderTop: 'none'}}>{players[8].id}</td>
+            <td
+              rowSpan={2}
+              className={styles.playerIDExpanded}
+              style={{
+                borderBottom: '.5pt solid black',
+                borderTop: 'none',
+                ...playerIDStyle
+              }}
+            >
+                {players[8].id}
+            </td>
             <td rowSpan={2} className={styles.borderTopRight} style={{borderBottom: '.5pt solid black', borderTop: 'none'}}>Score</td>
             <td className={styles.borderRight}>&nbsp;</td>
             <td />
@@ -453,12 +640,20 @@ export default function Expanded({ players }) {
             <td className={styles.xl00} />
             <td className={styles.borderLeft}>&nbsp;</td>
           </tr>
-          <tr height={21} style={{height: '16.0pt'}}>
-            <td height={21} className={styles.xl00} style={{height: '16.0pt'}} />
+          <tr height={20} style={{height: '15.75pt'}}>
+            <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
             <td className={styles.xl00} />
             <td className={styles.xl00} />
             <td className={styles.xl00} />
-            <td colSpan={2} className={styles.playerNameExpanded}>{`${players[8].name} (${players[8].club})`}</td>
+            <td
+              colSpan={2}
+              className={styles.playerNameExpanded}
+              style={{
+                ...playerNameStyle
+              }}
+            >
+              {`${players[8].name} (${players[8].club})`}
+            </td>
             <td className={styles.xl00} />
             <td className={styles.xl00} />
             <td className={styles.xl00} />
@@ -503,7 +698,16 @@ export default function Expanded({ players }) {
             <td className={styles.xl00} />
             <td className={styles.xl00} />
             <td className={styles.xl00} />
-            <td rowSpan={2} className={styles.playerIDExpanded} style={{borderBottom: '.5pt solid black'}}>{players[9].id}</td>
+            <td
+              rowSpan={2}
+              className={styles.playerIDExpanded}
+              style={{
+                borderBottom: '.5pt solid black',
+                ...playerIDStyle
+              }}
+            >
+                {players[9].id}
+            </td>
             <td rowSpan={2} className={styles.borderTopRight} style={{borderBottom: '.5pt solid black'}}>Score</td>
             <td className={styles.xl00} />
             <td className={styles.xl00} />
@@ -525,9 +729,17 @@ export default function Expanded({ players }) {
             <td className={styles.xl00} />
             <td className={styles.borderRight}>&nbsp;</td>
           </tr>
-          <tr height={21} style={{height: '16.0pt'}}>
-            <td height={21} colSpan={4} style={{height: '16.0pt', msoIgnore: 'colspan'}} />
-            <td colSpan={2} className={styles.playerNameExpanded}>{`${players[9].name} (${players[9].club})`}</td>
+          <tr height={20} style={{height: '15.75pt'}}>
+            <td height={20} colSpan={4} style={{height: '15.75pt', msoIgnore: 'colspan'}} />
+            <td
+              colSpan={2}
+              className={styles.playerNameExpanded}
+              style={{
+                ...playerNameStyle
+              }}
+            >
+              {`${players[9].name} (${players[9].club})`}
+            </td>
             <td rowSpan={2} className={styles.xl00}>7</td>
             <td className={styles.borderBottomLeft}>&nbsp;</td>
             <td rowSpan={2} className={styles.playerIDExpanded} style={{borderBottom: '.5pt solid black'}}>7</td>
@@ -542,7 +754,17 @@ export default function Expanded({ players }) {
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             <td height={20} colSpan={4} style={{height: '15.75pt', msoIgnore: 'colspan'}} />
-            <td rowSpan={2} className={styles.playerIDExpanded} style={{borderBottom: '.5pt solid black', borderTop: 'none'}}>{players[10].id}</td>
+            <td
+              rowSpan={2}
+              className={styles.playerIDExpanded}
+              style={{
+                borderBottom: '.5pt solid black',
+                borderTop: 'none',
+                ...playerIDStyle
+              }}
+            >
+                {players[10].id}
+            </td>
             <td rowSpan={2} className={styles.borderTopRight} style={{borderBottom: '.5pt solid black', borderTop: 'none'}}>Score</td>
             <td className={styles.borderRight}>&nbsp;</td>
             <td className={styles.borderLeft} style={{borderLeft: 'none'}}>&nbsp;</td>
@@ -552,9 +774,17 @@ export default function Expanded({ players }) {
             <td height={20} colSpan={4} style={{height: '15.75pt', msoIgnore: 'colspan'}} />
             <td className={styles.borderTop}>&nbsp;</td>
           </tr>
-          <tr height={21} style={{height: '16.0pt'}}>
-            <td height={21} colSpan={4} style={{height: '16.0pt', msoIgnore: 'colspan'}} />
-            <td colSpan={2} className={styles.playerNameExpanded}>{`${players[10].name} (${players[10].club})`}</td>
+          <tr height={20} style={{height: '15.75pt'}}>
+            <td height={20} colSpan={4} style={{height: '15.75pt', msoIgnore: 'colspan'}} />
+            <td
+              colSpan={2}
+              className={styles.playerNameExpanded}
+              style={{
+                ...playerNameStyle
+              }}
+            >
+              {`${players[10].name} (${players[10].club})`}
+            </td>
             <td className={styles.xl00} />
             <td className={styles.xl00} />
             <td className={styles.xl00} />
