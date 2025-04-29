@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from './stylesheet.module.css';
+import styles from '../stylesheet.module.css';
 
 // map raw → circled
 const CIRCLED = {

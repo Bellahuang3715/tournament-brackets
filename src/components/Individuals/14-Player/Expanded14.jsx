@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './stylesheet.module.css';
+import styles from '../stylesheet.module.css';
 
 export default function Expanded14({ players }) {
   return (

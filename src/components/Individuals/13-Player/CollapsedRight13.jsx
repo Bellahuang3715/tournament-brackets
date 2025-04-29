@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './stylesheet.module.css';
+import styles from '../stylesheet.module.css';
 
 export default function CollapsedRight13({ players }) {
   return (

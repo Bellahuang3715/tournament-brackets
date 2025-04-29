@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from './stylesheet.module.css';
+import styles from '../stylesheet.module.css';
 
 // map raw → circled
 const CIRCLED = { M: 'Ⓜ', K: 'Ⓚ', D: 'Ⓓ', T: 'Ⓣ' };
@@ -95,7 +95,7 @@ export default function Expanded8({ players }) {
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             <td rowSpan={2} height={40} className={styles.playerID} style={{borderBottom: '.5pt solid black', height: '31.5pt'}}>{players[0].id}</td>
             <td rowSpan={2}
-              className={styles.borderTopRIght}
+              className={styles.borderTopRight}
               style={{borderBottom: '.5pt solid black'}}>
               <input
                 type="text"
@@ -135,7 +135,7 @@ export default function Expanded8({ players }) {
               />
             </td>
             <td rowSpan={2}
-              className={styles.borderTopRIght}
+              className={styles.borderTopRight}
               style={{borderBottom: '.5pt solid black'}}>
               <input
                 type="text"
@@ -157,12 +157,12 @@ export default function Expanded8({ players }) {
             <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
             <td className={styles.xl00} />
             <td className={styles.borderTopLeft} style={{borderTop: 'none'}}>&nbsp;</td>
-            <td className={styles.borderTopRIght}>&nbsp;</td>
+            <td className={styles.borderTopRight}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             <td rowSpan={2} height={40} className={styles.playerID} style={{borderBottom: '.5pt solid black', height: '31.5pt'}}>{players[1].id}</td>
             <td rowSpan={2}
-              className={styles.borderTopRIght}
+              className={styles.borderTopRight}
               style={{borderBottom: '.5pt solid black'}}>
               <input
                 type="text"
@@ -223,7 +223,7 @@ export default function Expanded8({ players }) {
               />
             </td>
             <td rowSpan={2}
-              className={styles.borderTopRIght}
+              className={styles.borderTopRight}
               style={{borderBottom: '.5pt solid black'}}>
               <input
                 type="text"
@@ -276,7 +276,7 @@ export default function Expanded8({ players }) {
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             <td rowSpan={2} height={40} className={styles.playerID} style={{borderBottom: '.5pt solid black', height: '31.5pt'}}>{players[2].id}</td>
             <td rowSpan={2}
-              className={styles.borderTopRIght}
+              className={styles.borderTopRight}
               style={{borderBottom: '.5pt solid black'}}>
               <input
                 type="text"
@@ -334,7 +334,7 @@ export default function Expanded8({ players }) {
               />
             </td>
             <td rowSpan={2}
-              className={styles.borderTopRIght}
+              className={styles.borderTopRight}
               style={{borderBottom: '.5pt solid black'}}>
               <input
                 type="text"
@@ -351,7 +351,7 @@ export default function Expanded8({ players }) {
                 }
               />
             </td>
-            <td className={styles.borderBotton}>&nbsp;</td>
+            <td className={styles.borderBottom}>&nbsp;</td>
             <td className={styles.borderLeft}>&nbsp;</td>
             <td className={styles.xl00} />
             <td className={styles.xl00} />
@@ -372,7 +372,7 @@ export default function Expanded8({ players }) {
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             <td rowSpan={2} height={40} className={styles.playerID} style={{borderBottom: '.5pt solid black', height: '31.5pt'}}>{players[3].id}</td>
             <td rowSpan={2}
-              className={styles.borderTopRIght}
+              className={styles.borderTopRight}
               style={{borderBottom: '.5pt solid black'}}>
               <input
                 type="text"
@@ -457,7 +457,7 @@ export default function Expanded8({ players }) {
               />
             </td>
             <td rowSpan={2}
-              className={styles.borderTopRIght}
+              className={styles.borderTopRight}
               style={{borderBottom: '.5pt solid black'}}>
               <input
                 type="text"
@@ -489,7 +489,7 @@ export default function Expanded8({ players }) {
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             <td rowSpan={2} height={40} className={styles.playerID} style={{borderBottom: '.5pt solid black', height: '31.5pt'}}>{players[4].id}</td>
             <td rowSpan={2}
-              className={styles.borderTopRIght}
+              className={styles.borderTopRight}
               style={{borderBottom: '.5pt solid black'}}>
               <input
                 type="text"
@@ -555,7 +555,7 @@ export default function Expanded8({ players }) {
               />
             </td>
             <td rowSpan={2}
-              className={styles.borderTopRIght}
+              className={styles.borderTopRight}
               style={{borderBottom: '.5pt solid black'}}>
               <input
                 type="text"
@@ -583,7 +583,7 @@ export default function Expanded8({ players }) {
             <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
             <td className={styles.xl00} />
             <td className={styles.borderTopLeft} style={{borderTop: 'none'}}>&nbsp;</td>
-            <td className={styles.borderTopRIght}>&nbsp;</td>
+            <td className={styles.borderTopRight}>&nbsp;</td>
             <td className={styles.xl00} />
             <td className={styles.xl00} />
             <td className={styles.xl00} />
@@ -594,7 +594,7 @@ export default function Expanded8({ players }) {
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             <td rowSpan={2} height={40} className={styles.playerID} style={{borderBottom: '.5pt solid black', height: '31.5pt'}}>{players[5].id}</td>
             <td rowSpan={2}
-              className={styles.borderTopRIght}
+              className={styles.borderTopRight}
               style={{borderBottom: '.5pt solid black'}}>
               <input
                 type="text"
@@ -671,7 +671,7 @@ export default function Expanded8({ players }) {
               />
             </td>
             <td rowSpan={2}
-              className={styles.borderTopRIght}
+              className={styles.borderTopRight}
               style={{borderBottom: '.5pt solid black'}}>
               <input
                 type="text"
@@ -702,7 +702,7 @@ export default function Expanded8({ players }) {
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             <td rowSpan={2} height={40} className={styles.playerID} style={{borderBottom: '.5pt solid black', height: '31.5pt'}}>{players[6].id}</td>
             <td rowSpan={2}
-              className={styles.borderTopRIght}
+              className={styles.borderTopRight}
               style={{borderBottom: '.5pt solid black'}}>
               <input
                 type="text"
@@ -764,7 +764,7 @@ export default function Expanded8({ players }) {
               />
             </td>
             <td rowSpan={2}
-              className={styles.borderTopRIght}
+              className={styles.borderTopRight}
               style={{borderBottom: '.5pt solid black'}}>
               <input
                 type="text"
@@ -791,7 +791,7 @@ export default function Expanded8({ players }) {
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             <td rowSpan={2} height={40} className={styles.playerID} style={{borderBottom: '.5pt solid black', height: '31.5pt'}}>{players[7].id}</td>
             <td rowSpan={2}
-              className={styles.borderTopRIght}
+              className={styles.borderTopRight}
               style={{borderBottom: '.5pt solid black'}}>
               <input
                 type="text"
