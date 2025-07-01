@@ -1,77 +1,73 @@
 import React, { useState } from 'react';
+
+import { PlayerScoreRow } from '../../PlayerScoreRow';
+import { PlayerNameRow } from '../../PlayerNameRow';
 import styles from '../stylesheet.module.css';
 
 // map raw → circled
-const CIRCLED = {
-  M: 'Ⓜ',
-  K: 'Ⓚ',
-  D: 'Ⓓ',
-  T: 'Ⓣ',
-};
+const CIRCLED = { M: 'Ⓜ', K: 'Ⓚ', D: 'Ⓓ', T: 'Ⓣ' };
+const RAW = Object.fromEntries(Object.entries(CIRCLED).map(([k,v])=>[v,k]));
+const ALLOWED = ['M','K','D','T'];
 
 export default function Expanded({
-  players,
+  players: initialPlayers,
   fontFamily = 'Arial, sans-serif',
   playerIDFontSize = 14,
   playerNameFontSize = 12,
 }) {
-  const playerIDStyle = {
-    fontSize:  `${playerIDFontSize}pt`,
-    fontFamily,
-  };
-  const playerNameStyle = {
-    fontSize:  `${playerNameFontSize}pt`,
-    fontFamily,
-  };
-  const [scores, setScores] = useState(players.map(() => ''));
-  const [winnerID, setWinnerID] = useState(players.map(() => ''));
-  const [winnerName, setWinnerName] = useState(players.map(() => ''));
-
-  // reverse map (in case user pastes a circled char)
-  const RAW = Object.fromEntries(
-    Object.entries(CIRCLED).map(([k,v]) => [v, k])
-  );
-
-  const ALLOWED = ['M','K','D','T'];
-
-  const handleChange = i => e => {
-    // 1) Remove all whitespace from what the user typed:
-    const noSpaces = e.target.value.replace(/\s+/g, '')
+  const maxSlots = 17;
   
-    // 2) Take first char, map back to raw (in case it's already circled)
-    let firstRaw = '';
-    if (noSpaces.length > 0) {
+  // create own state copy of players
+  const [players, setPlayers] = useState(() => {
+    return Array.from({ length: maxSlots }, (_, i) => {
+      const p = initialPlayers[i];
+      return p
+        ? { ...p } 
+        : { id: '', name: '', club: '', score: '' };
+    });
+  });
+
+  // helper to merge partial updates into one player
+  const updatePlayer = (index, patch) => {
+    setPlayers(ps => {
+      const copy = [...ps];
+      copy[index] = { ...copy[index], ...patch };
+      return copy;
+    });
+  };
+
+  const playerIDStyle = { fontSize:  `${playerIDFontSize}pt`, fontFamily };
+  const playerNameStyle = { fontSize:  `${playerNameFontSize}pt`, fontFamily };
+  
+  // helper to process score text
+  function processRaw(input) {
+    const noSpaces = input.replace(/\s+/g, '')
+    let firstRaw = ''
+    if (noSpaces) {
       const c0 = noSpaces[0]
       firstRaw = RAW[c0] || c0.toUpperCase()
       if (!ALLOWED.includes(firstRaw)) firstRaw = ''
     }
-  
-    // 3) The rest, uppercase and filter
     const restRaw = Array.from(noSpaces.slice(1).toUpperCase())
       .filter(ch => ALLOWED.includes(ch))
       .join('')
-  
-    const raw = firstRaw + restRaw
-  
-    // 4) Store it
-    setScores(ns => {
-      const copy = [...ns]
-      copy[i] = raw
-      return copy
-    })
+    return firstRaw + restRaw
   }
 
-  const handleWinnerIDChange = i => e => {
-    const v = e.target.value.toUpperCase() // or whatever filter you like
-    setWinnerID(cs => {
-      const c = [...cs]; c[i] = v; return c
-    })
-  }
-  const handleWinnerNameChange = i => e => {
-    setWinnerName(ls => {
-      const l = [...ls]; l[i] = e.target.value; return l
-    })
-  }
+  const handleScoreChange = i => e => {
+    const raw = processRaw(e.target.value)
+    updatePlayer(i, { score: raw });
+  };
+
+  const handleIDChange = i => e => {
+    const id = e.target.value.toUpperCase()
+    updatePlayer(i, { id });
+  };
+
+  const handleNameChange = i => e => {
+    const name = e.target.value
+    updatePlayer(i, { name });
+  };
 
   return (
     <>
@@ -130,37 +126,13 @@ export default function Expanded({
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             <td height={20} colSpan={4} style={{height: '15.75pt', msoIgnore: 'colspan'}} />
-            <td
-              rowSpan={2}
-              height={40}
-              className={styles.playerIDExpanded}
-              style={{
-                borderBottom: '.5pt solid black',
-                height: '31.5pt',
-                ...playerIDStyle
-              }}
-            >
-                {players[2].id}
-            </td>
-            <td 
-              rowSpan={2}
-              className={styles.borderTopRight}
-              style={{borderBottom: '.5pt solid black'}}>
-              <input
-                type="text"
-                className={styles.inlineInput}
-                placeholder="SCORE"
-                onChange={handleChange(2)}
-                value={
-                  (scores[2] || '').length > 0
-                    ? [
-                      CIRCLED[scores[2][0]],
-                      ...scores[2].slice(1).split('')
-                    ].join(' ')
-                  : ''
-                }
-              />
-            </td>
+            {/* ID | Round 2 Top Player | Index 2 */}
+            <PlayerScoreRow 
+              player={players[2]}
+              onScoreChange={handleScoreChange(2)}
+              onIDChange={handleIDChange(2)}
+              playerIDStyle={playerIDStyle}
+            />
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             <td height={20} colSpan={4} style={{height: '15.75pt', msoIgnore: 'colspan'}} />
@@ -176,49 +148,21 @@ export default function Expanded({
           </tr>
           <tr height={20} style={{height: '15.75pt'}}>
             <td height={20} colSpan={4} style={{height: '15.75pt', msoIgnore: 'colspan'}} />
-            <td
-              colSpan={2}
-              className={styles.playerNameExpanded}
-              style={{
-                ...playerNameStyle
-              }}
-            >
-              {`${players[2].name} (${players[2].club})`}
-            </td>
+            {/* Club | Round 2 Top Player | Index 2 */}
+            <PlayerNameRow
+              player={players[2]}
+              onNameChange={handleNameChange(2)}
+              playerNameStyle={playerNameStyle}
+            />
             <td rowSpan={2} className={styles.xl00}>2</td>
             <td className={styles.borderBottomLeft}>&nbsp;</td>
-            <td
-                rowSpan={2}
-                className={styles.playerIDExpanded}
-                style={{borderBottom:'.5pt solid black'}}
-            >
-                <input
-                type="text"
-                className={styles.inlineInput}
-                placeholder="ID"
-                value={winnerID[1]}
-                onChange={handleWinnerIDChange(1)}
-                />
-            </td>
-            <td 
-              rowSpan={2}
-              className={styles.borderTopRight}
-              style={{borderBottom: '.5pt solid black'}}>
-              <input
-                type="text"
-                className={styles.inlineInput}
-                placeholder="SCORE"
-                onChange={handleChange(10)}
-                value={
-                  (scores[10] || '').length > 0
-                    ? [
-                      CIRCLED[scores[10][0]],
-                      ...scores[10].slice(1).split('')
-                    ].join(' ')
-                  : ''
-                }
-              />
-            </td>
+            {/* ID | Round 6 Top Player | Index 10 */}
+            <PlayerScoreRow 
+              player={players[10]}
+              onScoreChange={handleScoreChange(10)}
+              onIDChange={handleIDChange(10)}
+              playerIDStyle={playerIDStyle}
+            />
             <td className={styles.xl00} />
             <td className={styles.xl00} />
             <td className={styles.xl00} />
@@ -236,48 +180,21 @@ export default function Expanded({
             <td colSpan={2} height={20} className={styles.xl01} style={{height: '15.75pt'}} />
             <td className={styles.xl00} />
             <td className={styles.xl00} />
-            <td
-              rowSpan={2}
-              height={40}
-              className={styles.playerIDExpanded}
-              style={{
-                borderBottom: '.5pt solid black',
-                height: '31.5pt',
-                ...playerIDStyle
-              }}
-            >
-                {players[3].id}
-            </td>
-            <td 
-              rowSpan={2}
-              className={styles.borderTopRight}
-              style={{borderBottom: '.5pt solid black'}}>
-              <input
-                type="text"
-                className={styles.inlineInput}
-                placeholder="SCORE"
-                onChange={handleChange(3)}
-                value={
-                  (scores[3] || '').length > 0
-                    ? [
-                      CIRCLED[scores[3][0]],
-                      ...scores[3].slice(1).split('')
-                    ].join(' ')
-                  : ''
-                }
-              />
-            </td>
+            {/* ID | Round 2 Bottom Player | Index 3 */}
+            <PlayerScoreRow
+              player={players[3]}
+              onScoreChange={handleScoreChange(3)}
+              onIDChange={handleIDChange(3)}
+              playerIDStyle={playerIDStyle}
+            />
             <td className={styles.borderRightBottom}>&nbsp;</td>
             <td className={styles.xl00} />
-            <td colSpan={2} className={styles.playerNameExpanded}>
-              <input
-                type="text"
-                className={styles.winnerNameInput}
-                placeholder="Name (Club)"
-                value={winnerName[1]}
-                onChange={handleWinnerNameChange(1)}
-              />
-            </td>
+            {/* Club | Round 6 Top Player | Index 10 */}
+            <PlayerNameRow
+              player={players[10]}
+              onNameChange={handleNameChange(10)}
+              playerNameStyle={playerNameStyle}
+            />
             <td className={styles.borderRight}>&nbsp;</td>
             <td colSpan={5} style={{msoIgnore: 'colspan'}} />
           </tr>
@@ -296,15 +213,12 @@ export default function Expanded({
             <td className={styles.xl00} />
             <td className={styles.xl00} />
             <td className={styles.xl00} />
-            <td
-              colSpan={2}
-              className={styles.playerNameExpanded}
-              style={{
-                ...playerNameStyle
-              }}
-            >
-              {`${players[3].name} (${players[3].club})`}
-            </td>
+            {/* Club | Round 2 Bottom Player | Index 3 */}
+            <PlayerNameRow
+              player={players[3]}
+              onNameChange={handleNameChange(3)}
+              playerNameStyle={playerNameStyle}
+            />
             <td className={styles.xl00} />
             <td className={styles.xl00} />
             <td className={styles.xl00} />
@@ -324,38 +238,13 @@ export default function Expanded({
             <td className={styles.xl00} />
             <td rowSpan={2} className={styles.xl00}>6</td>
             <td className={styles.borderBottomLeft}>&nbsp;</td>
-            <td
-                rowSpan={2}
-                className={styles.playerIDExpanded}
-                style={{borderBottom:'.5pt solid black'}}
-            >
-                <input
-                type="text"
-                className={styles.inlineInput}
-                placeholder="ID"
-                value={winnerID[5]}
-                onChange={handleWinnerIDChange(5)}
-                />
-            </td>
-            <td 
-              rowSpan={2}
-              className={styles.borderTopRight}
-              style={{borderBottom: '.5pt solid black'}}>
-              <input
-                type="text"
-                className={styles.inlineInput}
-                placeholder="SCORE"
-                onChange={handleChange(14)}
-                value={
-                  (scores[14] || '').length > 0
-                    ? [
-                      CIRCLED[scores[14][0]],
-                      ...scores[14].slice(1).split('')
-                    ].join(' ')
-                  : ''
-                }
-              />
-            </td>
+            {/* ID | Round 8 Top Player | Index 14 */}
+            <PlayerScoreRow 
+              player={players[14]}
+              onScoreChange={handleScoreChange(14)}
+              onIDChange={handleIDChange(14)}
+              playerIDStyle={playerIDStyle}
+            />
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             <td height={20} className={styles.xl01} style={{height: '15.75pt'}} />
@@ -385,15 +274,12 @@ export default function Expanded({
             <td className={styles.xl00} />
             <td className={styles.xl00} />
             <td className={styles.borderLeft}>&nbsp;</td>
-            <td colSpan={2} className={styles.playerNameExpanded}>
-              <input
-                type="text"
-                className={styles.winnerNameInput}
-                placeholder="Name (Club)"
-                value={winnerName[5]}
-                onChange={handleWinnerNameChange(5)}
-              />
-            </td>
+            {/* Club | Round 8 Top Player | Index 14 */}
+            <PlayerNameRow
+              player={players[14]}
+              onNameChange={handleNameChange(14)}
+              playerNameStyle={playerNameStyle}
+            />
             <td />
             <td className={styles.borderLeft}>&nbsp;</td>
           </tr>
@@ -402,37 +288,13 @@ export default function Expanded({
             <td className={styles.xl01} />
             <td className={styles.xl01} />
             <td className={styles.borderRight}>&nbsp;</td>
-            <td
-              rowSpan={2}
-              height={40}
-              className={styles.playerIDExpanded}
-              style={{
-                borderBottom: '.5pt solid black',
-                height: '31.5pt',
-                ...playerIDStyle
-              }}
-            >
-                {players[4].id}
-            </td>
-            <td 
-              rowSpan={2}
-              className={styles.borderTopRight}
-              style={{borderBottom: '.5pt solid black'}}>
-              <input
-                type="text"
-                className={styles.inlineInput}
-                placeholder="SCORE"
-                onChange={handleChange(4)}
-                value={
-                  (scores[4] || '').length > 0
-                    ? [
-                      CIRCLED[scores[4][0]],
-                      ...scores[4].slice(1).split('')
-                    ].join(' ')
-                  : ''
-                }
-              />
-            </td>
+            {/* ID | Round 3 Top Player | Index 4 */}
+            <PlayerScoreRow
+              player={players[4]}
+              onScoreChange={handleScoreChange(4)}
+              onIDChange={handleIDChange(4)}
+              playerIDStyle={playerIDStyle}
+            />
             <td className={styles.xl00} />
             <td className={styles.xl00} />
             <td className={styles.xl00} />
@@ -465,49 +327,21 @@ export default function Expanded({
             <td className={styles.xl01} />
             <td className={styles.xl01} />
             <td className={styles.xl00} />
-            <td
-              colSpan={2}
-              className={styles.playerNameExpanded}
-              style={{
-                ...playerNameStyle
-              }}
-            >
-              {`${players[4].name} (${players[4].club})`}
-            </td>
+            {/* Club | Round 3 Top Player | Index 4 */}
+            <PlayerNameRow
+              player={players[4]}
+              onNameChange={handleNameChange(4)}
+              playerNameStyle={playerNameStyle}
+            />
             <td rowSpan={2} className={styles.xl00}>3</td>
             <td className={styles.borderBottomLeft}>&nbsp;</td>
-            <td
-                rowSpan={2}
-                className={styles.playerIDExpanded}
-                style={{borderBottom:'.5pt solid black'}}
-            >
-                <input
-                type="text"
-                className={styles.inlineInput}
-                placeholder="ID"
-                value={winnerID[2]}
-                onChange={handleWinnerIDChange(2)}
-                />
-            </td>
-            <td 
-              rowSpan={2}
-              className={styles.borderTopRight}
-              style={{borderBottom: '.5pt solid black'}}>
-              <input
-                type="text"
-                className={styles.inlineInput}
-                placeholder="SCORE"
-                onChange={handleChange(11)}
-                value={
-                  (scores[11] || '').length > 0
-                    ? [
-                      CIRCLED[scores[11][0]],
-                      ...scores[11].slice(1).split('')
-                    ].join(' ')
-                  : ''
-                }
-              />
-            </td>
+            {/* ID | Round 6 Bottom Player | Index 11 */}
+            <PlayerScoreRow 
+              player={players[11]}
+              onScoreChange={handleScoreChange(11)}
+              onIDChange={handleIDChange(11)}
+              playerIDStyle={playerIDStyle}
+            />
             <td className={styles.borderBottom}>&nbsp;</td>
             <td className={styles.borderLeft}>&nbsp;</td>
             <td className={styles.xl00} />
@@ -535,48 +369,21 @@ export default function Expanded({
             <td className={styles.xl01} />
             <td className={styles.xl01} />
             <td className={styles.xl00} />
-            <td
-              rowSpan={2}
-              height={40}
-              className={styles.playerIDExpanded}
-              style={{
-                borderBottom: '.5pt solid black',
-                height: '31.5pt',
-                ...playerIDStyle
-              }}
-            >
-                {players[5].id}
-            </td>
-            <td 
-              rowSpan={2}
-              className={styles.borderTopRight}
-              style={{borderBottom: '.5pt solid black'}}>
-              <input
-                type="text"
-                className={styles.inlineInput}
-                placeholder="SCORE"
-                onChange={handleChange(5)}
-                value={
-                  (scores[5] || '').length > 0
-                    ? [
-                      CIRCLED[scores[5][0]],
-                      ...scores[5].slice(1).split('')
-                    ].join(' ')
-                  : ''
-                }
-              />
-            </td>
+            {/* ID | Round 3 Bottom Player | Index 5 */}
+            <PlayerScoreRow
+              player={players[5]}
+              onScoreChange={handleScoreChange(5)}
+              onIDChange={handleIDChange(5)}
+              playerIDStyle={playerIDStyle}
+            />
             <td className={styles.borderRight}>&nbsp;</td>
             <td className={styles.xl00} />
-            <td colSpan={2} className={styles.playerNameExpanded}>
-              <input
-                type="text"
-                className={styles.winnerNameInput}
-                placeholder="Name (Club)"
-                value={winnerName[2]}
-                onChange={handleWinnerNameChange(2)}
-              />
-            </td>
+            {/* ID | Round 6 Bottom Player | Index 11 */}
+            <PlayerNameRow
+              player={players[11]}
+              onNameChange={handleNameChange(11)}
+              playerNameStyle={playerNameStyle}
+            />
             <td className={styles.xl00} />
             <td className={styles.xl00} />
             <td className={styles.xl00} />
@@ -605,15 +412,12 @@ export default function Expanded({
             <td className={styles.xl01} />
             <td className={styles.xl01} />
             <td className={styles.xl00} />
-            <td
-              colSpan={2}
-              className={styles.playerNameExpanded}
-              style={{
-                ...playerNameStyle
-              }}
-            >
-              {`${players[5].name} (${players[5].club})`}
-            </td>
+            {/* Name | Round 3 Bottom Player | Index 5 */}
+            <PlayerNameRow
+              player={players[5]}
+              onNameChange={handleNameChange(5)}
+              playerNameStyle={playerNameStyle}
+            />
             <td className={styles.xl00} />
             <td className={styles.xl00} />
             <td className={styles.xl00} />
@@ -640,38 +444,13 @@ export default function Expanded({
             <td className={styles.xl00}><span style={{msoSpacerun: 'yes'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style={{display: 'none'}}><span style={{msoSpacerun: 'yes'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></td>
             <td rowSpan={2} className={styles.xl00}>8</td>
             <td className={styles.borderBottomLeft}>&nbsp;</td>
-            <td
-                rowSpan={2}
-                className={styles.playerIDExpanded}
-                style={{borderBottom:'.5pt solid black'}}
-            >
-                <input
-                type="text"
-                className={styles.inlineInput}
-                placeholder="ID"
-                value={winnerID[6]}
-                onChange={handleWinnerIDChange(6)}
-                />
-            </td>
-            <td 
-              rowSpan={2}
-              className={styles.borderTopRight}
-              style={{borderBottom: '.5pt solid black'}}>
-              <input
-                type="text"
-                className={styles.inlineInput}
-                placeholder="SCORE"
-                onChange={handleChange(16)}
-                value={
-                  (scores[16] || '').length > 0
-                    ? [
-                      CIRCLED[scores[16][0]],
-                      ...scores[16].slice(1).split('')
-                    ].join(' ')
-                  : ''
-                }
-              />
-            </td>
+            {/* ID | Finalist | Index 16 */}
+            <PlayerScoreRow 
+              player={players[16]}
+              onScoreChange={handleScoreChange(16)}
+              onIDChange={handleIDChange(16)}
+              playerIDStyle={playerIDStyle}
+            />
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             <td height={20} className={styles.xl01} style={{height: '15.75pt'}} />
@@ -705,15 +484,12 @@ export default function Expanded({
             <td className={styles.xl00} />
             <td />
             <td className={styles.borderLeft}>&nbsp;</td>
-            <td colSpan={2} className={styles.playerNameExpanded}>
-              <input
-                type="text"
-                className={styles.winnerNameInput}
-                placeholder="Name (Club)"
-                value={winnerName[7]}
-                onChange={handleWinnerNameChange(7)}
-              />
-            </td>
+            {/* Club | Finalist | Index 16 */}
+            <PlayerNameRow
+              player={players[16]}
+              onNameChange={handleNameChange(16)}
+              playerNameStyle={playerNameStyle}
+            />
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             <td height={20} className={styles.xl01} style={{height: '15.75pt'}} />
@@ -738,37 +514,13 @@ export default function Expanded({
             <td className={styles.xl01} />
             <td className={styles.xl01} />
             <td className={styles.borderRight}>&nbsp;</td>
-            <td
-              rowSpan={2}
-              height={40}
-              className={styles.playerIDExpanded}
-              style={{
-                borderBottom: '.5pt solid black',
-                height: '31.5pt',
-                ...playerIDStyle
-              }}
-            >
-                {players[6].id}
-            </td>
-            <td 
-              rowSpan={2}
-              className={styles.borderTopRight}
-              style={{borderBottom: '.5pt solid black'}}>
-              <input
-                type="text"
-                className={styles.inlineInput}
-                placeholder="SCORE"
-                onChange={handleChange(6)}
-                value={
-                  (scores[6] || '').length > 0
-                    ? [
-                      CIRCLED[scores[6][0]],
-                      ...scores[6].slice(1).split('')
-                    ].join(' ')
-                  : ''
-                }
-              />
-            </td>
+            {/* ID | Round 4 Top Player | Index 6 */}
+            <PlayerScoreRow
+              player={players[6]}
+              onScoreChange={handleScoreChange(6)}
+              onIDChange={handleIDChange(6)}
+              playerIDStyle={playerIDStyle}
+            />
             <td className={styles.xl00} />
             <td className={styles.xl00} />
             <td className={styles.xl00} />
@@ -801,49 +553,21 @@ export default function Expanded({
             <td className={styles.xl01} />
             <td className={styles.xl01} />
             <td className={styles.xl00} />
-            <td
-              colSpan={2}
-              className={styles.playerNameExpanded}
-              style={{
-                ...playerNameStyle
-              }}
-            >
-              {`${players[6].name} (${players[6].club})`}
-            </td>
+            {/* Name | Round 4 Top Player | Index 6 */}
+            <PlayerNameRow
+              player={players[6]}
+              onNameChange={handleNameChange(6)}
+              playerNameStyle={playerNameStyle}
+            />
             <td rowSpan={2} className={styles.xl00}>4</td>
             <td className={styles.borderBottomLeft}>&nbsp;</td>
-            <td
-                rowSpan={2}
-                className={styles.playerIDExpanded}
-                style={{borderBottom:'.5pt solid black'}}
-            >
-                <input
-                type="text"
-                className={styles.inlineInput}
-                placeholder="ID"
-                value={winnerID[3]}
-                onChange={handleWinnerIDChange(3)}
-                />
-            </td>
-            <td 
-              rowSpan={2}
-              className={styles.borderTopRight}
-              style={{borderBottom: '.5pt solid black'}}>
-              <input
-                type="text"
-                className={styles.inlineInput}
-                placeholder="SCORE"
-                onChange={handleChange(12)}
-                value={
-                  (scores[12] || '').length > 0
-                    ? [
-                      CIRCLED[scores[12][0]],
-                      ...scores[12].slice(1).split('')
-                    ].join(' ')
-                  : ''
-                }
-              />
-            </td>
+            {/* ID | Round 7 Top Player | Index 12 */}
+            <PlayerScoreRow 
+              player={players[12]}
+              onScoreChange={handleScoreChange(12)}
+              onIDChange={handleIDChange(12)}
+              playerIDStyle={playerIDStyle}
+            />
             <td className={styles.xl00} />
             <td className={styles.xl00} />
             <td className={styles.xl00} />
@@ -871,48 +595,21 @@ export default function Expanded({
             <td colSpan={2} height={20} className={styles.xl01} style={{height: '15.75pt'}} />
             <td className={styles.xl00} />
             <td className={styles.xl00} />
-            <td
-              rowSpan={2}
-              height={40}
-              className={styles.playerIDExpanded}
-              style={{
-                borderBottom: '.5pt solid black',
-                height: '31.5pt',
-                ...playerIDStyle
-              }}
-            >
-                {players[7].id}
-            </td>
-            <td 
-              rowSpan={2}
-              className={styles.borderTopRight}
-              style={{borderBottom: '.5pt solid black'}}>
-              <input
-                type="text"
-                className={styles.inlineInput}
-                placeholder="SCORE"
-                onChange={handleChange(7)}
-                value={
-                  (scores[7] || '').length > 0
-                    ? [
-                      CIRCLED[scores[7][0]],
-                      ...scores[7].slice(1).split('')
-                    ].join(' ')
-                  : ''
-                }
-              />
-            </td>
+            {/* ID | Round 4 Bottom Player | Index 7 */}
+            <PlayerScoreRow
+              player={players[7]}
+              onScoreChange={handleScoreChange(7)}
+              onIDChange={handleIDChange(7)}
+              playerIDStyle={playerIDStyle}
+            />
             <td className={styles.borderRight}>&nbsp;</td>
             <td />
-            <td colSpan={2} className={styles.playerNameExpanded}>
-              <input
-                type="text"
-                className={styles.winnerNameInput}
-                placeholder="Name (Club)"
-                value={winnerName[3]}
-                onChange={handleWinnerNameChange(3)}
-              />
-            </td>
+            {/* Club | Round 7 Top Player | Index 12 */}
+            <PlayerNameRow
+              player={players[12]}
+              onNameChange={handleNameChange(12)}
+              playerNameStyle={playerNameStyle}
+            />
             <td className={styles.borderRight}>&nbsp;</td>
             <td colSpan={3} style={{msoIgnore: 'colspan'}} />
             <td className={styles.xl00} />
@@ -936,15 +633,12 @@ export default function Expanded({
             <td className={styles.xl00} />
             <td className={styles.xl00} />
             <td className={styles.xl00} />
-            <td
-              colSpan={2}
-              className={styles.playerNameExpanded}
-              style={{
-                ...playerNameStyle
-              }}
-            >
-              {`${players[7].name} (${players[7].club})`}
-            </td>
+            {/* Club | Round 4 Bottom Player | Index 7 */}
+            <PlayerNameRow
+              player={players[7]}
+              onNameChange={handleNameChange(7)}
+              playerNameStyle={playerNameStyle}
+            />
             <td className={styles.xl00} />
             <td className={styles.xl00} />
             <td className={styles.xl00} />
@@ -955,37 +649,13 @@ export default function Expanded({
             <td className={styles.borderLeft}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td
-              rowSpan={2}
-              height={40}
-              className={styles.playerIDExpanded}
-              style={{
-                borderBottom: '.5pt solid black',
-                height: '31.5pt',
-                ...playerIDStyle
-              }}
-            >
-                {players[0].id}
-            </td>
-            <td 
-              rowSpan={2}
-              className={styles.borderTopRight}
-              style={{borderBottom: '.5pt solid black'}}>
-              <input
-                type="text"
-                className={styles.inlineInput}
-                placeholder="SCORE (M, K, D, ...)"
-                onChange={handleChange(1)}
-                value={
-                  (scores[0] || '').length > 0
-                    ? [
-                      CIRCLED[scores[0][0]],
-                      ...scores[0].slice(0).split('')
-                    ].join(' ')
-                  : ''
-                }
-              />
-            </td>
+            {/* ID | Round 1 Top Player | Index 0 */}
+            <PlayerScoreRow
+              player={players[0]}
+              onScoreChange={handleScoreChange(0)}
+              onIDChange={handleIDChange(0)}
+              playerIDStyle={playerIDStyle}
+            />
             <td className={styles.borderBottom}>&nbsp;</td>
             <td />
             <td className={styles.xl00} />
@@ -996,38 +666,13 @@ export default function Expanded({
             <td className={styles.xl00} />
             <td rowSpan={2} className={styles.xl00}>7</td>
             <td className={styles.borderBottomLeft}>&nbsp;</td>
-            <td
-                rowSpan={2}
-                className={styles.playerIDExpanded}
-                style={{borderBottom:'.5pt solid black'}}
-            >
-                <input
-                type="text"
-                className={styles.inlineInput}
-                placeholder="ID"
-                value={winnerID[5]}
-                onChange={handleWinnerIDChange(5)}
-                />
-            </td>
-            <td 
-              rowSpan={2}
-              className={styles.borderTopRight}
-              style={{borderBottom: '.5pt solid black'}}>
-              <input
-                type="text"
-                className={styles.inlineInput}
-                placeholder="SCORE"
-                onChange={handleChange(15)}
-                value={
-                  (scores[15] || '').length > 0
-                    ? [
-                      CIRCLED[scores[15][0]],
-                      ...scores[15].slice(1).split('')
-                    ].join(' ')
-                  : ''
-                }
-              />
-            </td>
+            {/* ID | Round 8 Bottom Player | Index 15 */}
+            <PlayerScoreRow 
+              player={players[15]}
+              onScoreChange={handleScoreChange(15)}
+              onIDChange={handleIDChange(15)}
+              playerIDStyle={playerIDStyle}
+            />
             <td className={styles.xl00} />
             <td className={styles.borderLeft}>&nbsp;</td>
           </tr>
@@ -1042,64 +687,33 @@ export default function Expanded({
             <td className={styles.borderTop}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td
-              colSpan={2}
-              className={styles.playerNameExpanded}
-              style={{
-                ...playerNameStyle
-              }}
-            >
-              {`${players[0].name} (${players[0].club})`}
-            </td>
+            {/* Club | Round 1 Top Player | Index 0 */}
+            <PlayerNameRow
+              player={players[0]}
+              onNameChange={handleNameChange(0)}
+              playerNameStyle={playerNameStyle}
+            />
             <td rowSpan={2} className={styles.borderRightExpanded}>1</td>
             <td className={styles.borderRightBottom}>&nbsp;</td>
-            <td
-                rowSpan={2}
-                className={styles.playerIDExpanded}
-                style={{borderBottom:'.5pt solid black'}}
-            >
-                <input
-                type="text"
-                className={styles.inlineInput}
-                placeholder="ID"
-                value={winnerID[0]}
-                onChange={handleWinnerIDChange(0)}
-                />
-            </td>
-            <td 
-              rowSpan={2}
-              className={styles.borderTopRight}
-              style={{borderBottom: '.5pt solid black'}}>
-              <input
-                type="text"
-                className={styles.inlineInput}
-                placeholder="Ex. Ⓜ K"
-                onChange={handleChange(8)}
-                value={
-                  (scores[8] || '').length > 0
-                    ? [
-                      CIRCLED[scores[8][0]],
-                      ...scores[8].slice(1).split('')
-                    ].join(' ')
-                  : ''
-                }
-              />
-            </td>
+            {/* ID | Round 5 Top Player | Index 9 */}
+            <PlayerScoreRow 
+              player={players[9]}
+              onScoreChange={handleScoreChange(9)}
+              onIDChange={handleIDChange(9)}
+              playerIDStyle={playerIDStyle}
+            />
             <td className={styles.xl00} />
             <td className={styles.xl00} />
             <td className={styles.xl00} />
             <td className={styles.xl00} />
             <td className={styles.borderRight}>&nbsp;</td>
             <td />
-            <td colSpan={2} className={styles.playerNameExpanded}>
-              <input
-                type="text"
-                className={styles.winnerNameInput}
-                placeholder="Name (Club)"
-                value={winnerName[6]}
-                onChange={handleWinnerNameChange(6)}
-              />
-            </td>
+            {/* Club | Round 8 Bottom Player | Index 15 */}
+            <PlayerNameRow
+              player={players[15]}
+              onNameChange={handleNameChange(15)}
+              playerNameStyle={playerNameStyle}
+            />
             <td colSpan={2} style={{msoIgnore: 'colspan'}} />
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
@@ -1113,82 +727,30 @@ export default function Expanded({
             <td className={styles.borderRight}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td
-              rowSpan={2}
-              height={40}
-              className={styles.playerIDExpanded}
-              style={{
-                borderBottom: '.5pt solid black',
-                height: '31.5pt',
-                ...playerIDStyle
-              }}
-            >
-                {players[1].id}
-            </td>
-            <td 
-              rowSpan={2}
-              className={styles.borderTopRight}
-              style={{borderBottom: '.5pt solid black'}}>
-              <input
-                type="text"
-                className={styles.inlineInput}
-                placeholder="SCORE (M, K, D, ...)"
-                onChange={handleChange(1)}
-                value={
-                  (scores[1] || '').length > 0
-                    ? [
-                      CIRCLED[scores[1][0]],
-                      ...scores[1].slice(1).split('')
-                    ].join(' ')
-                  : ''
-                }
-              />
-            </td>
+            {/* ID | Round 1 Bottom Player | Index 1 */}
+            <PlayerScoreRow
+              player={players[1]}
+              onScoreChange={handleScoreChange(1)}
+              onIDChange={handleIDChange(1)}
+              playerIDStyle={playerIDStyle}
+            />
             <td className={styles.borderRightBottom}>&nbsp;</td>
             <td className={styles.xl00} />
-            <td colSpan={2} className={styles.playerNameExpanded}>
-              <input
-                type="text"
-                className={styles.winnerNameInput}
-                placeholder="Ex. John Doe (DOJO)"
-                value={winnerName[0]}
-                onChange={handleWinnerNameChange(0)}
-              />
-            </td>
+            {/* Club | Round 5 Top Player | Index 9 */}
+            <PlayerNameRow
+              player={players[9]}
+              onNameChange={handleNameChange(9)}
+              playerNameStyle={playerNameStyle}
+            />
             <td rowSpan={2} className={styles.xl00}>5</td>
             <td className={styles.borderBottomLeft}>&nbsp;</td>
-            <td
-                rowSpan={2}
-                className={styles.playerIDExpanded}
-                style={{borderBottom:'.5pt solid black'}}
-            >
-                <input
-                type="text"
-                className={styles.inlineInput}
-                placeholder="ID"
-                value={winnerID[4]}
-                onChange={handleWinnerIDChange(4)}
-                />
-            </td>
-            <td 
-              rowSpan={2}
-              className={styles.borderTopRight}
-              style={{borderBottom: '.5pt solid black'}}>
-              <input
-                type="text"
-                className={styles.inlineInput}
-                placeholder="SCORE"
-                onChange={handleChange(13)}
-                value={
-                  (scores[13] || '').length > 0
-                    ? [
-                      CIRCLED[scores[13][0]],
-                      ...scores[13].slice(1).split('')
-                    ].join(' ')
-                  : ''
-                }
-              />
-            </td>
+            {/* ID | Round 7 Bottom Player | Index 13 */}
+            <PlayerScoreRow
+              player={players[13]}
+              onScoreChange={handleScoreChange(13)}
+              onIDChange={handleIDChange(13)}
+              playerIDStyle={playerIDStyle}
+            />
             <td className={styles.borderRightBottom}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
@@ -1199,58 +761,28 @@ export default function Expanded({
             <td className={styles.borderTopLeft} style={{borderTop: 'none'}}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td
-              colSpan={2}
-              className={styles.playerNameExpanded}
-              style={{
-                ...playerNameStyle
-              }}
-            >
-              {`${players[1].name} (${players[1].club})`}
-            </td>
+            {/* Club | Round 1 Bottom Player | Index 1 */}
+            <PlayerNameRow
+              player={players[1]}
+              onNameChange={handleNameChange(1)}
+              playerNameStyle={playerNameStyle}
+            />
             <td colSpan={2} style={{msoIgnore: 'colspan'}} />
-            <td
-              rowSpan={2}
-              height={40}
-              className={styles.playerIDExpanded}
-              style={{
-                borderBottom: '.5pt solid black',
-                height: '31.5pt',
-                ...playerIDStyle
-              }}
-            >
-                {players[8].id}
-            </td>
-            <td 
-              rowSpan={2}
-              className={styles.borderTopRight}
-              style={{borderBottom: '.5pt solid black'}}>
-              <input
-                type="text"
-                className={styles.inlineInput}
-                placeholder="SCORE"
-                onChange={handleChange(9)}
-                value={
-                  (scores[9] || '').length > 0
-                    ? [
-                      CIRCLED[scores[9][0]],
-                      ...scores[9].slice(1).split('')
-                    ].join(' ')
-                  : ''
-                }
-              />
-            </td>
+            {/* ID | Round 5 Bottom Player | Index 8 */}
+            <PlayerScoreRow
+              player={players[8]}
+              onScoreChange={handleScoreChange(8)}
+              onIDChange={handleIDChange(8)}
+              playerIDStyle={playerIDStyle}
+            />
             <td className={styles.borderRight}>&nbsp;</td>
             <td className={styles.borderLeft} style={{borderLeft: 'none'}}>&nbsp;</td>
-            <td colSpan={2} className={styles.playerNameExpanded}>
-              <input
-                type="text"
-                className={styles.winnerNameInput}
-                placeholder="Name (Club)"
-                value={winnerName[4]}
-                onChange={handleWinnerNameChange(4)}
-              />
-            </td>
+            {/* Club | Round 7 Bottom Player | Index 13 */}
+            <PlayerNameRow
+              player={players[13]}
+              onNameChange={handleNameChange(13)}
+              playerNameStyle={playerNameStyle}
+            />
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             <td height={20} colSpan={4} style={{height: '15.75pt', msoIgnore: 'colspan'}} />
@@ -1258,15 +790,12 @@ export default function Expanded({
           </tr>
           <tr height={20} style={{height: '15.75pt'}}>
             <td height={20} colSpan={4} style={{height: '15.75pt', msoIgnore: 'colspan'}} />
-            <td
-              colSpan={2}
-              className={styles.playerNameExpanded}
-              style={{
-                ...playerNameStyle
-              }}
-            >
-              {`${players[8].name} (${players[8].club})`}
-            </td>
+            {/* Club | Round 5 Bottom Player | Index 8 */}
+            <PlayerNameRow
+              player={players[8]}
+              onNameChange={handleNameChange(8)}
+              playerNameStyle={playerNameStyle}
+            />
             <td className={styles.xl00} />
             <td className={styles.xl00} />
             <td className={styles.xl00} />
