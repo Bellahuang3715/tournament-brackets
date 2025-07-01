@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Individuals/stylesheet.module.css";
 
-export function PlayerNameRow({ player, onNameChange, playerNameStyle }) {
+export function NameRowFillable({ player, onNameChange, playerNameStyle }) {
   return (
     <>
       {player.name ? (

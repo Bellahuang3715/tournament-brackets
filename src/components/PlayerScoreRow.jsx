@@ -3,7 +3,7 @@ import styles from "./Individuals/stylesheet.module.css";
 
 const CIRCLED = { M: 'Ⓜ', K: 'Ⓚ', D: 'Ⓓ', T: 'Ⓣ' };
 
-export function PlayerScoreRow({
+export function ScoreRowFillable({
   player,
   onScoreChange,
   onIDChange,
