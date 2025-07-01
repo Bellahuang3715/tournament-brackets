@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { ScoreRowFillable } from '../../PlayerScoreRow';
+import { ScoreRowFillable } from '../../ScoreRowFillable';
 import { NameRowFillable } from '../../NameRowFillable';
 import styles from '../stylesheet.module.css';
 
