@@ -256,7 +256,7 @@ export default function CollapsedRight({
             <td className={styles.borderBottomLeft}>&nbsp;</td>
             <td className={styles.xl01} />
             <ScoreRow
-              player={players[6]}
+              player={players[12]}
               playerIDStyle={playerIDStyle}
             />
           </tr>
@@ -274,7 +274,7 @@ export default function CollapsedRight({
             <td className={styles.xl01} />
             <td className={styles.xl01} />
             <NameRow
-              player={players[6]}
+              player={players[12]}
               playerNameStyle={playerNameStyle}
             />
           </tr>
@@ -288,7 +288,7 @@ export default function CollapsedRight({
             <td className={styles.xl01} />
             <td className={styles.borderBottom}>&nbsp;</td>
             <ScoreRow
-              player={players[7]}
+              player={players[6]}
               playerIDStyle={playerIDStyle}
             />
           </tr>
@@ -306,7 +306,7 @@ export default function CollapsedRight({
             <td className={styles.borderRight}>&nbsp;</td>
             <td rowSpan={2} className={styles.xl01}>4</td>
             <NameRow
-              player={players[7]}
+              player={players[6]}
               playerNameStyle={playerNameStyle}
             />
           </tr>
@@ -325,7 +325,7 @@ export default function CollapsedRight({
             <td className={styles.borderRightLeft}>&nbsp;</td>
             <td className={styles.borderRightBottom}>&nbsp;</td>
             <ScoreRow
-              player={players[8]}
+              player={players[7]}
               playerIDStyle={playerIDStyle}
             />
           </tr>
@@ -342,7 +342,7 @@ export default function CollapsedRight({
             <td rowSpan={2} className={styles.borderLeft}>9</td>
             <td className={styles.xl01} />
             <NameRow
-              player={players[8]}
+              player={players[7]}
               playerNameStyle={playerNameStyle}
             />
           </tr>
@@ -361,7 +361,7 @@ export default function CollapsedRight({
             <td className={styles.borderLeft}>&nbsp;</td>
             <td className={styles.borderBottom}>&nbsp;</td>
             <ScoreRow
-              player={players[9]}
+              player={players[8]}
               playerIDStyle={playerIDStyle}
             />
           </tr>
@@ -378,7 +378,7 @@ export default function CollapsedRight({
             <td className={styles.borderRBL}>&nbsp;</td>
             <td rowSpan={2} className={styles.xl01}>5</td>
             <NameRow
-              player={players[9]}
+              player={players[8]}
               playerNameStyle={playerNameStyle}
             />
           </tr>
@@ -397,7 +397,7 @@ export default function CollapsedRight({
             <td className={styles.borderRight}>&nbsp;</td>
             <td className={styles.borderRightBottom}>&nbsp;</td>
             <ScoreRow
-              player={players[10]}
+              player={players[9]}
               playerIDStyle={playerIDStyle}
             />
           </tr>
@@ -412,7 +412,7 @@ export default function CollapsedRight({
             <td className={styles.xl01} />
             <td className={styles.xl01} />
             <NameRow
-              player={players[10]}
+              player={players[9]}
               playerNameStyle={playerNameStyle}
             />
           </tr>
@@ -427,7 +427,7 @@ export default function CollapsedRight({
             <td className={styles.xl01} />
             <td className={styles.borderBottom}>&nbsp;</td>
             <ScoreRow
-              player={players[11]}
+              player={players[10]}
               playerIDStyle={playerIDStyle}
             />
           </tr>
@@ -445,7 +445,7 @@ export default function CollapsedRight({
             <td className={styles.borderRight}>&nbsp;</td>
             <td rowSpan={2} className={styles.xl01}>6</td>
             <NameRow
-              player={players[11]}
+              player={players[10]}
               playerNameStyle={playerNameStyle}
             />
           </tr>
@@ -464,7 +464,7 @@ export default function CollapsedRight({
             <td className={styles.borderRightLeft}>&nbsp;</td>
             <td className={styles.borderRightBottom}>&nbsp;</td>
             <ScoreRow
-              player={players[12]}
+              player={players[11]}
               playerIDStyle={playerIDStyle}
             />
           </tr>
@@ -480,7 +480,7 @@ export default function CollapsedRight({
             <td className={styles.xl01} />
             <td className={styles.xl01} />
             <NameRow
-              player={players[12]}
+              player={players[11]}
               playerNameStyle={playerNameStyle}
             />
           </tr>

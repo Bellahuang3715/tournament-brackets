@@ -41,6 +41,7 @@ export default function CollapsedLeft({
             <td className={styles.xl00} width={101} style={{width: '76pt'}} />
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
+            {/* Round 1 Top Player | Index 0 */}
             <ScoreRow
               player={players[0]}
               playerIDStyle={playerIDStyle}
@@ -64,6 +65,7 @@ export default function CollapsedLeft({
             <td className={styles.borderRight}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
+            {/* Round 1 Bottom Player | Index 1 */}
             <ScoreRow
               player={players[1]}
               playerIDStyle={playerIDStyle}
@@ -91,8 +93,9 @@ export default function CollapsedLeft({
             <td className={styles.borderRight}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
+            {/* Round 5 Bottom Player | Index 8 */}
             <ScoreRow
-              player={players[2]}
+              player={players[8]}
               playerIDStyle={playerIDStyle}
             />
             <td className={styles.borderBottom}>&nbsp;</td>
@@ -121,8 +124,9 @@ export default function CollapsedLeft({
             <td rowSpan={2} className={styles.borderRight}>9</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
+            {/* Round 2 Top Player | Index 2 */}
             <ScoreRow
-              player={players[3]}
+              player={players[2]}
               playerIDStyle={playerIDStyle}
             />
             <td className={styles.borderBottom}>&nbsp;</td>
@@ -153,8 +157,9 @@ export default function CollapsedLeft({
             <td className={styles.borderRight}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
+            {/* Round 2 Bottom Player | Index 3 */}
             <ScoreRow
-              player={players[4]}
+              player={players[3]}
               playerIDStyle={playerIDStyle}
             />
             <td className={styles.borderRightBottom}>&nbsp;</td>
@@ -186,8 +191,9 @@ export default function CollapsedLeft({
             <td className={styles.borderRight}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
+            {/* Round 6 Bottom Player | Index 9 */}
             <ScoreRow
-              player={players[5]}
+              player={players[9]}
               playerIDStyle={playerIDStyle}
             />
             <td className={styles.xl01} />
@@ -222,8 +228,9 @@ export default function CollapsedLeft({
             <td className={styles.borderLeft}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
+            {/* Round 3 Top Player | Index 4 */}
             <ScoreRow
-              player={players[6]}
+              player={players[4]}
               playerIDStyle={playerIDStyle}
             />
             <td className={styles.borderBottom}>&nbsp;</td>
@@ -258,8 +265,9 @@ export default function CollapsedLeft({
             <td className={styles.borderRight}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
+            {/* Round 3 Bottom Player | Index 5 */}
             <ScoreRow
-              player={players[7]}
+              player={players[5]}
               playerIDStyle={playerIDStyle}
             />
             <td className={styles.borderRightBottom}>&nbsp;</td>
@@ -291,8 +299,9 @@ export default function CollapsedLeft({
             <td className={styles.borderRight}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
+            {/* Round 7 Bottom Player | Index 10 */}
             <ScoreRow
-              player={players[8]}
+              player={players[10]}
               playerIDStyle={playerIDStyle}
             />
             <td className={styles.borderBottom}>&nbsp;</td>
@@ -325,8 +334,9 @@ export default function CollapsedLeft({
             <td className={styles.borderRightBottom}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
+            {/* Round 4 Top Player | Index 6 */}
             <ScoreRow
-              player={players[9]}
+              player={players[6]}
               playerIDStyle={playerIDStyle}
             />
             <td className={styles.borderBottom}>&nbsp;</td>
@@ -352,8 +362,9 @@ export default function CollapsedLeft({
             <td className={styles.borderRight}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
+            {/* Round 4 Bottom Player | Index 7 */}
             <ScoreRow
-              player={players[10]}
+              player={players[7]}
               playerIDStyle={playerIDStyle}
             />
             <td className={styles.borderRightBottom}>&nbsp;</td>
@@ -378,6 +389,7 @@ export default function CollapsedLeft({
             <td className={styles.borderRight}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
+            {/* Round 8 Bottom Player | Index 11 */}
             <ScoreRow
               player={players[11]}
               playerIDStyle={playerIDStyle}
