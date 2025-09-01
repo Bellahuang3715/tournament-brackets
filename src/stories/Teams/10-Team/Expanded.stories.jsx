@@ -1,10 +1,12 @@
 import React from "react";
 import Expanded from "../../../components/Teams/10-Team/Expanded";
+import { sampleTeams10 } from "../../data/teams";
 
 export default {
   title: "Teams/10-Team/Expanded",
   component: Expanded,
   argTypes: {
+    teams:            { control: 'object' },
     teamIDFontFamily: {
       control: 'text',
       description: 'CSS font-family for the team-ID cell'
@@ -24,6 +26,7 @@ const Template = (args) => <Expanded {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
+  teams:            sampleTeams10,
   teamIDFontFamily: "Arial, sans-serif",
   teamIDColor: "#c00",
   teamIDFontSize: 14,

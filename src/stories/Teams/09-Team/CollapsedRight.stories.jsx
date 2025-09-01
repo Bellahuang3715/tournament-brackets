@@ -1,10 +1,12 @@
 import React from "react";
 import CollapsedRight from "../../../components/Teams/09-Team/CollapsedRight";
+import { sampleTeams9 } from "../../data/teams";
 
 export default {
   title: "Teams/09-Team/CollapsedRight",
   component: CollapsedRight,
   argTypes: {
+    teams:            { control: 'object' },
     teamIDFontFamily: {
       control: 'text',
       description: 'CSS font-family for the team-ID cell'
@@ -24,6 +26,7 @@ const Template = (args) => <CollapsedRight {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
+  teams:            sampleTeams9,
   teamIDFontFamily: 'Arial, sans-serif',
   teamIDColor:      '#c00',
   teamIDFontSize:   11,

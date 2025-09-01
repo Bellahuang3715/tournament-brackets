@@ -1,7 +1,10 @@
 import React from 'react';
 import styles from '../stylesheet.module.css';
 
+import { Team } from '../../Team';
+
 export default function CollapsedLeft({
+  teams,
   teamIDFontFamily,
   teamIDColor,
   teamIDFontSize,
@@ -40,18 +43,10 @@ export default function CollapsedLeft({
             <td className={styles.xl00} width={101} style={{width: '76pt'}} />
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td 
-              rowSpan={2}
-              height={40}
-              className={styles.teamID}
-              style={{
-                borderBottom: '.5pt solid black',
-                height: '31.5pt',
-                ...teamIDStyle
-              }}
-            >
-                TKC A
-              </td>
+            <Team
+              team={teams[0]}
+              teamStyle={teamIDStyle}
+            />
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             <td height={20} className={styles.borderTop} style={{height: '15.75pt'}}>&nbsp;</td>
@@ -75,18 +70,10 @@ export default function CollapsedLeft({
             <td className={styles.borderTopRight} style={{borderTop: 'none'}}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td 
-              rowSpan={2}
-              height={40}
-              className={styles.teamID}
-              style={{
-                borderBottom: '.5pt solid black',
-                height: '31.5pt',
-                ...teamIDStyle
-              }}
-            >
-              TKC A
-            </td>
+            <Team
+              team={teams[1]}
+              teamStyle={teamIDStyle}
+            />
             <td className={styles.borderRightBottom}>&nbsp;</td>
             <td className={styles.borderRight}>&nbsp;</td>
             <td className={styles.xl01} />
@@ -129,18 +116,10 @@ export default function CollapsedLeft({
             <td colSpan={2} style={{msoIgnore: 'colspan'}} />
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td 
-              rowSpan={2}
-              height={40}
-              className={styles.teamID}
-              style={{
-                borderBottom: '.5pt solid black',
-                height: '31.5pt',
-                ...teamIDStyle
-              }}
-            >
-              TKC A
-            </td>
+            <Team
+              team={teams[2]}
+              teamStyle={teamIDStyle}
+            />
             <td className={styles.xl01} />
             <td className={styles.borderRight}>&nbsp;</td>
             <td className={styles.xl01} />
@@ -174,18 +153,10 @@ export default function CollapsedLeft({
             <td colSpan={2} style={{msoIgnore: 'colspan'}} />
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td 
-              rowSpan={2}
-              height={40}
-              className={styles.teamID}
-              style={{
-                borderBottom: '.5pt solid black',
-                height: '31.5pt',
-                ...teamIDStyle
-              }}
-            >
-              TKC A
-            </td>
+            <Team
+              team={teams[3]}
+              teamStyle={teamIDStyle}
+            />
             <td className={styles.borderRight}>&nbsp;</td>
             <td className={styles.xl01} />
             <td className={styles.xl01} />
@@ -228,18 +199,10 @@ export default function CollapsedLeft({
             <td colSpan={2} style={{msoIgnore: 'colspan'}} />
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td 
-              rowSpan={2}
-              height={40}
-              className={styles.teamID}
-              style={{
-                borderBottom: '.5pt solid black',
-                height: '31.5pt',
-                ...teamIDStyle
-              }}
-            >
-              TKC A
-            </td>
+            <Team
+              team={teams[4]}
+              teamStyle={teamIDStyle}
+            />
             <td className={styles.xl01} />
             <td className={styles.xl01} />
             <td className={styles.borderRight}>&nbsp;</td>
@@ -273,18 +236,10 @@ export default function CollapsedLeft({
             <td colSpan={4} style={{msoIgnore: 'colspan'}} />
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td 
-              rowSpan={2}
-              height={40}
-              className={styles.teamID}
-              style={{
-                borderBottom: '.5pt solid black',
-                height: '31.5pt',
-                ...teamIDStyle
-              }}
-            >
-              TKC A
-            </td>
+            <Team
+              team={teams[5]}
+              teamStyle={teamIDStyle}
+            />
             <td className={styles.borderRight}>&nbsp;</td>
             <td className={styles.borderRight}>&nbsp;</td>
             <td className={styles.xl01} />
@@ -322,18 +277,10 @@ export default function CollapsedLeft({
             <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td 
-              rowSpan={2}
-              height={40}
-              className={styles.teamID}
-              style={{
-                borderBottom: '.5pt solid black',
-                height: '31.5pt',
-                ...teamIDStyle
-              }}
-            >
-              TKC A
-            </td>
+            <Team
+              team={teams[6]}
+              teamStyle={teamIDStyle}
+            />
             <td className={styles.xl01} />
             <td className={styles.borderRight}>&nbsp;</td>
             <td className={styles.xl01} />
@@ -363,18 +310,10 @@ export default function CollapsedLeft({
             <td className={styles.borderTopLeft} style={{borderTop: 'none', borderLeft: 'none'}}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td 
-              rowSpan={2}
-              height={40}
-              className={styles.teamID}
-              style={{
-                borderBottom: '.5pt solid black',
-                height: '31.5pt',
-                ...teamIDStyle
-              }}
-            >
-              TKC A
-            </td>
+            <Team
+              team={teams[7]}
+              teamStyle={teamIDStyle}
+            />
             <td className={styles.borderRight}>&nbsp;</td>
             <td className={styles.borderLeft} style={{borderLeft: 'none'}}>&nbsp;</td>
           </tr>
