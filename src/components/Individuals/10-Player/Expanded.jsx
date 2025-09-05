@@ -99,7 +99,7 @@ export default function Expanded(props) {
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             <td height={20} colSpan={4} style={{height: '15.75pt', msoIgnore: 'colspan'}} />
-            {/* ID | Round 3 Top Player | Index 4 */}
+            {/* Round 3 Top Player | Index 4 */}
             {scoreRow(4)}
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
@@ -116,11 +116,11 @@ export default function Expanded(props) {
           </tr>
           <tr height={20} style={{height: '15.75pt'}}>
             <td height={20} colSpan={4} style={{height: '15.75pt', msoIgnore: 'colspan'}} />
-            {/* Club | Round 3 Top Player | Index 4 */}
+            {/* Round 3 Top Player | Index 4 */}
             {nameRow(4)}
             <td rowSpan={2} className={styles.xl00}>3</td>
             <td className={styles.borderBottomLeft}>&nbsp;</td>
-            {/* ID | Round 7 Top Player | Index 12 */}
+            {/* Round 7 Top Player | Index 12 */}
             {scoreRow(12)}
             <td className={styles.xl00} />
             <td className={styles.xl00} />
@@ -139,11 +139,11 @@ export default function Expanded(props) {
             <td colSpan={2} height={20} className={styles.xl01} style={{height: '15.75pt'}} />
             <td className={styles.xl00} />
             <td className={styles.xl00} />
-            {/* ID | Round 3 Bottom Player | Index 5 */}
+            {/* Round 3 Bottom Player | Index 5 */}
             {scoreRow(5)}
             <td className={styles.borderRightBottom}>&nbsp;</td>
             <td className={styles.xl00} />
-            {/* Club | Round 7 Top Player | Index 12 */}
+            {/* Round 7 Top Player | Index 12 */}
             {nameRow(12)}
             <td className={styles.borderRight}>&nbsp;</td>
             <td colSpan={5} style={{msoIgnore: 'colspan'}} />
@@ -163,7 +163,7 @@ export default function Expanded(props) {
             <td className={styles.xl00} />
             <td className={styles.xl00} />
             <td className={styles.xl00} />
-            {/* Club | Round 3 Bottom Player | Index 5 */}
+            {/* Round 3 Bottom Player | Index 5 */}
             {nameRow(5)}
             <td className={styles.xl00} />
             <td className={styles.xl00} />
@@ -184,11 +184,11 @@ export default function Expanded(props) {
             <td className={styles.xl00} />
             <td rowSpan={2} className={styles.xl00}>7</td>
             <td className={styles.borderBottomLeft}>&nbsp;</td>
-            {/* ID | Round 9 Top Player | Index 16 */}
+            {/* Round 9 Top Player | Index 16 */}
             {scoreRow(16)}
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            {/* ID | Round 1 Top Player | Index 0 */}
+            {/* Round 1 Top Player | Index 0 */}
             {scoreRow(0)}
             <td className={styles.borderBottom}>&nbsp;</td>
             <td />
@@ -213,17 +213,17 @@ export default function Expanded(props) {
             <td className={styles.xl00} />
             <td className={styles.xl00} />
             <td className={styles.borderLeft}>&nbsp;</td>
-            {/* Club | Round 9 Top Player | Index 16 */}
+            {/* Round 9 Top Player | Index 16 */}
             {nameRow(16)}
             <td />
             <td className={styles.borderLeft}>&nbsp;</td>
           </tr>
           <tr height={20} style={{height: '15.75pt'}}>
-            {/* Club | Round 1 Top Player | Index 0 */}
+            {/* Round 1 Top Player | Index 0 */}
             {nameRow(0)}
             <td rowSpan={2} className={styles.borderRightExpanded}>1</td>
             <td className={styles.borderRightBottom}>&nbsp;</td>
-            {/* ID | Round 4 Top Player | Index 10 */}
+            {/* Round 4 Top Player | Index 10 */}
             {scoreRow(10)}
             <td className={styles.xl00} />
             <td className={styles.xl00} />
@@ -252,15 +252,15 @@ export default function Expanded(props) {
             <td className={styles.borderLeft}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            {/* ID | Round 1 Bottom Player | Index 1 */}
+            {/* Round 1 Bottom Player | Index 1 */}
             {scoreRow(1)}
             <td className={styles.borderRightBottom}>&nbsp;</td>
             <td className={styles.xl00} />
-            {/* Club | Round 4 Top Player | Index 10 */}
+            {/* Round 4 Top Player | Index 10 */}
             {nameRow(10)}
             <td rowSpan={2} className={styles.xl00}>4</td>
             <td className={styles.borderBottomLeft}>&nbsp;</td>
-            {/* ID | Round 7 Bottom Player | Index 13 */}
+            {/* Round 7 Bottom Player | Index 13 */}
             {scoreRow(13)}
             <td className={styles.borderBottom}>&nbsp;</td>
             <td className={styles.borderLeft}>&nbsp;</td>
@@ -283,14 +283,14 @@ export default function Expanded(props) {
             <td className={styles.borderLeft}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            {/* Club | Round 1 Bottom Player | Index 1 */}
+            {/* Round 1 Bottom Player | Index 1 */}
             {nameRow(1)}
             <td colSpan={2} style={{msoIgnore: 'colspan'}} />
-            {/* ID | Round 4 Bottom Player | Index 6 */}
+            {/* Round 4 Bottom Player | Index 6 */}
             {scoreRow(6)}
             <td className={styles.borderRight}>&nbsp;</td>
             <td className={styles.xl00} />
-            {/* Club | Round 7 Bottom Player | Index 13 */}
+            {/* Round 7 Bottom Player | Index 13 */}
             {nameRow(13)}
             <td className={styles.xl00} />
             <td className={styles.xl00} />
@@ -320,7 +320,7 @@ export default function Expanded(props) {
             <td className={styles.xl01} />
             <td className={styles.xl01} />
             <td className={styles.xl00} />
-            {/* Club | Round 4 Bottom Player | Index 6 */}
+            {/* Round 4 Bottom Player | Index 6 */}
             {nameRow(6)}
             <td className={styles.xl00} />
             <td className={styles.xl00} />
@@ -348,7 +348,7 @@ export default function Expanded(props) {
             <td className={styles.xl00}><span style={{msoSpacerun: 'yes'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style={{display: 'none'}}><span style={{msoSpacerun: 'yes'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></span></td>
             <td rowSpan={2} className={styles.xl00}>9</td>
             <td className={styles.borderBottomLeft}>&nbsp;</td>
-            {/* ID | Finalist | Index 18 */}
+            {/* Finalist | Index 18 */}
             {scoreRow(18)}
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
@@ -383,7 +383,7 @@ export default function Expanded(props) {
             <td className={styles.xl00} />
             <td />
             <td className={styles.borderLeft}>&nbsp;</td>
-            {/* Club | Finalist | Index 18 */}
+            {/* Finalist | Index 18 */}
             {nameRow(18)}
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
@@ -409,7 +409,7 @@ export default function Expanded(props) {
             <td className={styles.xl01} />
             <td className={styles.xl01} />
             <td className={styles.borderRight}>&nbsp;</td>
-            {/* ID | Round 5 Top Player | Index 7 */}
+            {/* Round 5 Top Player | Index 7 */}
             {scoreRow(7)}
             <td className={styles.xl00} />
             <td className={styles.xl00} />
@@ -443,11 +443,11 @@ export default function Expanded(props) {
             <td className={styles.xl01} />
             <td className={styles.xl01} />
             <td className={styles.xl00} />
-            {/* Club | Round 5 Top Player | Index 7 */}
+            {/* Round 5 Top Player | Index 7 */}
             {nameRow(7)}
             <td rowSpan={2} className={styles.xl00}>5</td>
             <td className={styles.borderBottomLeft}>&nbsp;</td>
-            {/* ID | Round 8 Top Player | Index 14 */}
+            {/* Round 8 Top Player | Index 14 */}
             {scoreRow(14)}
             <td className={styles.xl00} />
             <td className={styles.xl00} />
@@ -476,11 +476,11 @@ export default function Expanded(props) {
             <td colSpan={2} height={20} className={styles.xl01} style={{height: '15.75pt'}} />
             <td className={styles.xl00} />
             <td className={styles.xl00} />
-            {/* ID | Round 5 Bottom Player | Index 8 */}
+            {/* Round 5 Bottom Player | Index 8 */}
             {scoreRow(8)}
             <td className={styles.borderRight}>&nbsp;</td>
             <td />
-            {/* Club | Round 8 Top Player | Index 14 */}
+            {/* Round 8 Top Player | Index 14 */}
             {nameRow(14)}
             <td className={styles.borderRight}>&nbsp;</td>
             <td colSpan={3} style={{msoIgnore: 'colspan'}} />
@@ -505,7 +505,7 @@ export default function Expanded(props) {
             <td className={styles.xl00} />
             <td className={styles.xl00} />
             <td className={styles.xl00} />
-            {/* Club | Round 5 Bottom Player | Index 8 */}
+            {/* Round 5 Bottom Player | Index 8 */}
             {nameRow(8)}
             <td className={styles.xl00} />
             <td className={styles.xl00} />
@@ -517,7 +517,7 @@ export default function Expanded(props) {
             <td className={styles.borderLeft}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            {/* ID | Round 2 Top Player | Index 2 */}
+            {/* Round 2 Top Player | Index 2 */}
             {scoreRow(2)}
             <td className={styles.borderBottom}>&nbsp;</td>
             <td />
@@ -529,7 +529,7 @@ export default function Expanded(props) {
             <td className={styles.xl00} />
             <td rowSpan={2} className={styles.xl00}>8</td>
             <td className={styles.borderBottomLeft}>&nbsp;</td>
-            {/* ID | Round 9 Bottom Player | Index 17 */}
+            {/* Round 9 Bottom Player | Index 17 */}
             {scoreRow(17)}
             <td className={styles.xl00} />
             <td className={styles.borderLeft}>&nbsp;</td>
@@ -545,11 +545,11 @@ export default function Expanded(props) {
             <td className={styles.borderTop}>&nbsp;</td>
           </tr>
           <tr height={20} style={{height: '15.75pt'}}>
-            {/* Club | Round 2 Top Player | Index 2 */}
+            {/* Round 2 Top Player | Index 2 */}
             {nameRow(2)}
             <td rowSpan={2} className={styles.borderRightExpanded}>2</td>
             <td className={styles.borderRightBottom}>&nbsp;</td>
-            {/* ID | Round 6 Top Player | Index 11 */}
+            {/* Round 6 Top Player | Index 11 */}
             {scoreRow(11)}
             <td className={styles.xl00} />
             <td className={styles.xl00} />
@@ -557,7 +557,7 @@ export default function Expanded(props) {
             <td className={styles.xl00} />
             <td className={styles.borderRight}>&nbsp;</td>
             <td />
-            {/* Club | Round 9 Bottom Player | Index 17 */}
+            {/* Round 9 Bottom Player | Index 17 */}
             {nameRow(17)}
             <td colSpan={2} style={{msoIgnore: 'colspan'}} />
           </tr>
@@ -572,15 +572,15 @@ export default function Expanded(props) {
             <td className={styles.borderRight}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            {/* ID | Round 2 Bottom Player | Index 3 */}
+            {/* Round 2 Bottom Player | Index 3 */}
             {scoreRow(3)}
             <td className={styles.borderRightBottom}>&nbsp;</td>
             <td className={styles.xl00} />
-            {/* Club | Round 6 Top Player | Index 11 */}
+            {/* Round 6 Top Player | Index 11 */}
             {nameRow(11)}
             <td rowSpan={2} className={styles.xl00}>6</td>
             <td className={styles.borderBottomLeft}>&nbsp;</td>
-            {/* ID | Round 8 Bottom Player | Index 15 */}
+            {/* Round 8 Bottom Player | Index 15 */}
             {scoreRow(15)}
             <td className={styles.borderRightBottom}>&nbsp;</td>
           </tr>
@@ -592,14 +592,14 @@ export default function Expanded(props) {
             <td className={styles.borderTopLeft} style={{borderTop: 'none'}}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            {/* Club | Round 2 Bottom Player | Index 3 */}
+            {/* Round 2 Bottom Player | Index 3 */}
             {nameRow(3)}
             <td colSpan={2} style={{msoIgnore: 'colspan'}} />
-            {/* ID | Round 6 Bottom Player | Index 9 */}
+            {/* Round 6 Bottom Player | Index 9 */}
             {scoreRow(9)}
             <td className={styles.borderRight}>&nbsp;</td>
             <td className={styles.borderLeft} style={{borderLeft: 'none'}}>&nbsp;</td>
-            {/* Club | Round 8 Bottom Player | Index 15 */}
+            {/* Round 8 Bottom Player | Index 15 */}
             {nameRow(15)}
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
@@ -608,7 +608,7 @@ export default function Expanded(props) {
           </tr>
           <tr height={20} style={{height: '15.75pt'}}>
             <td height={20} colSpan={4} style={{height: '15.75pt', msoIgnore: 'colspan'}} />
-            {/* Club | Round 6 Bottom Player | Index 9 */}
+            {/* Round 6 Bottom Player | Index 9 */}
             {nameRow(9)}
             <td className={styles.xl00} />
             <td className={styles.xl00} />
