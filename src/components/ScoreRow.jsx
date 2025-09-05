@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./Individuals/stylesheet.module.css";
 
 export function ScoreRow({
@@ -9,7 +8,7 @@ export function ScoreRow({
     <>
       <td
         rowSpan="2"
-        className={styles.playerID}
+        className={styles.playerIDExpanded}
         style={{
           borderBottom: ".5pt solid black",
           height: "31.5pt",

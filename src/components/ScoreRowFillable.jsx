@@ -1,7 +1,6 @@
-import React from "react";
 import styles from "./Individuals/stylesheet.module.css";
 
-const CIRCLED = { M: 'Ⓜ', K: 'Ⓚ', D: 'Ⓓ', T: 'Ⓣ' };
+const CIRCLED = { M: "Ⓜ", K: "Ⓚ", D: "Ⓓ", T: "Ⓣ" };
 
 export function ScoreRowFillable({
   player,
@@ -18,33 +17,22 @@ export function ScoreRowFillable({
 
   return (
     <>
-      {player.id ? (
-        <td
-          rowSpan="2"
-          className={styles.playerIDExpanded}
-          style={{
-            borderBottom: ".5pt solid black",
-            height: "31.5pt",
-            ...playerIDStyle,
-          }}
-        >
-          {player.id}
-        </td>
-      ) : (
-        <td
-          rowSpan={2}
-          className={styles.playerIDExpanded}
-          style={{ borderBottom: ".5pt solid black" }}
-        >
-          <input
-            type="text"
-            className={styles.inlineInput}
-            placeholder="ID"
-            onChange={onIDChange}
-          />
-        </td>
-      )}
-
+      <td
+        rowSpan={2}
+        className={styles.playerIDExpanded}
+        style={{
+          borderBottom: ".5pt solid black",
+          height: "31.5pt",
+          ...playerIDStyle,
+        }}
+      >
+        <input
+          type="text"
+          className={styles.inlineInput}
+          placeholder="ID"
+          onChange={onIDChange}
+        />
+      </td>
       <td
         rowSpan="2"
         className={styles.borderTopRight}

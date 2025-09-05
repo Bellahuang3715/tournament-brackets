@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./Individuals/stylesheet.module.css";
 
 export function NameRowFillable({ player, onNameChange, playerNameStyle }) {

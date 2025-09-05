@@ -1,10 +1,3 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+export { default as CollapsedLeft }  from "./components/Facades/CollapsedLeft";
+export { default as CollapsedRight } from "./components/Facades/CollapsedRight";
+export { default as Expanded }       from "./components/Facades/Expanded";

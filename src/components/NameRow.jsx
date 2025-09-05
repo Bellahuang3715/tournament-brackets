@@ -1,7 +1,7 @@
-import React from "react";
 import styles from "./Individuals/stylesheet.module.css";
 
 export function NameRow({ player, playerNameStyle }) {
+  const club = player?.club?.trim();
   return (
     <>
       <td
@@ -13,7 +13,8 @@ export function NameRow({ player, playerNameStyle }) {
           ...playerNameStyle,
         }}
       >
-        {`${player.name} (${player.club})`}
+        {player?.name}
+        {club ? ` (${club})` : ""}
       </td>
     </>
   );
