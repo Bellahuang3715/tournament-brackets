@@ -1,24 +1,23 @@
-import React, { useState } from 'react';
-
+import { ExpandedBase } from '../../_internal/ExpandedBase';
 import { NameRow } from '../../NameRow';
 import { ScoreRow } from '../../ScoreRow';
 import { ScoreRowFillable } from '../../ScoreRowFillable';
 import { NameRowFillable } from '../../NameRowFillable';
 import styles from '../stylesheet.module.css';
 
-// map raw → circled
-const CIRCLED = { M: 'Ⓜ', K: 'Ⓚ', D: 'Ⓓ', T: 'Ⓣ' };
-const RAW = Object.fromEntries(Object.entries(CIRCLED).map(([k,v])=>[v,k]));
-const ALLOWED = ['M','K','D','T'];
-
-export default function Expanded({
-  players: initialPlayers,
-  fontFamily = 'Arial, sans-serif',
-  playerIDFontSize = 14,
-  playerNameFontSize = 12,
-  mode = "view", // "view" | "fillable"
-}) {
-  const maxSlots = 17;
+export default function Expanded(props) {
+  const {
+    players, mode,
+    playerIDStyle, playerNameStyle,
+    handleScoreChange, handleIDChange, handleNameChange
+  } = ExpandedBase({
+    initialPlayers: props.players,
+    maxSlots: 17,
+    mode: "view",   // "view" | "fillable"
+    fontFamily: props.fontFamily,
+    playerIDFontSize: 14,
+    playerNameFontSize: 12,
+  });
 
   const nameRow = (i) => mode === "view" ? 
     <NameRow
@@ -42,58 +41,6 @@ export default function Expanded({
       onIDChange={handleIDChange(i)}
       playerIDStyle={playerIDStyle}
     />;
-  
-  // create own state copy of players
-  const [players, setPlayers] = useState(() => {
-    return Array.from({ length: maxSlots }, (_, i) => {
-      const p = initialPlayers[i];
-      return p
-        ? { ...p } 
-        : { id: '', name: '', club: '', score: '' };
-    });
-  });
-
-  // helper to merge partial updates into one player
-  const updatePlayer = (index, patch) => {
-    setPlayers(ps => {
-      const copy = [...ps];
-      copy[index] = { ...copy[index], ...patch };
-      return copy;
-    });
-  };
-
-  const playerIDStyle = { fontSize:  `${playerIDFontSize}pt`, fontFamily };
-  const playerNameStyle = { fontSize:  `${playerNameFontSize}pt`, fontFamily };
-  
-  // helper to process score text
-  function processRaw(input) {
-    const noSpaces = input.replace(/\s+/g, '')
-    let firstRaw = ''
-    if (noSpaces) {
-      const c0 = noSpaces[0]
-      firstRaw = RAW[c0] || c0.toUpperCase()
-      if (!ALLOWED.includes(firstRaw)) firstRaw = ''
-    }
-    const restRaw = Array.from(noSpaces.slice(1).toUpperCase())
-      .filter(ch => ALLOWED.includes(ch))
-      .join('')
-    return firstRaw + restRaw
-  }
-
-  const handleScoreChange = i => e => {
-    const raw = processRaw(e.target.value)
-    updatePlayer(i, { score: raw });
-  };
-
-  const handleIDChange = i => e => {
-    const id = e.target.value.toUpperCase()
-    updatePlayer(i, { id });
-  };
-
-  const handleNameChange = i => e => {
-    const name = e.target.value
-    updatePlayer(i, { name });
-  };
 
   return (
     <>

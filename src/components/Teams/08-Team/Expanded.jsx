@@ -1,19 +1,41 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from '../stylesheet.module.css';
 
 import { Team } from '../../Team';
+import { TeamFillable } from '../../TeamFillable';
 
 export default function Expanded({
-  teams,
+  teams = [],
   teamIDFontFamily,
   teamIDColor,
   teamIDFontSize,
 }) {
+  // local state; initialized from props once
+  const [localTeams, setLocalTeams] = useState(() => teams.slice());
+
   const teamIDStyle = {
     fontFamily: teamIDFontFamily,
     color:      teamIDColor,
     fontSize:   teamIDFontSize ? `${teamIDFontSize}pt` : undefined,
   };
+
+  // per-index updater; receives a plain string from TeamFillable
+  const handleTeamChange = (i) => (nextValue) => {
+    setLocalTeams((prev) => {
+      const copy = prev.slice();
+      copy[i] = nextValue;
+      return copy;
+    });
+  };
+
+  const team = (i) => (
+    <TeamFillable
+      team={localTeams[i]}
+      onTeamChange={handleTeamChange(i)}
+      teamStyle={teamIDStyle}
+    />
+  );
+
   return (
     <>
       <table border={0} cellPadding={0} cellSpacing={0} width={1690} style={{borderCollapse: 'collapse', tableLayout: 'fixed', width: '1268pt'}}>
@@ -50,10 +72,7 @@ export default function Expanded({
             <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <Team
-              team={teams[0]}
-              teamStyle={teamIDStyle}
-            />
+            {team(0)}
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             <td height={20} className={styles.borderTop} style={{height: '15.75pt'}}>&nbsp;</td>
@@ -68,7 +87,7 @@ export default function Expanded({
             <td height={20} style={{height: '15.75pt'}} />
             <td rowSpan={2} className={styles.xl00}>1</td>
             <td className={styles.borderBottomLeft}>&nbsp;</td>
-            <td rowSpan={2} className={styles.teamIDExpanded} style={{borderBottom: '.5pt solid black'}}>REN B</td>
+            {team(8)}
             <td className={styles.xl00} />
             <td className={styles.xl00} />
             <td className={styles.xl00} />
@@ -80,10 +99,7 @@ export default function Expanded({
             <td className={styles.borderTopRight}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <Team
-              team={teams[1]}
-              teamStyle={teamIDStyle}
-            />
+            {team(1)}
             <td className={styles.borderRightBottom}>&nbsp;</td>
             <td className={styles.xl00} />
             <td className={styles.xl00} />
@@ -126,10 +142,7 @@ export default function Expanded({
             <td className={styles.borderLeft}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <Team
-              team={teams[2]}
-              teamStyle={teamIDStyle}
-            />
+            {team(2)}
             <td className={styles.xl00} />
             <td className={styles.xl00} />
             <td className={styles.xl00} />
@@ -170,10 +183,7 @@ export default function Expanded({
             <td className={styles.borderLeft}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <Team
-              team={teams[3]}
-              teamStyle={teamIDStyle}
-            />
+            {team(3)}
             <td className={styles.borderRight}>&nbsp;</td>
             <td className={styles.xl00} />
             <td className={styles.xl00} />
@@ -225,10 +235,7 @@ export default function Expanded({
             <td className={styles.borderTopLeft} style={{borderTop: 'none'}}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <Team
-              team={teams[4]}
-              teamStyle={teamIDStyle}
-            />
+            {team(4)}
             <td className={styles.xl00} />
             <td className={styles.xl00} />
             <td className={styles.xl00} />
@@ -268,10 +275,7 @@ export default function Expanded({
             <td className={styles.borderLeft}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <Team
-              team={teams[5]}
-              teamStyle={teamIDStyle}
-            />
+            {team(5)}
             <td className={styles.borderRight}>&nbsp;</td>
             <td colSpan={2} style={{msoIgnore: 'colspan'}} />
             <td className={styles.borderRight}>&nbsp;</td>
@@ -316,10 +320,7 @@ export default function Expanded({
             <td className={styles.borderTop}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <Team
-              team={teams[6]}
-              teamStyle={teamIDStyle}
-            />
+            {team(6)}
             <td className={styles.xl00} />
             <td className={styles.xl00} />
             <td className={styles.xl00} />
@@ -347,10 +348,7 @@ export default function Expanded({
             <td className={styles.borderTopLeft} style={{borderTop: 'none'}}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <Team
-              team={teams[7]}
-              teamStyle={teamIDStyle}
-            />
+            {team(7)}
             <td className={styles.borderRight}>&nbsp;</td>
             <td className={styles.borderLeft} style={{borderLeft: 'none'}}>&nbsp;</td>
           </tr>

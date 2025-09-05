@@ -1,73 +1,46 @@
-import React, { useState } from 'react';
-
+import { ExpandedBase } from '../../_internal/ExpandedBase';
+import { NameRow } from '../../NameRow';
+import { ScoreRow } from '../../ScoreRow';
 import { ScoreRowFillable } from '../../ScoreRowFillable';
 import { NameRowFillable } from '../../NameRowFillable';
 import styles from '../stylesheet.module.css';
 
-// map raw → circled
-const CIRCLED = { M: 'Ⓜ', K: 'Ⓚ', D: 'Ⓓ', T: 'Ⓣ' };
-const RAW = Object.fromEntries(Object.entries(CIRCLED).map(([k,v])=>[v,k]));
-const ALLOWED = ['M','K','D','T'];
-
-export default function Expanded({
-  players: initialPlayers,
-  fontFamily = 'Arial, sans-serif',
-  playerIDFontSize = 14,
-  playerNameFontSize = 12,
-}) {
-  const maxSlots = 19;
-  
-  // create own state copy of players
-  const [players, setPlayers] = useState(() => {
-    return Array.from({ length: maxSlots }, (_, i) => {
-      const p = initialPlayers[i];
-      return p
-        ? { ...p } 
-        : { id: '', name: '', club: '', score: '' };
-    });
+export default function Expanded(props) {
+  const {
+    players, mode,
+    playerIDStyle, playerNameStyle,
+    handleScoreChange, handleIDChange, handleNameChange
+  } = ExpandedBase({
+    initialPlayers: props.players,
+    maxSlots: 19,
+    mode: "view",   // "view" | "fillable"
+    fontFamily: props.fontFamily,
+    playerIDFontSize: 14,
+    playerNameFontSize: 12,
   });
 
-  // helper to merge partial updates into one player
-  const updatePlayer = (index, patch) => {
-    setPlayers(ps => {
-      const copy = [...ps];
-      copy[index] = { ...copy[index], ...patch };
-      return copy;
-    });
-  };
+  const nameRow = (i) => mode === "view" ? 
+    <NameRow
+      player={players[i]}
+      playerNameStyle={playerNameStyle}
+    /> : 
+    <NameRowFillable
+      player={players[i]}
+      onNameChange={handleNameChange(i)}
+      playerNameStyle={playerNameStyle}
+    />;
 
-  const playerIDStyle = { fontSize:  `${playerIDFontSize}pt`, fontFamily };
-  const playerNameStyle = { fontSize:  `${playerNameFontSize}pt`, fontFamily };
-  
-  // helper to process score text
-  function processRaw(input) {
-    const noSpaces = input.replace(/\s+/g, '')
-    let firstRaw = ''
-    if (noSpaces) {
-      const c0 = noSpaces[0]
-      firstRaw = RAW[c0] || c0.toUpperCase()
-      if (!ALLOWED.includes(firstRaw)) firstRaw = ''
-    }
-    const restRaw = Array.from(noSpaces.slice(1).toUpperCase())
-      .filter(ch => ALLOWED.includes(ch))
-      .join('')
-    return firstRaw + restRaw
-  }
-
-  const handleScoreChange = i => e => {
-    const raw = processRaw(e.target.value)
-    updatePlayer(i, { score: raw });
-  };
-
-  const handleIDChange = i => e => {
-    const id = e.target.value.toUpperCase()
-    updatePlayer(i, { id });
-  };
-
-  const handleNameChange = i => e => {
-    const name = e.target.value
-    updatePlayer(i, { name });
-  };
+  const scoreRow = (i) => mode === "view" ? 
+    <ScoreRow
+      player={players[i]}
+      playerNameStyle={playerNameStyle}
+    /> : 
+    <ScoreRowFillable
+      player={players[i]}
+      onScoreChange={handleScoreChange(i)}
+      onIDChange={handleIDChange(i)}
+      playerIDStyle={playerIDStyle}
+    />;
 
   return (
     <>
@@ -127,12 +100,7 @@ export default function Expanded({
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             <td height={20} colSpan={4} style={{height: '15.75pt', msoIgnore: 'colspan'}} />
             {/* ID | Round 3 Top Player | Index 4 */}
-            <ScoreRowFillable 
-              player={players[4]}
-              onScoreChange={handleScoreChange(4)}
-              onIDChange={handleIDChange(4)}
-              playerIDStyle={playerIDStyle}
-            />
+            {scoreRow(4)}
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             <td height={20} colSpan={4} style={{height: '15.75pt', msoIgnore: 'colspan'}} />
@@ -149,20 +117,11 @@ export default function Expanded({
           <tr height={20} style={{height: '15.75pt'}}>
             <td height={20} colSpan={4} style={{height: '15.75pt', msoIgnore: 'colspan'}} />
             {/* Club | Round 3 Top Player | Index 4 */}
-            <NameRowFillable
-              player={players[4]}
-              onNameChange={handleNameChange(4)}
-              playerNameStyle={playerNameStyle}
-            />
+            {nameRow(4)}
             <td rowSpan={2} className={styles.xl00}>3</td>
             <td className={styles.borderBottomLeft}>&nbsp;</td>
             {/* ID | Round 7 Top Player | Index 12 */}
-            <ScoreRowFillable 
-              player={players[12]}
-              onScoreChange={handleScoreChange(12)}
-              onIDChange={handleIDChange(12)}
-              playerIDStyle={playerIDStyle}
-            />
+            {scoreRow(12)}
             <td className={styles.xl00} />
             <td className={styles.xl00} />
             <td className={styles.xl00} />
@@ -181,20 +140,11 @@ export default function Expanded({
             <td className={styles.xl00} />
             <td className={styles.xl00} />
             {/* ID | Round 3 Bottom Player | Index 5 */}
-            <ScoreRowFillable 
-              player={players[5]}
-              onScoreChange={handleScoreChange(5)}
-              onIDChange={handleIDChange(5)}
-              playerIDStyle={playerIDStyle}
-            />
+            {scoreRow(5)}
             <td className={styles.borderRightBottom}>&nbsp;</td>
             <td className={styles.xl00} />
             {/* Club | Round 7 Top Player | Index 12 */}
-            <NameRowFillable
-              player={players[12]}
-              onNameChange={handleNameChange(12)}
-              playerNameStyle={playerNameStyle}
-            />
+            {nameRow(12)}
             <td className={styles.borderRight}>&nbsp;</td>
             <td colSpan={5} style={{msoIgnore: 'colspan'}} />
           </tr>
@@ -214,11 +164,7 @@ export default function Expanded({
             <td className={styles.xl00} />
             <td className={styles.xl00} />
             {/* Club | Round 3 Bottom Player | Index 5 */}
-            <NameRowFillable
-              player={players[5]}
-              onNameChange={handleNameChange(5)}
-              playerNameStyle={playerNameStyle}
-            />
+            {nameRow(5)}
             <td className={styles.xl00} />
             <td className={styles.xl00} />
             <td className={styles.xl00} />
@@ -239,21 +185,11 @@ export default function Expanded({
             <td rowSpan={2} className={styles.xl00}>7</td>
             <td className={styles.borderBottomLeft}>&nbsp;</td>
             {/* ID | Round 9 Top Player | Index 16 */}
-            <ScoreRowFillable 
-              player={players[16]}
-              onScoreChange={handleScoreChange(16)}
-              onIDChange={handleIDChange(16)}
-              playerIDStyle={playerIDStyle}
-            />
+            {scoreRow(16)}
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             {/* ID | Round 1 Top Player | Index 0 */}
-            <ScoreRowFillable 
-              player={players[0]}
-              onScoreChange={handleScoreChange(0)}
-              onIDChange={handleIDChange(0)}
-              playerIDStyle={playerIDStyle}
-            />
+            {scoreRow(0)}
             <td className={styles.borderBottom}>&nbsp;</td>
             <td />
             <td className={styles.xl00} />
@@ -278,30 +214,17 @@ export default function Expanded({
             <td className={styles.xl00} />
             <td className={styles.borderLeft}>&nbsp;</td>
             {/* Club | Round 9 Top Player | Index 16 */}
-            <NameRowFillable
-              player={players[16]}
-              onNameChange={handleNameChange(16)}
-              playerNameStyle={playerNameStyle}
-            />
+            {nameRow(16)}
             <td />
             <td className={styles.borderLeft}>&nbsp;</td>
           </tr>
           <tr height={20} style={{height: '15.75pt'}}>
             {/* Club | Round 1 Top Player | Index 0 */}
-            <NameRowFillable
-              player={players[0]}
-              onNameChange={handleNameChange(0)}
-              playerNameStyle={playerNameStyle}
-            />
+            {nameRow(0)}
             <td rowSpan={2} className={styles.borderRightExpanded}>1</td>
             <td className={styles.borderRightBottom}>&nbsp;</td>
-            {/* ID | Round 4 Top Player | Index 6 */}
-            <ScoreRowFillable 
-              player={players[10]}
-              onScoreChange={handleScoreChange(6)}
-              onIDChange={handleIDChange(6)}
-              playerIDStyle={playerIDStyle}
-            />
+            {/* ID | Round 4 Top Player | Index 10 */}
+            {scoreRow(10)}
             <td className={styles.xl00} />
             <td className={styles.xl00} />
             <td className={styles.xl00} />
@@ -330,29 +253,15 @@ export default function Expanded({
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             {/* ID | Round 1 Bottom Player | Index 1 */}
-            <ScoreRowFillable 
-              player={players[1]}
-              onScoreChange={handleScoreChange(1)}
-              onIDChange={handleIDChange(1)}
-              playerIDStyle={playerIDStyle}
-            />
+            {scoreRow(1)}
             <td className={styles.borderRightBottom}>&nbsp;</td>
             <td className={styles.xl00} />
-            {/* Club | Round 4 Top Player | Index 6 */}
-            <NameRowFillable
-              player={players[10]}
-              onNameChange={handleNameChange(6)}
-              playerNameStyle={playerNameStyle}
-            />
+            {/* Club | Round 4 Top Player | Index 10 */}
+            {nameRow(10)}
             <td rowSpan={2} className={styles.xl00}>4</td>
             <td className={styles.borderBottomLeft}>&nbsp;</td>
             {/* ID | Round 7 Bottom Player | Index 13 */}
-            <ScoreRowFillable 
-              player={players[13]}
-              onScoreChange={handleScoreChange(13)}
-              onIDChange={handleIDChange(13)}
-              playerIDStyle={playerIDStyle}
-            />
+            {scoreRow(13)}
             <td className={styles.borderBottom}>&nbsp;</td>
             <td className={styles.borderLeft}>&nbsp;</td>
             <td className={styles.xl00} />
@@ -375,27 +284,14 @@ export default function Expanded({
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             {/* Club | Round 1 Bottom Player | Index 1 */}
-            <NameRowFillable
-              player={players[1]}
-              onNameChange={handleNameChange(1)}
-              playerNameStyle={playerNameStyle}
-            />
+            {nameRow(1)}
             <td colSpan={2} style={{msoIgnore: 'colspan'}} />
-            {/* ID | Round 4 Bottom Player | Index 7 */}
-            <ScoreRowFillable 
-              player={players[6]}
-              onScoreChange={handleScoreChange(7)}
-              onIDChange={handleIDChange(7)}
-              playerIDStyle={playerIDStyle}
-            />
+            {/* ID | Round 4 Bottom Player | Index 6 */}
+            {scoreRow(6)}
             <td className={styles.borderRight}>&nbsp;</td>
             <td className={styles.xl00} />
             {/* Club | Round 7 Bottom Player | Index 13 */}
-            <NameRowFillable
-              player={players[13]}
-              onNameChange={handleNameChange(13)}
-              playerNameStyle={playerNameStyle}
-            />
+            {nameRow(13)}
             <td className={styles.xl00} />
             <td className={styles.xl00} />
             <td className={styles.xl00} />
@@ -424,12 +320,8 @@ export default function Expanded({
             <td className={styles.xl01} />
             <td className={styles.xl01} />
             <td className={styles.xl00} />
-            {/* Club | Round 4 Bottom Player | Index 7 */}
-            <NameRowFillable
-              player={players[6]}
-              onNameChange={handleNameChange(7)}
-              playerNameStyle={playerNameStyle}
-            />
+            {/* Club | Round 4 Bottom Player | Index 6 */}
+            {nameRow(6)}
             <td className={styles.xl00} />
             <td className={styles.xl00} />
             <td className={styles.xl00} />
@@ -457,12 +349,7 @@ export default function Expanded({
             <td rowSpan={2} className={styles.xl00}>9</td>
             <td className={styles.borderBottomLeft}>&nbsp;</td>
             {/* ID | Finalist | Index 18 */}
-            <ScoreRowFillable 
-              player={players[18]}
-              onScoreChange={handleScoreChange(18)}
-              onIDChange={handleIDChange(18)}
-              playerIDStyle={playerIDStyle}
-            />
+            {scoreRow(18)}
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             <td height={20} className={styles.xl01} style={{height: '15.75pt'}} />
@@ -497,11 +384,7 @@ export default function Expanded({
             <td />
             <td className={styles.borderLeft}>&nbsp;</td>
             {/* Club | Finalist | Index 18 */}
-            <NameRowFillable
-              player={players[18]}
-              onNameChange={handleNameChange(18)}
-              playerNameStyle={playerNameStyle}
-            />
+            {nameRow(18)}
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             <td height={20} className={styles.xl01} style={{height: '15.75pt'}} />
@@ -526,13 +409,8 @@ export default function Expanded({
             <td className={styles.xl01} />
             <td className={styles.xl01} />
             <td className={styles.borderRight}>&nbsp;</td>
-            {/* ID | Round 5 Top Player | Index 8 */}
-            <ScoreRowFillable 
-              player={players[7]}
-              onScoreChange={handleScoreChange(8)}
-              onIDChange={handleIDChange(8)}
-              playerIDStyle={playerIDStyle}
-            />
+            {/* ID | Round 5 Top Player | Index 7 */}
+            {scoreRow(7)}
             <td className={styles.xl00} />
             <td className={styles.xl00} />
             <td className={styles.xl00} />
@@ -565,21 +443,12 @@ export default function Expanded({
             <td className={styles.xl01} />
             <td className={styles.xl01} />
             <td className={styles.xl00} />
-            {/* Club | Round 5 Top Player | Index 8 */}
-            <NameRowFillable
-              player={players[7]}
-              onNameChange={handleNameChange(8)}
-              playerNameStyle={playerNameStyle}
-            />
+            {/* Club | Round 5 Top Player | Index 7 */}
+            {nameRow(7)}
             <td rowSpan={2} className={styles.xl00}>5</td>
             <td className={styles.borderBottomLeft}>&nbsp;</td>
             {/* ID | Round 8 Top Player | Index 14 */}
-            <ScoreRowFillable 
-              player={players[14]}
-              onScoreChange={handleScoreChange(14)}
-              onIDChange={handleIDChange(14)}
-              playerIDStyle={playerIDStyle}
-            />
+            {scoreRow(14)}
             <td className={styles.xl00} />
             <td className={styles.xl00} />
             <td className={styles.xl00} />
@@ -607,21 +476,12 @@ export default function Expanded({
             <td colSpan={2} height={20} className={styles.xl01} style={{height: '15.75pt'}} />
             <td className={styles.xl00} />
             <td className={styles.xl00} />
-            {/* ID | Round 5 Bottom Player | Index 9 */}
-            <ScoreRowFillable 
-              player={players[8]}
-              onScoreChange={handleScoreChange(9)}
-              onIDChange={handleIDChange(9)}
-              playerIDStyle={playerIDStyle}
-            />
+            {/* ID | Round 5 Bottom Player | Index 8 */}
+            {scoreRow(8)}
             <td className={styles.borderRight}>&nbsp;</td>
             <td />
             {/* Club | Round 8 Top Player | Index 14 */}
-            <NameRowFillable
-              player={players[14]}
-              onNameChange={handleNameChange(14)}
-              playerNameStyle={playerNameStyle}
-            />
+            {nameRow(14)}
             <td className={styles.borderRight}>&nbsp;</td>
             <td colSpan={3} style={{msoIgnore: 'colspan'}} />
             <td className={styles.xl00} />
@@ -645,12 +505,8 @@ export default function Expanded({
             <td className={styles.xl00} />
             <td className={styles.xl00} />
             <td className={styles.xl00} />
-            {/* Club | Round 5 Bottom Player | Index 9 */}
-            <NameRowFillable
-              player={players[8]}
-              onNameChange={handleNameChange(9)}
-              playerNameStyle={playerNameStyle}
-            />
+            {/* Club | Round 5 Bottom Player | Index 8 */}
+            {nameRow(8)}
             <td className={styles.xl00} />
             <td className={styles.xl00} />
             <td className={styles.xl00} />
@@ -662,12 +518,7 @@ export default function Expanded({
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             {/* ID | Round 2 Top Player | Index 2 */}
-            <ScoreRowFillable 
-              player={players[2]}
-              onScoreChange={handleScoreChange(2)}
-              onIDChange={handleIDChange(2)}
-              playerIDStyle={playerIDStyle}
-            />
+            {scoreRow(2)}
             <td className={styles.borderBottom}>&nbsp;</td>
             <td />
             <td className={styles.xl00} />
@@ -679,12 +530,7 @@ export default function Expanded({
             <td rowSpan={2} className={styles.xl00}>8</td>
             <td className={styles.borderBottomLeft}>&nbsp;</td>
             {/* ID | Round 9 Bottom Player | Index 17 */}
-            <ScoreRowFillable 
-              player={players[17]}
-              onScoreChange={handleScoreChange(17)}
-              onIDChange={handleIDChange(17)}
-              playerIDStyle={playerIDStyle}
-            />
+            {scoreRow(17)}
             <td className={styles.xl00} />
             <td className={styles.borderLeft}>&nbsp;</td>
           </tr>
@@ -700,20 +546,11 @@ export default function Expanded({
           </tr>
           <tr height={20} style={{height: '15.75pt'}}>
             {/* Club | Round 2 Top Player | Index 2 */}
-            <NameRowFillable
-              player={players[2]}
-              onNameChange={handleNameChange(2)}
-              playerNameStyle={playerNameStyle}
-            />
+            {nameRow(2)}
             <td rowSpan={2} className={styles.borderRightExpanded}>2</td>
             <td className={styles.borderRightBottom}>&nbsp;</td>
             {/* ID | Round 6 Top Player | Index 11 */}
-            <ScoreRowFillable 
-              player={players[11]}
-              onScoreChange={handleScoreChange(11)}
-              onIDChange={handleIDChange(11)}
-              playerIDStyle={playerIDStyle}
-            />
+            {scoreRow(11)}
             <td className={styles.xl00} />
             <td className={styles.xl00} />
             <td className={styles.xl00} />
@@ -721,11 +558,7 @@ export default function Expanded({
             <td className={styles.borderRight}>&nbsp;</td>
             <td />
             {/* Club | Round 9 Bottom Player | Index 17 */}
-            <NameRowFillable
-              player={players[17]}
-              onNameChange={handleNameChange(17)}
-              playerNameStyle={playerNameStyle}
-            />
+            {nameRow(17)}
             <td colSpan={2} style={{msoIgnore: 'colspan'}} />
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
@@ -740,29 +573,15 @@ export default function Expanded({
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             {/* ID | Round 2 Bottom Player | Index 3 */}
-            <ScoreRowFillable 
-              player={players[3]}
-              onScoreChange={handleScoreChange(3)}
-              onIDChange={handleIDChange(3)}
-              playerIDStyle={playerIDStyle}
-            />
+            {scoreRow(3)}
             <td className={styles.borderRightBottom}>&nbsp;</td>
             <td className={styles.xl00} />
             {/* Club | Round 6 Top Player | Index 11 */}
-            <NameRowFillable
-              player={players[11]}
-              onNameChange={handleNameChange(11)}
-              playerNameStyle={playerNameStyle}
-            />
+            {nameRow(11)}
             <td rowSpan={2} className={styles.xl00}>6</td>
             <td className={styles.borderBottomLeft}>&nbsp;</td>
             {/* ID | Round 8 Bottom Player | Index 15 */}
-            <ScoreRowFillable 
-              player={players[15]}
-              onScoreChange={handleScoreChange(15)}
-              onIDChange={handleIDChange(15)}
-              playerIDStyle={playerIDStyle}
-            />
+            {scoreRow(15)}
             <td className={styles.borderRightBottom}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
@@ -774,27 +593,14 @@ export default function Expanded({
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             {/* Club | Round 2 Bottom Player | Index 3 */}
-            <NameRowFillable
-              player={players[3]}
-              onNameChange={handleNameChange(3)}
-              playerNameStyle={playerNameStyle}
-            />
+            {nameRow(3)}
             <td colSpan={2} style={{msoIgnore: 'colspan'}} />
             {/* ID | Round 6 Bottom Player | Index 9 */}
-            <ScoreRowFillable 
-              player={players[9]}
-              onScoreChange={handleScoreChange(9)}
-              onIDChange={handleIDChange(9)}
-              playerIDStyle={playerIDStyle}
-            />
+            {scoreRow(9)}
             <td className={styles.borderRight}>&nbsp;</td>
             <td className={styles.borderLeft} style={{borderLeft: 'none'}}>&nbsp;</td>
             {/* Club | Round 8 Bottom Player | Index 15 */}
-            <NameRowFillable
-              player={players[15]}
-              onNameChange={handleNameChange(15)}
-              playerNameStyle={playerNameStyle}
-            />
+            {nameRow(15)}
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             <td height={20} colSpan={4} style={{height: '15.75pt', msoIgnore: 'colspan'}} />
@@ -803,11 +609,7 @@ export default function Expanded({
           <tr height={20} style={{height: '15.75pt'}}>
             <td height={20} colSpan={4} style={{height: '15.75pt', msoIgnore: 'colspan'}} />
             {/* Club | Round 6 Bottom Player | Index 9 */}
-            <NameRowFillable
-              player={players[9]}
-              onNameChange={handleNameChange(9)}
-              playerNameStyle={playerNameStyle}
-            />
+            {nameRow(9)}
             <td className={styles.xl00} />
             <td className={styles.xl00} />
             <td className={styles.xl00} />
