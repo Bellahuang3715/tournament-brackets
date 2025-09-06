@@ -29,32 +29,21 @@ export default function Expanded(props) {
 
   return (
     <>
-      <table border={0} cellPadding={0} cellSpacing={0} width={1690} style={{borderCollapse: 'collapse', tableLayout: 'fixed', width: '1268pt'}}>
-        <colgroup><col width={168} style={{msoWidthSource: 'userset', msoWidthAlt: 5376, width: '126pt'}} />
-          <col width={35} span={2} style={{msoWidthSource: 'userset', msoWidthAlt: 1109, width: '26pt'}} />
+      <table border={0} cellPadding={0} cellSpacing={0} width={1690} style={{borderCollapse: 'collapse', tableLayout: 'fixed', width: 'fit-content', maxWidth: '100%'}}>
+        <colgroup>
           <col width={168} style={{msoWidthSource: 'userset', msoWidthAlt: 5376, width: '126pt'}} />
           <col width={35} span={2} style={{msoWidthSource: 'userset', msoWidthAlt: 1109, width: '26pt'}} />
           <col width={168} style={{msoWidthSource: 'userset', msoWidthAlt: 5376, width: '126pt'}} />
           <col width={35} span={2} style={{msoWidthSource: 'userset', msoWidthAlt: 1109, width: '26pt'}} />
           <col width={168} style={{msoWidthSource: 'userset', msoWidthAlt: 5376, width: '126pt'}} />
-          <col width={101} span={8} style={{width: '76pt'}} />
+          <col width={35} span={2} style={{msoWidthSource: 'userset', msoWidthAlt: 1109, width: '26pt'}} />
+          <col width={168} style={{msoWidthSource: 'userset', msoWidthAlt: 5376, width: '126pt'}} />
         </colgroup><tbody><tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             <td height={20} className={styles.xl00} width={168} style={{height: '15.75pt', width: '126pt'}} />
             <td className={styles.xl00} width={35} style={{width: '26pt'}} />
             <td width={35} style={{width: '26pt'}} />
             <td className={styles.groupTitle} colSpan={4} width={406} style={{msoIgnore: 'colspan', width: '304pt'}}>GROUP
               x-x | COURT x</td>
-            <td className={styles.xl00} width={35} style={{width: '26pt'}} />
-            <td className={styles.xl00} width={35} style={{width: '26pt'}} />
-            <td className={styles.xl00} width={168} style={{width: '126pt'}} />
-            <td className={styles.xl00} width={101} style={{width: '76pt'}} />
-            <td className={styles.xl00} width={101} style={{width: '76pt'}} />
-            <td className={styles.xl00} width={101} style={{width: '76pt'}} />
-            <td className={styles.xl00} width={101} style={{width: '76pt'}} />
-            <td className={styles.xl00} width={101} style={{width: '76pt'}} />
-            <td className={styles.xl00} width={101} style={{width: '76pt'}} />
-            <td className={styles.xl00} width={101} style={{width: '76pt'}} />
-            <td className={styles.xl00} width={101} style={{width: '76pt'}} />
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
@@ -360,9 +349,6 @@ export default function Expanded(props) {
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             <td height={20} className={styles.borderTop} style={{height: '15.75pt'}}>&nbsp;</td>
-          </tr>
-          <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} colSpan={7} style={{height: '15.75pt', msoIgnore: 'colspan'}} />
           </tr>
         </tbody></table>
     </>

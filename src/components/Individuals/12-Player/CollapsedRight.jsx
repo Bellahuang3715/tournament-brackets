@@ -22,7 +22,6 @@ export default function CollapsedRight({
         <colgroup><col width={35} span={5} style={{msoWidthSource: 'userset', msoWidthAlt: 1109, width: '26pt'}} />
           <col width={57} style={{msoWidthSource: 'userset', msoWidthAlt: 1834, width: '43pt'}} />
           <col width={163} style={{msoWidthSource: 'userset', msoWidthAlt: 5205, width: '122pt'}} />
-          <col width={101} span={5} style={{width: '76pt'}} />
         </colgroup>
         <tbody>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
