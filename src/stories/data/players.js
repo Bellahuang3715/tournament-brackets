@@ -96,6 +96,24 @@ export const samplePlayers14 = [
   { id: "E14", name: "Kwame Boateng", club: "EAG" },
 ];
 
+export const samplePlayers15 = [
+  { id: "E01", name: "Alice Johnson", club: "RED" },
+  { id: "E02", name: "Bob Martinez", club: "BLU" },
+  { id: "E03", name: "Charlie Davis", club: "GRN" },
+  { id: "E04", name: "Dana Smith", club: "YEL" },
+  { id: "E05", name: "Evan Clark", club: "PUR" },
+  { id: "E06", name: "Fiona Lewis", club: "ORA" },
+  { id: "E07", name: "George Walker", club: "BLK" },
+  { id: "E08", name: "Hannah Hall", club: "WHT" },
+  { id: "E09", name: "Ian Allen", club: "GOL" },
+  { id: "E10", name: "Julia Young", club: "SIL" },
+  { id: "E11", name: "Kevin King", club: "PIN" },
+  { id: "E12", name: "Laura Scott", club: "BRZ" },
+  { id: "E13", name: "Michael Turner", club: "TAN" },
+  { id: "E14", name: "Natalie Perez", club: "TEA" },
+  { id: "E15", name: "Oscar Ramirez", club: "SKY" },
+];
+
 export const samplePlayers16 = [
   { id: "E01", name: "Alice Johnson", club: "RED" },
   { id: "E02", name: "Bob Martinez", club: "BLU" },
