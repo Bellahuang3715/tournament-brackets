@@ -7,6 +7,9 @@ export function TeamsBase({
   teamIDFontFamily = "Arial, sans-serif",
   teamIDColor,
   teamIDFontSize = 12,
+  divisionID = 'x',
+  groupID = 'x',
+  courtID = 'x',
 }) {
   const [teams, setTeams] = useState(() =>
     Array.from({ length: maxSlots }, (_, i) => initialTeams[i] ?? "")
@@ -40,6 +43,9 @@ export function TeamsBase({
     teams,
     mode,
     teamIDStyle,
+    divisionID,
+    groupID,
+    courtID,
     handleTeamChange,
   };
 }

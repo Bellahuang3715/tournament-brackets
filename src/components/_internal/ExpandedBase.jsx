@@ -8,6 +8,9 @@ export function ExpandedBase({
   fontFamily = "Arial, sans-serif",
   playerIDFontSize,
   playerNameFontSize,
+  divisionID = 'x',
+  groupID = 'x',
+  courtID = 'x',
 }) {
   // State
   const [players, setPlayers] = useState(() =>
@@ -53,6 +56,9 @@ export function ExpandedBase({
     mode,
     playerIDStyle,
     playerNameStyle,
+    divisionID,
+    groupID,
+    courtID,
     handleScoreChange,
     handleIDChange,
     handleNameChange,

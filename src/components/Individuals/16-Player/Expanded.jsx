@@ -9,6 +9,7 @@ export default function Expanded(props) {
   const {
     players, mode,
     playerIDStyle, playerNameStyle,
+    divisionID, groupID, courtID,
     handleScoreChange, handleIDChange, handleNameChange
   } = ExpandedBase({
     initialPlayers: props.players,
@@ -67,8 +68,7 @@ export default function Expanded(props) {
             <td className={styles.xl00} width={57} style={{width: '43pt'}} />
             <td className={styles.xl00} width={163} style={{width: '122pt'}} />
             <td className={styles.xl00} width={35} style={{width: '26pt'}} />
-            <td className={styles.groupTitle} colSpan={6} width={382} style={{msoIgnore: 'colspan', width: '286pt'}}>GROUP
-              x-x | COURT x</td>
+            <td className={styles.groupTitle} colSpan={6} width={382} style={{msoIgnore: 'colspan', width: '286pt'}}>GROUP {divisionID}-{groupID} | COURT {courtID}</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             {/* Round 1 Top Player | Index 0 */}

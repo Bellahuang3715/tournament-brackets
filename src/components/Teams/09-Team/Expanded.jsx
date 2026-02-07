@@ -6,6 +6,7 @@ import styles from '../stylesheet.module.css';
 export default function Expanded(props) {
   const {
     teams, mode,
+    divisionID, groupID, courtID,
     teamIDStyle, handleTeamChange,
   } = TeamsBase({
     initialTeams: props.teams,
@@ -45,8 +46,7 @@ export default function Expanded(props) {
             <td className={styles.xl00} width={35} style={{width: '26pt'}} />
             <td className={styles.xl00} width={163} style={{width: '122pt'}} />
             <td className={styles.xl00} width={35} style={{width: '26pt'}} />
-            <td className={styles.groupTitle} colSpan={5} width={431} style={{msoIgnore: 'colspan', width: '322pt'}}>COURT
-              x | GROUP x-x</td>
+            <td className={styles.groupTitle} colSpan={5} width={431} style={{msoIgnore: 'colspan', width: '322pt'}}>GROUP {divisionID}-{groupID} | COURT {courtID}</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
