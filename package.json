@@ -4,51 +4,40 @@
   "description": "A React component library for rendering tournament brackets.",
   "author": "Bella Huang",
   "license": "MIT",
-  "dependencies": {
-    "@testing-library/dom": "^10.4.0",
-    "@testing-library/jest-dom": "^6.6.3",
-    "@testing-library/react": "^16.3.0",
-    "@testing-library/user-event": "^13.5.0",
-    "form-data": "^4.0.4",
+  "type": "module",
+
+  "main": "dist/index.cjs",
+  "module": "dist/esm/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./style.css": "./dist/index.css"
+  },
+
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+
+  "peerDependencies": {
     "react": "^18 || ^19",
-    "react-dom": "^18 || ^19",
-    "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+    "react-dom": "^18 || ^19"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
-    "build-lib": "rollup -c"
+
+  "dependencies": {
+    "form-data": "^4.0.4"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest",
-      "plugin:storybook/recommended"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
+
   "devDependencies": {
     "@babel/core": "^7.28.4",
     "@babel/preset-react": "^7.27.1",
     "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-commonjs": "^28.0.6",
     "@rollup/plugin-node-resolve": "^16.0.1",
+
     "@storybook/addon-essentials": "^8.6.12",
     "@storybook/addon-interactions": "^8.6.12",
     "@storybook/addon-onboarding": "^8.6.12",
@@ -57,6 +46,9 @@
     "@storybook/react": "^8.6.12",
     "@storybook/react-webpack5": "^8.6.12",
     "@storybook/test": "^8.6.12",
+    "storybook": "^8.6.12",
+    "webpack": "^5.99.6",
+
     "ajv": "^8.16.0",
     "ajv-keywords": "^5.1.0",
     "eslint-plugin-storybook": "^0.12.0",
@@ -67,21 +59,37 @@
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^4.0.2",
     "schema-utils": "^4.2.0",
-    "storybook": "^8.6.12",
-    "webpack": "^5.99.6"
-  },
-  "type": "module",
-  "main": "dist/index.cjs",
-  "module": "dist/esm/index.js",
-  "exports": {
-    ".": {
-      "import": "./dist/esm/index.js",
-      "require": "./dist/index.cjs"
-    },
-    "./style.css": "./dist/style.css"
-  },
-  "peerDependencies": {
+
     "react": "^18 || ^19",
-    "react-dom": "^18 || ^19"
+    "react-dom": "^18 || ^19",
+    "react-scripts": "5.0.1",
+
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^13.5.0",
+    "web-vitals": "^2.1.4"
+  },
+
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+
+    "clean": "rm -rf dist",
+    "build-lib": "rollup -c",
+    "prepack": "npm run clean && npm run build-lib"
+  },
+
+  "eslintConfig": {
+    "extends": ["react-app", "react-app/jest", "plugin:storybook/recommended"]
+  },
+
+  "browserslist": {
+    "production": [">0.2%", "not dead", "not op_mini all"],
+    "development": ["last 1 chrome version", "last 1 firefox version", "last 1 safari version"]
   }
 }
