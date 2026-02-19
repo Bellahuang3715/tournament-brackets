@@ -13,7 +13,7 @@ export default function CollapsedRight({
 
   return (
     <>
-      <table border={0} cellPadding={0} cellSpacing={0} width={1072} style={{borderCollapse: 'collapse', tableLayout: 'fixed', width: 'fit-content', maxWidth: '100%'}}>
+      <table className={styles.bracketTable} border={0} cellPadding={0} cellSpacing={0} width={1072}>
         <colgroup>
           <col width={35} span={4} style={{msoWidthSource: 'userset', msoWidthAlt: 1109, width: '26pt'}} />
           <col width={57} style={{msoWidthSource: 'userset', msoWidthAlt: 1834, width: '43pt'}} />

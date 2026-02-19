@@ -14,7 +14,7 @@ export default function CollapsedLeft({
   };
   return (
     <>
-      <table border={0} cellPadding={0} cellSpacing={0} width={1401} style={{borderCollapse: 'collapse', tableLayout: 'fixed', width: 'fit-content', maxWidth: '100%'}}>
+      <table className={styles.bracketTable} border={0} cellPadding={0} cellSpacing={0} width={1401}>
         <colgroup>
           <col width={168} style={{msoWidthSource: 'userset', msoWidthAlt: 5376, width: '126pt'}} />
           <col width={35} span={6} style={{msoWidthSource: 'userset', msoWidthAlt: 1109, width: '26pt'}} />

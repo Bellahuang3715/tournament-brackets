@@ -45,7 +45,7 @@ export default function Expanded(props) {
 
   return (
     <>
-      <table border={0} cellPadding={0} cellSpacing={0} width={2289} style={{borderCollapse: 'collapse', tableLayout: 'fixed', width: 'fit-content', maxWidth: '100%'}}>
+      <table className={styles.bracketTable} border={0} cellPadding={0} cellSpacing={0} width={2289}>
         <colgroup><col width={57} style={{msoWidthSource: 'userset', msoWidthAlt: 1834, width: '43pt'}} />
           <col width={163} style={{msoWidthSource: 'userset', msoWidthAlt: 5205, width: '122pt'}} />
           <col width={35} span={2} style={{msoWidthSource: 'userset', msoWidthAlt: 1109, width: '26pt'}} />

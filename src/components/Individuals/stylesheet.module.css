@@ -52,6 +52,23 @@ td {
   white-space: nowrap;
   mso-rotate: 0;
 }
+
+.bracketTable {
+  border-collapse: collapse;
+  table-layout: fixed;
+  width: fit-content;
+  max-width: 100%;
+}
+.bracketTable td {
+  line-height: 1;          /* key */
+  padding: 0;              /* you currently have 1px top/right/left globally */
+  vertical-align: middle;  /* match your intent for most cells */
+  white-space: nowrap;
+}
+.bracketTable tr {
+  line-height: 1;          /* prevents row-level font metrics weirdness */
+}
+
 .groupTitle {
   mso-style-parent: style0;
   color: black;
