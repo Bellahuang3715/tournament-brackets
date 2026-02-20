@@ -1,22 +1,23 @@
 import { useCallback, useMemo, useState } from "react";
 import { sanitizeScore } from "../../scripts/scoreUtils";
 
+export const TEXT_STYLES = {
+  playerId:   { fontFamily: "Arial, sans-serif", fontSize: 14, color: "#000000" },
+  playerText: { fontFamily: "Arial, sans-serif", fontSize: 12, color: "#000000" },
+};
+
 export function ExpandedBase({
   initialPlayers = [],
   maxSlots,
-  mode,                // "view" | "fillable"
-  fontFamily = "Arial, sans-serif",
-  playerIDFontSize,
-  playerNameFontSize,
-  divisionID = 'x',
-  groupID = 'x',
-  courtID = 'x',
+  mode, // "view" | "fillable"
+  textStyles, // { playerId, playerText }
 }) {
-  // State
   const [players, setPlayers] = useState(() =>
     Array.from({ length: maxSlots }, (_, i) =>
-      initialPlayers[i] ? { ...initialPlayers[i] } : { id: "", name: "", club: "", score: "" }
-    )
+      initialPlayers[i]
+        ? { ...initialPlayers[i] }
+        : { id: "", name: "", club: "", score: "" },
+    ),
   );
 
   const updatePlayer = useCallback((index, patch) => {
@@ -27,28 +28,37 @@ export function ExpandedBase({
     });
   }, []);
 
-  // Styles
-  const playerIDStyle = useMemo(
-    () => ({ fontSize: `${playerIDFontSize}pt`, fontFamily }),
-    [playerIDFontSize, fontFamily]
-  );
-  const playerNameStyle = useMemo(
-    () => ({ fontSize: `${playerNameFontSize}pt`, fontFamily }),
-    [playerNameFontSize, fontFamily]
-  );
+  // Build styles for DOM (React inline style object)
+  const playerIDStyle = useMemo(() => {
+    const s = textStyles?.playerId ?? {};
+    return {
+      fontFamily: s.fontFamily,
+      fontSize: s.fontSize != null ? `${s.fontSize}pt` : undefined,
+      color: s.color,
+    };
+  }, [textStyles?.playerId]);
+
+  const playerNameStyle = useMemo(() => {
+    const s = textStyles?.playerText ?? {};
+    return {
+      fontFamily: s.fontFamily,
+      fontSize: s.fontSize != null ? `${s.fontSize}pt` : undefined,
+      color: s.color,
+    };
+  }, [textStyles?.playerText]);
 
   // Handlers (index-aware)
   const handleScoreChange = useCallback(
     (i) => (e) => updatePlayer(i, { score: sanitizeScore(e.target.value) }),
-    [updatePlayer]
+    [updatePlayer],
   );
   const handleIDChange = useCallback(
     (i) => (e) => updatePlayer(i, { id: e.target.value.toUpperCase() }),
-    [updatePlayer]
+    [updatePlayer],
   );
   const handleNameChange = useCallback(
     (i) => (e) => updatePlayer(i, { name: e.target.value }),
-    [updatePlayer]
+    [updatePlayer],
   );
 
   return {
@@ -56,9 +66,6 @@ export function ExpandedBase({
     mode,
     playerIDStyle,
     playerNameStyle,
-    divisionID,
-    groupID,
-    courtID,
     handleScoreChange,
     handleIDChange,
     handleNameChange,

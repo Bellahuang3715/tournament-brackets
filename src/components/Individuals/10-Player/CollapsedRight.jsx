@@ -4,18 +4,23 @@ import styles from '../stylesheet.module.css';
 
 export default function CollapsedRight({
   players,
-  fontFamily = 'Arial, sans-serif',
-  playerIDFontSize = 11,
-  playerNameFontSize = 11,
+  textStyles = {
+    playerId:   { fontFamily: "Arial, sans-serif", fontSize: 11, color: "#000" },
+    playerText: { fontFamily: "Arial, sans-serif", fontSize: 11, color: "#000" },
+  },
 }) {
   const playerIDStyle = {
-    fontSize:  `${playerIDFontSize}pt`,
-    fontFamily,
+    fontFamily: textStyles.playerId.fontFamily,
+    fontSize: `${textStyles.playerId.fontSize}pt`,
+    color: textStyles.playerId.color,
   };
+
   const playerNameStyle = {
-    fontSize:  `${playerNameFontSize}pt`,
-    fontFamily,
+    fontFamily: textStyles.playerText.fontFamily,
+    fontSize: `${textStyles.playerText.fontSize}pt`,
+    color: textStyles.playerText.color,
   };
+  
   return (
     <>
       <table className={styles.bracketTable} border={0} cellPadding={0} cellSpacing={0} width={799}>

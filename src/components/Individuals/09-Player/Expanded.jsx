@@ -1,4 +1,4 @@
-import { ExpandedBase } from '../../_internal/ExpandedBase';
+import { ExpandedBase, TEXT_STYLES } from '../../_internal/ExpandedBase';
 import { NameRow } from '../../NameRow';
 import { ScoreRow } from '../../ScoreRow';
 import { ScoreRowFillable } from '../../ScoreRowFillable';
@@ -6,18 +6,20 @@ import { NameRowFillable } from '../../NameRowFillable';
 import styles from '../stylesheet.module.css';
 
 export default function Expanded(props) {
+  const mergedTextStyles = {
+    playerId:   { ...TEXT_STYLES.playerId,   ...(props.textStyles?.playerId ?? {}) },
+    playerText: { ...TEXT_STYLES.playerText, ...(props.textStyles?.playerText ?? {}) },
+  };
+
   const {
     players, mode,
     playerIDStyle, playerNameStyle,
-    divisionID, groupID, courtID,
     handleScoreChange, handleIDChange, handleNameChange
   } = ExpandedBase({
     initialPlayers: props.players,
     maxSlots: 17,
     mode: "view",   // "view" | "fillable"
-    fontFamily: props.fontFamily,
-    playerIDFontSize: 14,
-    playerNameFontSize: 12,
+    textStyles: mergedTextStyles,
   });
 
   const nameRow = (i) => mode === "view" ? 
@@ -34,7 +36,7 @@ export default function Expanded(props) {
   const scoreRow = (i) => mode === "view" ? 
     <ScoreRow
       player={players[i]}
-      playerNameStyle={playerNameStyle}
+      playerIDStyle={playerIDStyle}
     /> : 
     <ScoreRowFillable
       player={players[i]}
@@ -61,28 +63,7 @@ export default function Expanded(props) {
           <col width={35} span={2} style={{msoWidthSource: 'userset', msoWidthAlt: 1109, width: '26pt'}} />
           <col width={57} style={{msoWidthSource: 'userset', msoWidthAlt: 1834, width: '43pt'}} />
           <col width={163} style={{msoWidthSource: 'userset', msoWidthAlt: 5205, width: '122pt'}} />
-        </colgroup><tbody><tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} className={styles.xl00} width={57} style={{height: '15.75pt', width: '43pt'}}><span style={{msoSpacerun: 'yes'}}>&nbsp;</span></td>
-            <td className={styles.xl00} width={163} style={{width: '122pt'}} />
-            <td className={styles.xl00} width={35} style={{width: '26pt'}} />
-            <td className={styles.xl00} width={35} style={{width: '26pt'}} />
-            <td className={styles.xl00} width={57} style={{width: '43pt'}} />
-            <td className={styles.xl00} width={163} style={{width: '122pt'}} />
-            <td className={styles.xl00} width={35} style={{width: '26pt'}} />
-            <td className={styles.groupTitle} colSpan={5} width={317} style={{msoIgnore: 'colspan', width: '237pt'}}>GROUP {divisionID}-{groupID} | COURT {courtID}</td>
-          </tr>
-          <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
-          </tr>
-          <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} colSpan={3} style={{height: '15.75pt', msoIgnore: 'colspan'}} />
-          </tr>
-          <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} colSpan={7} style={{height: '15.75pt', msoIgnore: 'colspan'}} />
-          </tr>
-          <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} colSpan={4} style={{height: '15.75pt', msoIgnore: 'colspan'}} />
-          </tr>
+        </colgroup><tbody>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             <td height={20} colSpan={4} style={{height: '15.75pt', msoIgnore: 'colspan'}} />
             {/* Round 2 Top Player | Index 2 */}

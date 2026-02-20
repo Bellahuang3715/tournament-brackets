@@ -1,30 +1,70 @@
-import React from 'react';
-import CollapsedLeft from '../../../components/Individuals/08-Player/CollapsedLeft';
-import { samplePlayers8 } from '../../data/players';
+import React from "react";
+import CollapsedLeft from "../../../components/Individuals/08-Player/CollapsedLeft";
+import { samplePlayers8 } from "../../data/players";
 
 export default {
-  title: 'Individuals/08-Player/CollapsedLeft',
+  title: "Individuals/08-Player/CollapsedLeft",
   component: CollapsedLeft,
   argTypes: {
-    players:             { control: 'object' },
-    fontFamily:          { control: 'text' },
-    playerIDFontSize:    { 
-      control: { type:'number', min:6, max:72, step:1 },
-      description: 'ID cell font size in pt'
+    players: { control: "object" },
+
+    // playerId
+    playerIdFontFamily: { control: "text" },
+    playerIdFontSize: {
+      control: { type: "number", min: 6, max: 72, step: 1 },
+      description: "ID cell font size in pt",
     },
-    playerNameFontSize:  { 
-      control: { type:'number', min:6, max:72, step:1 },
-      description: 'Name cell font size in pt'
+    playerIdColor: { control: "color" },
+
+    // playerText
+    playerTextFontFamily: { control: "text" },
+    playerTextFontSize: {
+      control: { type: "number", min: 6, max: 72, step: 1 },
+      description: "Name/club cell font size in pt",
     },
+    playerTextColor: { control: "color" },
   },
 };
 
-const Template = (args) => <CollapsedLeft {...args} />;
+const Template = (args) => {
+  const {
+    playerIdFontFamily,
+    playerIdFontSize,
+    playerIdColor,
+    playerTextFontFamily,
+    playerTextFontSize,
+    playerTextColor,
+    ...rest
+  } = args;
+
+  return (
+    <CollapsedLeft
+      {...rest}
+      textStyles={{
+        playerId: {
+          fontFamily: playerIdFontFamily,
+          fontSize: playerIdFontSize,
+          color: playerIdColor,
+        },
+        playerText: {
+          fontFamily: playerTextFontFamily,
+          fontSize: playerTextFontSize,
+          color: playerTextColor,
+        },
+      }}
+    />
+  );
+};
 
 export const Default = Template.bind({});
 Default.args = {
-  players:            samplePlayers8,
-  fontFamily:         'Arial, sans-serif',
-  playerIDFontSize:   11,
-  playerNameFontSize: 11,
+  players: samplePlayers8,
+
+  playerIdFontFamily: "Arial, sans-serif",
+  playerIdFontSize: 11,
+  playerIdColor: "#000000",
+
+  playerTextFontFamily: "Arial, sans-serif",
+  playerTextFontSize: 11,
+  playerTextColor: "#000000",
 };
