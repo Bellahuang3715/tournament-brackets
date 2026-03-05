@@ -6,7 +6,6 @@ import styles from '../stylesheet.module.css';
 export default function Expanded(props) {
   const {
     teams, mode,
-    divisionID, groupID, courtID,
     teamIDStyle, handleTeamChange,
   } = TeamsBase({
     initialTeams: props.teams,
@@ -40,20 +39,7 @@ export default function Expanded(props) {
           <col width={163} style={{msoWidthSource: 'userset', msoWidthAlt: 5205, width: '122pt'}} />
           <col width={35} span={2} style={{msoWidthSource: 'userset', msoWidthAlt: 1109, width: '26pt'}} />
           <col width={163} style={{msoWidthSource: 'userset', msoWidthAlt: 5205, width: '122pt'}} />
-        </colgroup><tbody><tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} className={styles.xl00} width={163} style={{height: '15.75pt', width: '122pt'}} />
-            <td className={styles.xl00} width={35} style={{width: '26pt'}} />
-            <td className={styles.xl00} width={35} style={{width: '26pt'}} />
-            <td className={styles.xl00} width={163} style={{width: '122pt'}} />
-            <td className={styles.xl00} width={35} style={{width: '26pt'}} />
-            <td className={styles.groupTitle} colSpan={5} width={431} style={{msoIgnore: 'colspan', width: '322pt'}}>GROUP {divisionID}-{groupID} | COURT {courtID}</td>
-          </tr>
-          <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
-          </tr>
-          <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} colSpan={2} style={{height: '15.75pt', msoIgnore: 'colspan'}} />
-          </tr>
+        </colgroup><tbody>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             {/* Round 1 Top Player | Index 0 */}
             {team(0)}

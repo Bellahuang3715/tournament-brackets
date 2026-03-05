@@ -69,16 +69,6 @@ td {
   line-height: 1;          /* prevents row-level font metrics weirdness */
 }
 
-.groupTitle {
-  mso-style-parent: style0;
-  color: black;
-  font-size: 24pt;
-  font-weight: 700;
-  font-family: Arial, sans-serif;
-  mso-font-charset: 0;
-  text-align: left;
-  vertical-align: middle;
-}
 .teamID {
   mso-style-parent: style0;
   color: black;
