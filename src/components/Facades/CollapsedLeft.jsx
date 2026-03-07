@@ -19,6 +19,7 @@ const registry = {
     12: React.lazy(() => import("../Individuals/12-Player/CollapsedLeft")),
     13: React.lazy(() => import("../Individuals/13-Player/CollapsedLeft")),
     14: React.lazy(() => import("../Individuals/14-Player/CollapsedLeft")),
+    15: React.lazy(() => import("../Individuals/15-Player/CollapsedLeft")),
     16: React.lazy(() => import("../Individuals/16-Player/CollapsedLeft")),
   },
 };
