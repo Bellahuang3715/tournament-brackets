@@ -252,6 +252,16 @@ td {
   border-bottom: none;
   border-left: 0.5pt solid black;
 }
+.borderTBL {
+  mso-style-parent: style0;
+  color: black;
+  font-family: Arial, sans-serif;
+  mso-font-charset: 0;
+  border-top: .5pt solid black;
+  border-right: none;
+  border-bottom: .5pt solid black;
+  border-left: .5pt solid black;
+}
 
 .xl00 {
   mso-style-parent: style0;

@@ -19,6 +19,7 @@ export function generateTeams(prefix, count) {
 }
 
 // Prebuilt sets, alphabetical order
+export const sampleTeams7  = generateTeams("TKC", 7);
 export const sampleTeams8  = generateTeams("TKC", 8);
 export const sampleTeams9  = generateTeams("TKC", 9);
 export const sampleTeams10 = generateTeams("TKC", 10);
