@@ -27,7 +27,6 @@ export default function CollapsedRight({
         <colgroup><col width={35} span={5} style={{msoWidthSource: 'userset', msoWidthAlt: 1109, width: '26pt'}} />
           <col width={57} style={{msoWidthSource: 'userset', msoWidthAlt: 1834, width: '43pt'}} />
           <col width={163} style={{msoWidthSource: 'userset', msoWidthAlt: 5205, width: '122pt'}} />
-          <col width={101} span={6} style={{width: '76pt'}} />
         </colgroup><tbody>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
@@ -279,8 +278,8 @@ export default function CollapsedRight({
             <td className={styles.borderTRL} style={{borderTop: 'none'}}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} className={styles.borderBottom} style={{height: '15.75pt'}}>&nbsp;</td>
-            <td rowSpan={2} className={styles.borderLeft}>14</td>
+            <td height={20} className={styles.xl00} style={{height: '15.75pt'}}>&nbsp;</td>
+            <td rowSpan={2} className={styles.borderLeft}>&nbsp;</td>
             <td className={styles.xl00} />
             <td className={styles.borderBottomLeft}>&nbsp;</td>
             <td rowSpan={2} className={styles.borderLeft}>4</td>
@@ -316,8 +315,8 @@ export default function CollapsedRight({
             <td className={styles.borderRight}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
-            <td className={styles.borderLeft}>&nbsp;</td>
+            <td height={20} className={styles.borderBottom} style={{height: '15.75pt'}}>&nbsp;</td>
+            <td rowSpan={2} className={styles.borderLeft}>14</td>
             <td className={styles.xl00} />
             <td className={styles.xl00} />
             <td rowSpan={2} className={styles.xl00} />
@@ -328,7 +327,6 @@ export default function CollapsedRight({
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
-            <td className={styles.borderLeft}>&nbsp;</td>
             <td className={styles.xl00} />
             <td className={styles.xl00} />
             <td colSpan={2} style={{msoIgnore: 'colspan'}} />
@@ -430,7 +428,7 @@ export default function CollapsedRight({
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
-            <td className={styles.borderRBL}>&nbsp;</td>
+            <td className={styles.borderRightLeft}>&nbsp;</td>
             <td className={styles.xl00} />
             <td className={styles.borderRBL}>&nbsp;</td>
             <td rowSpan={2} className={styles.borderLeft}>6</td>
@@ -440,7 +438,7 @@ export default function CollapsedRight({
             />
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
+            <td height={20} className={styles.borderRight} style={{height: '15.75pt'}} />
             <td className={styles.borderRight}>&nbsp;</td>
             <td className={styles.xl00} />
             <td className={styles.borderRight}>&nbsp;</td>
@@ -448,7 +446,7 @@ export default function CollapsedRight({
             <td className={styles.xl00}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
+            <td height={20} className={styles.borderRight} style={{height: '15.75pt'}} />
             <td className={styles.borderRight}>&nbsp;</td>
             <td className={styles.xl01} />
             <td className={styles.borderRight}>&nbsp;</td>
@@ -460,7 +458,7 @@ export default function CollapsedRight({
             />
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
+            <td height={20} className={styles.borderRight} style={{height: '15.75pt'}} />
             <td className={styles.borderRight}>&nbsp;</td>
             <td className={styles.xl01} />
             <td className={styles.xl01} />
@@ -468,7 +466,7 @@ export default function CollapsedRight({
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
-            <td className={styles.borderRight}>&nbsp;</td>
+            <td className={styles.borderRBL}>&nbsp;</td>
             <td rowSpan={2} className={styles.borderLeft}>13</td>
             <td className={styles.xl00} />
             <td className={styles.xl00} />
