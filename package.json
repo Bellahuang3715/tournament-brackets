@@ -1,6 +1,6 @@
 {
   "name": "tournament-brackets-ui",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "A React component library for rendering tournament brackets.",
   "author": "Bella Huang",
   "license": "MIT",
