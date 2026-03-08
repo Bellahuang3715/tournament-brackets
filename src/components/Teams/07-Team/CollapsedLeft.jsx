@@ -19,10 +19,6 @@ export default function CollapsedLeft({
       <table border={0} cellPadding={0} cellSpacing={0} width={1401} style={{borderCollapse: 'collapse', tableLayout: 'fixed', width: '1051pt'}}>
         <colgroup><col width={168} style={{msoWidthSource: 'userset', msoWidthAlt: 5376, width: '126pt'}} />
           <col width={35} span={6} style={{msoWidthSource: 'userset', msoWidthAlt: 1109, width: '26pt'}} />
-          <col width={101} style={{width: '76pt'}} />
-          <col width={47} style={{msoWidthSource: 'userset', msoWidthAlt: 1493, width: '35pt'}} />
-          <col width={168} style={{msoWidthSource: 'userset', msoWidthAlt: 5376, width: '126pt'}} />
-          <col width={101} span={7} style={{width: '76pt'}} />
         </colgroup><tbody>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             <Team
