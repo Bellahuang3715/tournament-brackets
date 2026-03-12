@@ -1,0 +1,90 @@
+(?<!\d)1(?!\d)
+node convert-html-to-jsx.js src/8-player\ tree\ template.fld/sheet002.htm src/components/8-Player/Booklet8Left.jsx
+
+chmod +x scripts/update-classnames.js
+node scripts/update-classnames.js
+
+find classes with more than one classnames:
+/className="[^"\s]+(?:\s+[^"\s]+)+"/g
+
+
+TODOS:
+1. get Expanded working - remove all the hardcoded data and leave just the dynamic parameters
+2. do the same with the other files - remember to put data in EVERY (id, name, score) so the formatting doesn't get messed up. before exporting htm, check if all cells are properly aligned
+3. publish the react component
+
+LATER: 
+- figure out proper kendo rules
+    - ex. two H becomes I, do we want to record encho?
+- do we want to auto calculate winner of current match? and auto render them?
+- do we want to add any highlights?
+- how can we handle collaboration?
+    - only one editor at a given time? rest can be readers/viewers?
+
+
+
+
+
+STEPS:
+
+1. download the tree template from google sheets (in .xlsx format)
+2. open the .xlsx file in Microsoft Excel app
+3. Save As => .htm => Workbook
+4. move the downloaded folder to the coding directory
+5. use the convert-html-to-jsx.js file to convert .htm to .jsx
+6. use the update-classnames.js file to avoid css conflicts
+7. move the stylesheet.css to corresponding folder and rename to stylesheet.module.css
+8. update .css import path 
+9. add the new .jsx files to index.js
+10. add .stories files for new components
+
+
+
+
+
+TODOS
+
+- 15 player bracket - for expanded the player ids not configured
+- no bracket for 15 teams
+
+
+------------  NPM -------------
+
+How to check “what will publish” + vulnerabilities before publish
+A) Confirm tarball contents (must-do)
+npm pack --dry-run
+
+You should see basically dist/ + README + LICENSE + package.json.
+
+B) Check consumer-facing vulnerabilities (runtime deps only)
+npm audit --omit=dev
+
+This is the important one for your users.
+
+C) Check everything (including your toolchain)
+npm audit
+
+But it's okay if this one has vulnerabilities. As long as B comes out clean
+
+"npm version patch" to update patch version
+"npm publish" to republish to npm
+
+
+ 
+
+TO DOS
+
+- create brackets for 2/4/5/6/7 players + teams (collapsed left/right, expanded)
+
+MAX_SPREAD = 3
+- create combined brackets for:
+    - 5 players => 5-5, 5-6, 5-7, 5-8
+    - 6 players => 6-5, 6-6, 6-7, 6-8, 6-9
+    - 7 players => 7-5, 7-6, 7-7, 7-8, 7-9, 7-10
+    - 8 players => 
+
+
+
+    8-16
+
+9 * 7 = 63
