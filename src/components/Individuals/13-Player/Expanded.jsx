@@ -1,6 +1,7 @@
 import { ExpandedBase, TEXT_STYLES } from '../../_internal/ExpandedBase';
 import { NameRow } from '../../NameRow';
-import { ScoreRow } from '../../ScoreRow';import { ScoreRowFillable } from '../../ScoreRowFillable';
+import { ScoreRow } from '../../ScoreRow';
+import { ScoreRowFillable } from '../../ScoreRowFillable';
 import { NameRowFillable } from '../../NameRowFillable';
 import styles from '../stylesheet.module.css';
 

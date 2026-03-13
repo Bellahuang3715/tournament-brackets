@@ -1,3 +1,42 @@
+export const samplePlayers2 = [
+  { id: "E01", name: "Amira Hassan", club: "NFC" },
+  { id: "E02", name: "Jinwoo Park", club: "SJU" },
+];
+
+export const samplePlayers4 = [
+  { id: "E01", name: "Amira Hassan", club: "NFC" },
+  { id: "E02", name: "Jinwoo Park", club: "SJU" },
+  { id: "E03", name: "Carlos Méndez", club: "TRL" },
+  { id: "E04", name: "Lakshmi Rao", club: "SPC" },
+];
+
+export const samplePlayers5 = [
+  { id: "E01", name: "Amira Hassan", club: "NFC" },
+  { id: "E02", name: "Jinwoo Park", club: "SJU" },
+  { id: "E03", name: "Carlos Méndez", club: "TRL" },
+  { id: "E04", name: "Lakshmi Rao", club: "SPC" },
+  { id: "E05", name: "Eva Müller", club: "DYN" },
+];
+
+export const samplePlayers6 = [
+  { id: "E01", name: "Amira Hassan", club: "NFC" },
+  { id: "E02", name: "Jinwoo Park", club: "SJU" },
+  { id: "E03", name: "Carlos Méndez", club: "TRL" },
+  { id: "E04", name: "Lakshmi Rao", club: "SPC" },
+  { id: "E05", name: "Eva Müller", club: "DYN" },
+  { id: "E06", name: "Kwame Mensah", club: "GRT" },
+];
+
+export const samplePlayers7 = [
+  { id: "E01", name: "Amira Hassan", club: "NFC" },
+  { id: "E02", name: "Jinwoo Park", club: "SJU" },
+  { id: "E03", name: "Carlos Méndez", club: "TRL" },
+  { id: "E04", name: "Lakshmi Rao", club: "SPC" },
+  { id: "E05", name: "Eva Müller", club: "DYN" },
+  { id: "E06", name: "Kwame Mensah", club: "GRT" },
+  { id: "E07", name: "Sofia Rossi", club: "AZZ" },
+];
+
 export const samplePlayers8 = [
   { id: "E01", name: "Amira Hassan", club: "NFC" },
   { id: "E02", name: "Jinwoo Park", club: "SJU" },
