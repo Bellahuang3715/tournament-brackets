@@ -3,6 +3,7 @@ import { VariantFacade } from "../_internal/VariantFacade";
 
 const registry = {
   teams: {
+    6:  React.lazy(() => import("../Teams/06-Team/CollapsedRight")),
     7:  React.lazy(() => import("../Teams/07-Team/CollapsedRight")),
     8:  React.lazy(() => import("../Teams/08-Team/CollapsedRight")),
     9:  React.lazy(() => import("../Teams/09-Team/CollapsedRight")),

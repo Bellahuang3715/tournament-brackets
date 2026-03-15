@@ -271,6 +271,10 @@ td {
   text-align: center;
   vertical-align: middle;
 }
+/* round numbers 1 & 2: same size as xl00 (10pt) but keep border */
+.bracketTable td.xl00.borderRight {
+  font-size: 10pt;
+}
 .xl01 {
   mso-style-parent: style0;
   color: black;
