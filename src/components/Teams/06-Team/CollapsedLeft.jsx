@@ -96,7 +96,7 @@ export default function CollapsedLeft({
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             <Team
-              team={teams[2]}
+              team={teams[4]}
               teamIDStyle={teamIDStyle}
             />
             <td className={styles.borderBottom}>&nbsp;</td>
@@ -134,7 +134,7 @@ export default function CollapsedLeft({
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             <Team
-              team={teams[3]}
+              team={teams[2]}
               teamIDStyle={teamIDStyle}
             />
             <td className={styles.borderBottom}>&nbsp;</td>
@@ -162,7 +162,7 @@ export default function CollapsedLeft({
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             <Team
-              team={teams[4]}
+              team={teams[3]}
               teamIDStyle={teamIDStyle}
             />
             <td className={styles.borderRightBottom}>&nbsp;</td>

@@ -80,7 +80,7 @@ export default function CollapsedRight({
             <td className={styles.borderBottomLeft}>&nbsp;</td>
             <td className={styles.borderBottom}>&nbsp;</td>
             <Team
-              team={teams[2]}
+              team={teams[4]}
               teamIDStyle={teamIDStyle}
             />
           </tr>
@@ -101,7 +101,7 @@ export default function CollapsedRight({
             <td className={styles.xl01} />
             <td className={styles.borderBottom}>&nbsp;</td>
             <Team
-              team={teams[3]}
+              team={teams[2]}
               teamIDStyle={teamIDStyle}
             />
           </tr>
@@ -130,7 +130,7 @@ export default function CollapsedRight({
             <td className={styles.borderLeft}>&nbsp;</td>
             <td className={styles.borderRBL}>&nbsp;</td>
             <Team
-              team={teams[4]}
+              team={teams[3]}
               teamIDStyle={teamIDStyle}
             />
           </tr>
