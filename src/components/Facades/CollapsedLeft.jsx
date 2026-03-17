@@ -2,6 +2,7 @@ import React from "react";
 import { VariantFacade } from "../_internal/VariantFacade";
 const registry = {
   teams: {
+    5:  React.lazy(() => import("../Teams/05-Team/CollapsedLeft")),
     6:  React.lazy(() => import("../Teams/06-Team/CollapsedLeft")),
     7:  React.lazy(() => import("../Teams/07-Team/CollapsedLeft")),
     8:  React.lazy(() => import("../Teams/08-Team/CollapsedLeft")),
@@ -11,9 +12,13 @@ const registry = {
     12: React.lazy(() => import("../Teams/12-Team/CollapsedLeft")),
     13: React.lazy(() => import("../Teams/13-Team/CollapsedLeft")),
     14: React.lazy(() => import("../Teams/14-Team/CollapsedLeft")),
+    15: React.lazy(() => import("../Teams/15-Team/CollapsedLeft")),
     16: React.lazy(() => import("../Teams/16-Team/CollapsedLeft")),
   },
   individuals: {
+    5:  React.lazy(() => import("../Individuals/05-Player/CollapsedLeft")),
+    6:  React.lazy(() => import("../Individuals/06-Player/CollapsedLeft")),
+    7:  React.lazy(() => import("../Individuals/07-Player/CollapsedLeft")),
     8:  React.lazy(() => import("../Individuals/08-Player/CollapsedLeft")),
     9:  React.lazy(() => import("../Individuals/09-Player/CollapsedLeft")),
     10: React.lazy(() => import("../Individuals/10-Player/CollapsedLeft")),

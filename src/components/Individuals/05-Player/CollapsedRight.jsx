@@ -23,31 +23,16 @@ export default function CollapsedRight({
 
   return (
     <>
-      <table border={0} cellPadding={0} cellSpacing={0} width={360} style={{borderCollapse: 'collapse', tableLayout: 'fixed', width: '269pt'}}>
+      <table className={styles.bracketTable} border={0} cellPadding={0} cellSpacing={0} width={360}>
         <colgroup><col width={35} span={4} style={{msoWidthSource: 'userset', msoWidthAlt: 1109, width: '26pt'}} />
           <col width={57} style={{msoWidthSource: 'userset', msoWidthAlt: 1834, width: '43pt'}} />
           <col width={163} style={{msoWidthSource: 'userset', msoWidthAlt: 5205, width: '122pt'}} />
-        </colgroup><tbody><tr height={20} style={{height: '15.75pt'}}>
-            <td height={20} width={35} style={{height: '15.75pt', width: '26pt'}} />
-            <td width={35} style={{width: '26pt'}} />
-            <td width={35} style={{width: '26pt'}} />
-            <td width={35} style={{width: '26pt'}} />
-            <td width={57} style={{width: '43pt'}} />
-            <td width={163} style={{width: '122pt'}} />
-          </tr>
+        </colgroup><tbody>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             <td height={20} style={{height: '15.75pt'}} />
-            <td className="xl84" />
-            <td className="xl84" />
-            <td className="xl84" />
-            <td className="xl65" />
-            <td className="xl66" />
-          </tr>
-          <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} style={{height: '15.75pt'}} />
-            <td className="xl88" />
-            <td className="xl84" />
-            <td className="xl108">&nbsp;</td>
+            <td className={styles.xl01} />
+            <td className={styles.xl01} />
+            <td className={styles.borderBottom}>&nbsp;</td>
             <ScoreRow
               player={players[0]}
               playerIDStyle={playerIDStyle}
@@ -55,15 +40,15 @@ export default function CollapsedRight({
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             <td height={20} style={{height: '15.75pt'}} />
-            <td className="xl88" />
-            <td className="xl84" />
-            <td className="xl104" style={{borderTop: 'none'}}>&nbsp;</td>
+            <td className={styles.xl01} />
+            <td className={styles.xl01} />
+            <td className={styles.borderTRL} style={{borderTop: 'none'}}>&nbsp;</td>
           </tr>
           <tr height={21} style={{height: '16.0pt'}}>
             <td height={21} style={{height: '16.0pt'}} />
-            <td className="xl88" />
-            <td className="xl84" />
-            <td rowSpan={2} className="xl94">1</td>
+            <td className={styles.xl01} />
+            <td className={styles.xl01} />
+            <td rowSpan={2} className={styles.borderLeft}>1</td>
             <NameRow
               player={players[0]}
               playerNameStyle={playerNameStyle}
@@ -71,16 +56,16 @@ export default function CollapsedRight({
           </tr>
           <tr height={21} style={{height: '16.0pt'}}>
             <td height={21} style={{height: '16.0pt'}} />
-            <td className="xl88" />
-            <td className="xl100">&nbsp;</td>
-            <td className="xl80">&nbsp;</td>
-            <td className="xl112">&nbsp;</td>
+            <td className={styles.xl01} />
+            <td className={styles.borderTopLeft}>&nbsp;</td>
+            <td className={styles.borderBottom}>&nbsp;</td>
+            <td className={styles.borderBottom}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             <td height={20} style={{height: '15.75pt'}} />
-            <td className="xl88" />
-            <td className="xl121">&nbsp;</td>
-            <td className="xl92">&nbsp;</td>
+            <td className={styles.xl01} />
+            <td className={styles.borderRightLeft}>&nbsp;</td>
+            <td className={styles.borderRightBottom}>&nbsp;</td>
             <ScoreRow
               player={players[1]}
               playerIDStyle={playerIDStyle}
@@ -88,14 +73,14 @@ export default function CollapsedRight({
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             <td height={20} style={{height: '15.75pt'}} />
-            <td className="xl88" />
-            <td rowSpan={2} className="xl94">3</td>
-            <td className="xl84" />
+            <td className={styles.xl01} />
+            <td rowSpan={2} className={styles.borderLeft}>3</td>
+            <td className={styles.xl01} />
           </tr>
           <tr height={21} style={{height: '16.0pt'}}>
             <td height={21} style={{height: '16.0pt'}} />
-            <td className="xl116">&nbsp;</td>
-            <td className="xl84" />
+            <td className={styles.borderTopLeft}>&nbsp;</td>
+            <td className={styles.xl01} />
             <NameRow
               player={players[1]}
               playerNameStyle={playerNameStyle}
@@ -103,46 +88,79 @@ export default function CollapsedRight({
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             <td height={20} style={{height: '15.75pt'}} />
-            <td className="xl101">&nbsp;</td>
-            <td className="xl94">&nbsp;</td>
-            <td className="xl115" />
-            <td className="xl113" />
-            <td className="xl114" />
+            <td className={styles.borderLeft}>&nbsp;</td>
+            <td className={styles.borderLeft}>&nbsp;</td>
+            <td className={styles.xl01} />
+            <td className={styles.xl01} />
+            <td className={styles.xl01} />
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             <td height={20} style={{height: '15.75pt'}} />
-            <td className="xl101">&nbsp;</td>
-            <td className="xl105">&nbsp;</td>
-            <td className="xl84" />
+            <td className={styles.borderLeft}>&nbsp;</td>
+            <td className={styles.borderBottomLeft}>&nbsp;</td>
+            <td className={styles.xl01} />
             <ScoreRow
-              player={players[2]}
+              player={players[4]}
               playerIDStyle={playerIDStyle}
             />
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} className="xl109" style={{height: '15.75pt'}}>&nbsp;</td>
-            <td rowSpan={2} className="xl94">4</td>
-            <td className="xl84" />
-            <td className="xl86">&nbsp;</td>
+            <td height={20} className={styles.borderBottom} style={{height: '15.75pt'}}>&nbsp;</td>
+            <td rowSpan={2} className={styles.borderLeft}>4</td>
+            <td className={styles.xl01} />
+            <td className={styles.borderTop}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             <td height={20} style={{height: '15.75pt'}} />
             <td colSpan={2} style={{msoIgnore: 'colspan'}} />
             <NameRow
+              player={players[4]}
+              playerNameStyle={playerNameStyle}
+            />
+          </tr>
+          <tr height={21} style={{height: '16.0pt'}}>
+            <td height={21} style={{height: '16.0pt'}} />
+            <td className={styles.borderLeft}>&nbsp;</td>
+            <td colSpan={4} style={{msoIgnore: 'colspan'}} />
+          </tr>
+          <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
+            <td height={20} style={{height: '15.75pt'}} />
+            <td className={styles.borderLeft}>&nbsp;</td>
+            <td className={styles.xl01} />
+            <td className={styles.xl01} />
+            <ScoreRow
+              player={players[2]}
+              playerIDStyle={playerIDStyle}
+            />
+          </tr>
+          <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
+            <td height={20} style={{height: '15.75pt'}} />
+            <td className={styles.borderLeft}>&nbsp;</td>
+            <td className={styles.xl01} />
+            <td className={styles.borderTRL}>&nbsp;</td>
+          </tr>
+          <tr height={21} style={{height: '16.0pt'}}>
+            <td height={21} style={{height: '16.0pt'}} />
+            <td className={styles.borderBottomLeft}>&nbsp;</td>
+            <td className={styles.xl01} />
+            <td rowSpan={2} className={styles.borderLeft}>2</td>
+            <NameRow
               player={players[2]}
               playerNameStyle={playerNameStyle}
             />
           </tr>
           <tr height={21} style={{height: '16.0pt'}}>
             <td height={21} style={{height: '16.0pt'}} />
-            <td className="xl102">&nbsp;</td>
-            <td colSpan={4} style={{msoIgnore: 'colspan'}} />
+            <td className={styles.xl01} />
+            <td className={styles.borderTop}>&nbsp;</td>
+            <td className={styles.borderBottom}>&nbsp;</td>
+            <td className={styles.borderBottom}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             <td height={20} style={{height: '15.75pt'}} />
-            <td className="xl102">&nbsp;</td>
-            <td className="xl84" />
-            <td className="xl84" />
+            <td className={styles.xl01} />
+            <td className={styles.xl01} />
+            <td className={styles.borderRBL}>&nbsp;</td>
             <ScoreRow
               player={players[3]}
               playerIDStyle={playerIDStyle}
@@ -150,65 +168,21 @@ export default function CollapsedRight({
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             <td height={20} style={{height: '15.75pt'}} />
-            <td className="xl102">&nbsp;</td>
-            <td className="xl84" />
-            <td className="xl104">&nbsp;</td>
+            <td className={styles.xl01} />
+            <td className={styles.xl01} />
+            <td className={styles.xl01} />
           </tr>
           <tr height={21} style={{height: '16.0pt'}}>
             <td height={21} style={{height: '16.0pt'}} />
-            <td className="xl107">&nbsp;</td>
-            <td className="xl84" />
-            <td rowSpan={2} className="xl94">2</td>
+            <td className={styles.xl01} />
+            <td className={styles.xl01} />
+            <td className={styles.xl01} />
             <NameRow
               player={players[3]}
               playerNameStyle={playerNameStyle}
             />
           </tr>
-          <tr height={21} style={{height: '16.0pt'}}>
-            <td height={21} style={{height: '16.0pt'}} />
-            <td className="xl88" />
-            <td className="xl86">&nbsp;</td>
-            <td className="xl80">&nbsp;</td>
-            <td className="xl112">&nbsp;</td>
-          </tr>
-          <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} style={{height: '15.75pt'}} />
-            <td className="xl88" />
-            <td className="xl84" />
-            <td className="xl103">&nbsp;</td>
-            <ScoreRow
-              player={players[4]}
-              playerIDStyle={playerIDStyle}
-            />
-          </tr>
-          <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            <td height={20} style={{height: '15.75pt'}} />
-            <td className="xl88" />
-            <td className="xl84" />
-            <td className="xl84" />
-          </tr>
-          <tr height={21} style={{height: '16.0pt'}}>
-            <td height={21} style={{height: '16.0pt'}} />
-            <td className="xl88" />
-            <td className="xl84" />
-            <td className="xl84" />
-            <NameRow
-              player={players[4]}
-              playerNameStyle={playerNameStyle}
-            />
-          </tr>
-          {/*[if supportMisalignedColumns]*/}
-          <tr height={0} style={{display: 'none'}}>
-            <td width={35} style={{width: '26pt'}} />
-            <td width={35} style={{width: '26pt'}} />
-            <td width={35} style={{width: '26pt'}} />
-            <td width={35} style={{width: '26pt'}} />
-            <td width={57} style={{width: '43pt'}} />
-            <td width={163} style={{width: '122pt'}} />
-          </tr>
-          {/*[endif]*/}
-        </tbody></table>
-      
+        </tbody></table>      
     </>
   );
 }

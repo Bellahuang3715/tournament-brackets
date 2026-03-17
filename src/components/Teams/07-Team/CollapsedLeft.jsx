@@ -18,8 +18,6 @@ export default function CollapsedLeft({
         <colgroup>
           <col width={168} style={{msoWidthSource: 'userset', msoWidthAlt: 5376, width: '126pt'}} />
           <col width={35} span={6} style={{msoWidthSource: 'userset', msoWidthAlt: 1109, width: '26pt'}} />
-          <col width={101} style={{width: '76pt'}} />
-          <col span={10} style={{width: 0, minWidth: 0}} />
         </colgroup><tbody>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             <Team
