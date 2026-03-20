@@ -6,6 +6,11 @@ export default {
   title: "Teams/13-Team/Expanded",
   component: Expanded,
   argTypes: {
+    mode: {
+      control: "radio",
+      options: ["view", "fillable"],
+      description: "view: read-only; fillable: editable team fields",
+    },
     teams:            { control: 'object' },
     teamIDFontFamily: {
       control: 'text',
@@ -26,6 +31,7 @@ const Template = (args) => <Expanded {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
+  mode: "view",
   teams:            sampleTeams13,
   teamIDFontFamily: "Arial, sans-serif",
   teamIDColor: "#c00",

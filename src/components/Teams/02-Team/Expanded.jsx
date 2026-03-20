@@ -10,7 +10,7 @@ export default function Expanded(props) {
   } = TeamsBase({
     initialTeams: props.teams,
     maxSlots: 3,
-    mode: "view",
+    mode: props.mode ?? "view",
     teamIDFontFamily: props.teamIDFontFamily,
     teamIDColor: props.teamIDColor,
     teamIDFontSize: props.teamIDFontSize,

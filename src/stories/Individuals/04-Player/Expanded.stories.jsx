@@ -14,6 +14,11 @@ export default {
   title: "Individuals/04-Player/Expanded",
   component: Expanded,
   argTypes: {
+    mode: {
+      control: "radio",
+      options: ["view", "fillable"],
+      description: "view: read-only; fillable: editable player fields",
+    },
     players: { control: "object" },
     idFontFamily: { control: "select", options: FONT_CHOICES },
     idFontSize: { control: { type: "number", min: 6, max: 72, step: 1 }, description: "Player ID font size (pt)" },
@@ -39,6 +44,7 @@ const Template = (args) => {
 
 export const Default = Template.bind({});
 Default.args = {
+  mode: "view",
   players: samplePlayers4,
   idFontFamily: "Arial, sans-serif",
   idFontSize: 14,

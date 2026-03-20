@@ -17,7 +17,7 @@ export default function Expanded(props) {
   } = ExpandedBase({
     initialPlayers: props.players,
     maxSlots: 27,
-    mode: "view",   // "view" | "fillable"
+    mode: props.mode ?? "view", // "view" | "fillable"
     textStyles: mergedTextStyles,
   });
 

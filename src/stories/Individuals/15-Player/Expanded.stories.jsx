@@ -14,6 +14,11 @@ export default {
   title: 'Individuals/15-Player/Expanded',
   component: Expanded,
   argTypes: {
+    mode: {
+      control: "radio",
+      options: ["view", "fillable"],
+      description: "view: read-only; fillable: editable player fields",
+    },
     players: { control: "object" },
 
     // --- Player ID knobs ---
@@ -66,6 +71,7 @@ const Template = (args) => {
 
 export const Default = Template.bind({});
 Default.args = {
+  mode: "view",
   players: samplePlayers15,
 
   idFontFamily: "Arial, sans-serif",

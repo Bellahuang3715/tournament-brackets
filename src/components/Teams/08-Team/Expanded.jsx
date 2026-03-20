@@ -10,7 +10,7 @@ export default function Expanded(props) {
   } = TeamsBase({
     initialTeams: props.teams,
     maxSlots: 15,
-    mode: "view",   // "view" | "fillable"
+    mode: props.mode ?? "view", // "view" | "fillable"
     teamIDFontFamily: props.fontFamily,
     teamIDColor: props.teamIDColor,
     teamIDFontSize: props.teamIDFontSize,
@@ -29,15 +29,15 @@ export default function Expanded(props) {
 
   return (
     <>
-      <table className={styles.bracketTable} border={0} cellPadding={0} cellSpacing={0} width={1690}>
+      <table className={styles.bracketTable} border={0} cellPadding={0} cellSpacing={0} width={882}>
         <colgroup>
-          <col width={168} style={{msoWidthSource: 'userset', msoWidthAlt: 5376, width: '126pt'}} />
+          <col width={168} style={{msoWidthSource: 'userset', msoWidthAlt: 5376, width: '122pt'}} />
           <col width={35} span={2} style={{msoWidthSource: 'userset', msoWidthAlt: 1109, width: '26pt'}} />
-          <col width={168} style={{msoWidthSource: 'userset', msoWidthAlt: 5376, width: '126pt'}} />
+          <col width={168} style={{msoWidthSource: 'userset', msoWidthAlt: 5376, width: '122pt'}} />
           <col width={35} span={2} style={{msoWidthSource: 'userset', msoWidthAlt: 1109, width: '26pt'}} />
-          <col width={168} style={{msoWidthSource: 'userset', msoWidthAlt: 5376, width: '126pt'}} />
+          <col width={168} style={{msoWidthSource: 'userset', msoWidthAlt: 5376, width: '122pt'}} />
           <col width={35} span={2} style={{msoWidthSource: 'userset', msoWidthAlt: 1109, width: '26pt'}} />
-          <col width={168} style={{msoWidthSource: 'userset', msoWidthAlt: 5376, width: '126pt'}} />
+          <col width={168} style={{msoWidthSource: 'userset', msoWidthAlt: 5376, width: '122pt'}} />
         </colgroup><tbody>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             {/* Round 1 Top Player | Index 0 */}

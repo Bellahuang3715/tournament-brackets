@@ -18,7 +18,7 @@ export default function Expanded(props) {
   } = ExpandedBase({
     initialPlayers: props.players,
     maxSlots: 3,
-    mode: "view",
+    mode: props.mode ?? "view",
     textStyles: mergedTextStyles,
   });
 
