@@ -122,6 +122,7 @@ td {
   border-right: 0.5pt solid black;
   border-bottom: none;
   border-left: 0.5pt solid black;
+  overflow: visible;
 }
 .borderTop {
   mso-style-parent: style0;
@@ -315,6 +316,10 @@ td {
   opacity: 1;
 }
 
+.scoreStrikethrough {
+  text-decoration: line-through;
+}
+
 .winnerNameInput {
   box-sizing: border-box;
   width: 100%;
@@ -330,6 +335,215 @@ td {
 .winnerNameInput::placeholder {
   color: #aaa;
   opacity: 1;
+}
+
+.winnerFillCell {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-height: 100%;
+  box-sizing: border-box;
+}
+
+.winnerPickActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.winnerPickButton {
+  font: inherit;
+  font-size: 10px;
+  line-height: 1.2;
+  padding: 2px 6px;
+  cursor: pointer;
+  border: 1px solid #999;
+  background: #f5f5f5;
+  border-radius: 2px;
+}
+
+.winnerNameCell {
+  position: relative;
+}
+
+.winnerNameText {
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.winnerChangeButton {
+  position: absolute;
+  right: 2px;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0;
+  padding: 4px 6px;
+  border: none;
+  background: transparent;
+  font: inherit;
+  font-size: 10px;
+  line-height: 1;
+  color: #555;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  cursor: pointer;
+  opacity: 0.35;
+  transition: opacity 0.15s ease, color 0.15s ease;
+}
+
+.winnerNameCell:hover .winnerChangeButton,
+.winnerNameCell:focus-within .winnerChangeButton,
+.winnerChangeButton:focus-visible {
+  opacity: 1;
+  color: #111;
+}
+
+.winnerChangeButton:focus-visible {
+  outline: 1px solid rgba(0, 0, 0, 0.45);
+  outline-offset: 1px;
+  border-radius: 2px;
+}
+
+.winnerPickSelect {
+  font: inherit;
+  font-size: 12px;
+  line-height: 1.2;
+  padding: 2px 4px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  background: #ffffff;
+  width: 220px;
+}
+
+/* Advance picker trigger (replaces native <select>) */
+.advancePickRoot {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.slotAdvanceSelect {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0 4px;
+  font: inherit;
+  font-weight: inherit;
+  line-height: 1.2;
+  color: inherit;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 2px;
+}
+
+.slotAdvanceSelect:focus-visible {
+  outline: 1px solid rgba(0, 0, 0, 0.45);
+  outline-offset: -1px;
+}
+
+.slotAdvanceSelectPlaceholder {
+  color: #888;
+  font-weight: 400;
+  font-style: italic;
+  background: rgba(0, 0, 0, 0.03);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.18);
+}
+
+.slotAdvanceSelectOpen {
+  background: rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.28);
+}
+
+.advancePickPopup {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 40;
+  min-width: 11.5rem;
+  max-width: 16rem;
+  padding: 6px 0;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  border-radius: 4px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  text-align: left;
+  font-weight: 400;
+  font-style: normal;
+  color: #111;
+}
+
+.advancePickHeader {
+  padding: 2px 10px 6px;
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #666;
+}
+
+.advancePickList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.advancePickOption {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 6px;
+  width: 100%;
+  margin: 0;
+  padding: 7px 10px;
+  border: none;
+  background: transparent;
+  font: inherit;
+  font-size: 12px;
+  line-height: 1.25;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.advancePickOption:hover,
+.advancePickOption:focus-visible {
+  background: rgba(0, 0, 0, 0.06);
+  outline: none;
+}
+
+.advancePickOptionId {
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.advancePickOptionName {
+  font-size: 11px;
+  color: #444;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+  flex: 1;
+}
+
+.advancePickDivider {
+  height: 1px;
+  margin: 4px 0;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.advancePickNoShow {
+  color: #555;
+  font-size: 11px;
+  font-style: italic;
 }
 
 .tooltipWrapper {
@@ -374,4 +588,5 @@ td {
 .tooltipWrapper:focus-within .tooltip {
   visibility: visible;
   opacity: 1;
+  pointer-events: auto;
 }

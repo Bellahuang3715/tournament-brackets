@@ -13,8 +13,14 @@ export function NameRow({ player, playerNameStyle }) {
           ...playerNameStyle,
         }}
       >
-        {player?.name}
-        {club ? ` (${club})` : ""}
+        {player?.noShow ? (
+          "No Show"
+        ) : (
+          <>
+            {player?.name}
+            {club ? ` (${club})` : ""}
+          </>
+        )}
       </td>
     </>
   );

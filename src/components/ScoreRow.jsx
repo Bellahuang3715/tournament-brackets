@@ -15,7 +15,7 @@ export function ScoreRow({
           ...playerIDStyle,
         }}
       >
-        {player.id}
+        {player?.noShow ? "—" : player.id}
       </td>
       <td
         rowSpan={2}

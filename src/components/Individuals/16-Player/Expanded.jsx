@@ -1,9 +1,25 @@
 import { ExpandedBase, TEXT_STYLES } from '../../_internal/ExpandedBase';
-import { NameRow } from '../../NameRow';
-import { ScoreRow } from '../../ScoreRow';
-import { ScoreRowFillable } from '../../ScoreRowFillable';
-import { NameRowFillable } from '../../NameRowFillable';
+import { useAdvanceExpandedRows } from '../../_internal/useAdvanceExpandedRows';
 import styles from '../stylesheet.module.css';
+
+/** Feeder match → next-round slot (16-player expanded bracket). Configure manually. */
+const ADVANCE_MATCHES = [
+  { to: 16, from: [0, 1] },
+  { to: 17, from: [2, 3] },
+  { to: 18, from: [4, 5] },
+  { to: 19, from: [6, 7] },
+  { to: 20, from: [8, 9] },
+  { to: 21, from: [10, 11] },
+  { to: 22, from: [12, 13] },
+  { to: 23, from: [14, 15] },
+  { to: 24, from: [16, 17] },
+  { to: 25, from: [18, 19] },
+  { to: 26, from: [20, 21] },
+  { to: 27, from: [22, 23] },
+  { to: 28, from: [24, 25] },
+  { to: 29, from: [26, 27] },
+  { to: 30, from: [28, 29] },
+];
 
 export default function Expanded(props) {
   const mergedTextStyles = {
@@ -14,36 +30,30 @@ export default function Expanded(props) {
   const {
     players, mode,
     playerIDStyle, playerNameStyle,
-    handleScoreChange, handleIDChange, handleNameChange
+    handleScoreChange, handleIDChange, handleNameChange,
+    setAdvanceSlot,
+    clearPlayerSlot,
   } = ExpandedBase({
     initialPlayers: props.players,
     maxSlots: 31,
     mode: props.mode ?? "view", // "view" | "fillable"
     textStyles: mergedTextStyles,
+    scoreInputTransform: props.scoreInputTransform,
   });
 
-  const nameRow = (i) => mode === "view" ? 
-    <NameRow
-      player={players[i]}
-      playerNameStyle={playerNameStyle}
-    /> : 
-    <NameRowFillable
-      player={players[i]}
-      onNameChange={handleNameChange(i)}
-      playerNameStyle={playerNameStyle}
-    />;
-
-  const scoreRow = (i) => mode === "view" ? 
-    <ScoreRow
-      player={players[i]}
-      playerIDStyle={playerIDStyle}
-    /> : 
-    <ScoreRowFillable
-      player={players[i]}
-      onScoreChange={handleScoreChange(i)}
-      onIDChange={handleIDChange(i)}
-      playerIDStyle={playerIDStyle}
-    />;
+  const { nameRow, scoreRow } = useAdvanceExpandedRows({
+    players,
+    mode,
+    playerIDStyle,
+    playerNameStyle,
+    handleScoreChange,
+    handleIDChange,
+    handleNameChange,
+    setAdvanceSlot,
+    clearPlayerSlot,
+    advanceMatches: ADVANCE_MATCHES,
+    formatScoreDisplay: props.formatScoreDisplay,
+  });
 
   return (
     <>

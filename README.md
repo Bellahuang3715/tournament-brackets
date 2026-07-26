@@ -1,6 +1,6 @@
 # tournament-brackets-ui
 
-A React component library for rendering tournament brackets. Supports both **team** and **individual** brackets in multiple sizes and three layout variants: expanded, collapsed-left, and collapsed-right.
+A React component library for rendering tournament brackets. Supports both **team** and **individual** brackets in multiple sizes and three layout variants: **expanded**, **collapsed-left**, and **collapsed-right**.
 
 ## Installation
 
@@ -12,79 +12,138 @@ npm install tournament-brackets-ui
 
 ## Usage
 
-Import the components and optional styles:
+Import the components, optional helpers, and styles:
 
 ```jsx
-import { Expanded, CollapsedLeft, CollapsedRight } from "tournament-brackets-ui";
+import {
+  Expanded,
+  CollapsedLeft,
+  CollapsedRight,
+  BRACKET_SIZES,
+  EXPANDED_SIZES_TEAMS,
+  circledScoreDisplay,
+  tournamentMkdtScoreInput,
+} from "tournament-brackets-ui";
 import "tournament-brackets-ui/style.css";
+
+// e.g. validate user input
+const ok = EXPANDED_SIZES_TEAMS.includes(size);
 ```
 
 ### Components
 
-- **`Expanded`** — Full bracket layout with all rounds visible.
-- **`CollapsedLeft`** — Bracket with early rounds collapsed on the left.
-- **`CollapsedRight`** — Bracket with early rounds collapsed on the right.
+| Component | Purpose |
+|-----------|---------|
+| **`Expanded`** | Full bracket: all rounds visible. |
+| **`CollapsedLeft`** | Early rounds collapsed on the **left**. |
+| **`CollapsedRight`** | Early rounds collapsed on the **right**. |
 
-Each component can render either **teams** or **individuals**. Use the `entity` prop or the shorthand subcomponents:
+Each accepts **`entity`** + **`size`** + data, or use the shorthand subcomponents (entity fixed):
 
 ```jsx
-// Using entity prop
 <Expanded entity="teams" size={8} teams={teams} />
 <Expanded entity="individuals" size={8} players={players} />
 
-// Using shorthand (entity is fixed)
 <Expanded.Teams size={8} teams={teams} />
 <Expanded.Individuals size={8} players={players} />
 ```
 
-Same pattern for `CollapsedLeft` and `CollapsedRight`.
+The same pattern works for `CollapsedLeft` and `CollapsedRight`.
 
-### Supported sizes
+### Supported bracket sizes
 
-| Entity      | Sizes                          |
-|------------|---------------------------------|
-| Teams      | 8, 9, 10, 11, 12, 13, 14, 16   |
-| Individuals| 8, 9, 10, 11, 12, 13, 14, 15, 16 |
+Not every layout supports every size. Use the exported arrays (or `BRACKET_SIZES`) so your app stays aligned with the library.
 
-You must pass a `size` that matches the length of your `teams` or `players` array.
+| Layout | Teams (`entity="teams"`) | Individuals (`entity="individuals"`) |
+|--------|---------------------------|------------------------------------------|
+| **Expanded** | 2, 4 – 16 | same |
+| **CollapsedLeft** / **CollapsedRight** | 5 – 16 | 5 – 16 |
+
+| Export | Contents |
+|--------|----------|
+| `EXPANDED_SIZES_TEAMS` | Expanded team sizes |
+| `EXPANDED_SIZES_INDIVIDUALS` | Expanded individual sizes |
+| `COLLAPSED_SIZES_TEAMS` | Collapsed team sizes |
+| `COLLAPSED_SIZES_INDIVIDUALS` | Collapsed individual sizes |
+| `BRACKET_SIZES` | `{ expanded: { teams, individuals }, collapsed: { teams, individuals } }` |
+
+`size` must match the length of `teams` or `players`. If there is no variant for the combination, the component returns `null` and may log a dev warning.
+
+### Props reference
+
+Props differ by **layout** (expanded vs collapsed) and **entity** (teams vs individuals). Only **`size`** and the data array are always required.
+
+#### Shared (all facades)
+
+| Prop | Required | Description |
+|------|----------|-------------|
+| **`size`** | **Yes** | Bracket size; must be supported for that layout + entity (see table above). |
+| **`teams`** | **Yes** for team brackets | `string[]` — one entry per slot, length = `size`. |
+| **`players`** | **Yes** for individual brackets | Array of player objects (see [Data shape](#data-shape)), length = `size`. |
+| **`entity`** | No | `"teams"` \| `"individuals"`. Default on the main export is `"teams"`. Omitted when using `.Teams` / `.Individuals`. |
+
+#### `Expanded` — teams
+
+| Prop | Required | Description |
+|------|----------|-------------|
+| **`mode`** | No | `"view"` (default) or `"fillable"` — editable team name cells when fillable. |
+| **`fontFamily`** | No | Font family for team ID column (expanded team layouts). |
+| **`teamIDColor`** | No | Color for team ID text. |
+| **`teamIDFontSize`** | No | Team ID font size in **points**. |
+
+#### `Expanded` — individuals
+
+| Prop | Required | Description |
+|------|----------|-------------|
+| **`mode`** | No | `"view"` (default) or `"fillable"`. |
+| **`textStyles`** | No | `{ playerId, playerText }` — font family, `fontSize` (pt), `color` for ID and name/club. |
+| **`scoreInputTransform`** | No | `(rawInput: string) => string` — transform SCORE field input before storing on `player.score`. Default: store as typed. |
+| **`formatScoreDisplay`** | No | `(rawScore: string) => string` — how stored `player.score` appears in the SCORE cell. Default: plain text. |
+
+#### `CollapsedLeft` / `CollapsedRight` — teams
+
+| Prop | Required | Description |
+|------|----------|-------------|
+| **`teamIDFontFamily`** | No | Font family for team ID cells. |
+| **`teamIDColor`** | No | Color for team ID text. |
+| **`teamIDFontSize`** | No | Team ID font size in **points**. |
+
+#### `CollapsedLeft` / `CollapsedRight` — individuals
+
+| Prop | Required | Description |
+|------|----------|-------------|
+| **`textStyles`** | No | Same shape as expanded individuals; defaults match library styling if omitted. |
 
 ### Data shape
 
-**Teams:** an array of strings (e.g. team names or labels).
+**Teams:** an array of strings (team names or labels).
 
 ```jsx
-const teams = ["Team A", "Team B", "Team C", "Team D", "Team E", "Team F", "Team G", "Team H"];
+const teams = ["Team A", "Team B", /* ... length === size */];
 <Expanded.Teams size={8} teams={teams} />
 ```
 
-**Individuals:** an array of objects with `id`, `name`, and optional `club`.
+**Individuals:** objects with **`id`**, **`name`**, optional **`club`**, optional **`score`**, and optional **`noShow`** (set when an advance slot is marked No Show).
 
 ```jsx
 const players = [
   { id: "E01", name: "Amira Hassan", club: "NFC" },
   { id: "E02", name: "Jinwoo Park", club: "SJU" },
-  // ... one entry per player, length must match size
+  // ... one entry per player, length === size
 ];
 <Expanded.Individuals size={8} players={players} />
 ```
 
-### Styling (optional)
+### Fillable individuals — advancing winners
 
-**Individuals** — Pass `textStyles` to customize player ID and name/club text:
+In **`mode="fillable"`**, expanded individual brackets support picking who advances into later-round slots:
 
-```jsx
-<Expanded.Individuals
-  size={8}
-  players={players}
-  textStyles={{
-    playerId:  { fontFamily: "Arial", fontSize: 14, color: "#000" },
-    playerText: { fontFamily: "Arial", fontSize: 12, color: "#333" },
-  }}
-/>
-```
+1. Empty advance slots show a **Pick** control in the ID cell.
+2. Choosing a feeder player copies their **id / name / club** into that slot (score starts empty).
+3. **No Show** clears identity fields and marks the slot as no-show.
+4. After a pick, hover the name cell and use **Change** to clear the slot and pick again.
 
-**Teams** — For expanded team brackets you can pass `teamIDFontFamily`, `teamIDColor`, and `teamIDFontSize` to style the team ID cell.
-
+Advance wiring is per bracket size (feeder pair → destination slot). Consumers only need `mode="fillable"`; the UI is built in.
 
 ## License
 

@@ -1,5 +1,8 @@
 import { useCallback, useMemo, useState } from "react";
-import { sanitizeScore } from "../../scripts/scoreUtils";
+
+function passthroughScoreInput(value) {
+  return String(value ?? "");
+}
 
 export const TEXT_STYLES = {
   playerId:   { fontFamily: "Arial, sans-serif", fontSize: 14, color: "#000000" },
@@ -11,6 +14,8 @@ export function ExpandedBase({
   maxSlots,
   mode, // "view" | "fillable"
   textStyles, // { playerId, playerText }
+  /** Optional: map raw SCORE input string → stored `player.score`. Omit to store text as-is. */
+  scoreInputTransform,
 }) {
   const [players, setPlayers] = useState(() =>
     Array.from({ length: maxSlots }, (_, i) =>
@@ -48,9 +53,10 @@ export function ExpandedBase({
   }, [textStyles?.playerText]);
 
   // Handlers (index-aware)
+  const toStoredScore = scoreInputTransform ?? passthroughScoreInput;
   const handleScoreChange = useCallback(
-    (i) => (e) => updatePlayer(i, { score: sanitizeScore(e.target.value) }),
-    [updatePlayer],
+    (i) => (e) => updatePlayer(i, { score: toStoredScore(e.target.value) }),
+    [updatePlayer, toStoredScore],
   );
   const handleIDChange = useCallback(
     (i) => (e) => updatePlayer(i, { id: e.target.value.toUpperCase() }),
@@ -61,6 +67,64 @@ export function ExpandedBase({
     [updatePlayer],
   );
 
+  /**
+   * Set who advances into a slot: copy from one of two feeder slots, no-show, or clear.
+   * `source`: "0" | "1" (first/second in `pairFrom`) | "noshow" | "" (clear).
+   * `pairFrom`: global player indices for the feeder match (default [0, 1]).
+   */
+  const setAdvanceSlot = useCallback((toIndex, source, pairFrom = [0, 1]) => {
+    setPlayers((ps) => {
+      const next = [...ps];
+      const cur = { ...next[toIndex] };
+      if (source === "" || source == null) {
+        next[toIndex] = { id: "", name: "", club: "", score: "" };
+        delete next[toIndex].noShow;
+        return next;
+      }
+      if (source === "noshow") {
+        next[toIndex] = {
+          ...cur,
+          id: "",
+          name: "",
+          club: "",
+          score: "",
+          noShow: true,
+        };
+        return next;
+      }
+      const si = Number(source);
+      if (si === 0 || si === 1) {
+        const idx = pairFrom[si];
+        const src = ps[idx];
+        next[toIndex] = {
+          ...cur,
+          id: src.id,
+          name: src.name,
+          club: src.club,
+          score: "",
+        };
+        delete next[toIndex].noShow;
+      }
+      return next;
+    });
+  }, []);
+
+  /** Clear a bracket slot (id/name/club/score) to allow repicking. */
+  const clearPlayerSlot = useCallback((toIndex) => {
+    setPlayers((ps) => {
+      const next = [...ps];
+      next[toIndex] = {
+        ...next[toIndex],
+        id: "",
+        name: "",
+        club: "",
+        score: "",
+      };
+      delete next[toIndex].noShow;
+      return next;
+    });
+  }, []);
+
   return {
     players,
     mode,
@@ -69,5 +133,7 @@ export function ExpandedBase({
     handleScoreChange,
     handleIDChange,
     handleNameChange,
+    setAdvanceSlot,
+    clearPlayerSlot,
   };
 }

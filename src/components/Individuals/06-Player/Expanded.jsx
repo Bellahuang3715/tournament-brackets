@@ -1,9 +1,15 @@
 import { ExpandedBase, TEXT_STYLES } from '../../_internal/ExpandedBase';
-import { NameRow } from '../../NameRow';
-import { ScoreRow } from '../../ScoreRow';
-import { ScoreRowFillable } from '../../ScoreRowFillable';
-import { NameRowFillable } from '../../NameRowFillable';
+import { useAdvanceExpandedRows } from '../../_internal/useAdvanceExpandedRows';
 import styles from '../stylesheet.module.css';
+
+/** Feeder match → next-round slot (06-player expanded bracket). Configure manually. */
+const ADVANCE_MATCHES = [
+  { to: 6, from: [0, 1] },
+  { to: 7, from: [2, 3] },
+  { to: 8, from: [6, 4] },
+  { to: 9, from: [7, 5] },
+  { to: 10, from: [8, 9] },
+];
 
 export default function Expanded(props) {
   const mergedTextStyles = {
@@ -14,36 +20,30 @@ export default function Expanded(props) {
   const {
     players, mode,
     playerIDStyle, playerNameStyle,
-    handleScoreChange, handleIDChange, handleNameChange
+    handleScoreChange, handleIDChange, handleNameChange,
+    setAdvanceSlot,
+    clearPlayerSlot,
   } = ExpandedBase({
     initialPlayers: props.players,
     maxSlots: 11,
     mode: props.mode ?? "view",
     textStyles: mergedTextStyles,
+    scoreInputTransform: props.scoreInputTransform,
   });
 
-  const nameRow = (i) => mode === "view" ?
-    <NameRow
-      player={players[i]}
-      playerNameStyle={playerNameStyle}
-    /> :
-    <NameRowFillable
-      player={players[i]}
-      onNameChange={handleNameChange(i)}
-      playerNameStyle={playerNameStyle}
-    />;
-
-  const scoreRow = (i) => mode === "view" ?
-    <ScoreRow
-      player={players[i]}
-      playerIDStyle={playerIDStyle}
-    /> :
-    <ScoreRowFillable
-      player={players[i]}
-      onScoreChange={handleScoreChange(i)}
-      onIDChange={handleIDChange(i)}
-      playerIDStyle={playerIDStyle}
-    />;
+  const { nameRow, scoreRow } = useAdvanceExpandedRows({
+    players,
+    mode,
+    playerIDStyle,
+    playerNameStyle,
+    handleScoreChange,
+    handleIDChange,
+    handleNameChange,
+    setAdvanceSlot,
+    clearPlayerSlot,
+    advanceMatches: ADVANCE_MATCHES,
+    formatScoreDisplay: props.formatScoreDisplay,
+  });
 
   return (
     <>
@@ -104,9 +104,9 @@ export default function Expanded(props) {
           </tr>
           <tr height={21} style={{height: '16.0pt'}}>
             {nameRow(0)}
-            <td rowSpan={2} className={styles.borderRight}>1</td>
+            <td rowSpan={2} className={styles.borderRightExpanded}>1</td>
             <td className={styles.borderRightBottom}>&nbsp;</td>
-            {scoreRow(1)}
+            {scoreRow(6)}
             <td className={styles.xl00} />
             <td className={styles.xl00} />
             <td className={styles.xl00} />
@@ -146,13 +146,13 @@ export default function Expanded(props) {
             <td className={styles.xl00} />
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            {scoreRow(2)}
+            {scoreRow(1)}
             <td className={styles.borderRightBottom}>&nbsp;</td>
             <td className={styles.xl00} />
-            {nameRow(1)}
+            {nameRow(6)}
             <td rowSpan={2} className={styles.xl00}>3</td>
             <td className={styles.borderBottomLeft}>&nbsp;</td>
-            {scoreRow(3)}
+            {scoreRow(8)}
             <td className={styles.xl00} />
             <td className={styles.xl00} />
             <td className={styles.xl00} />
@@ -186,13 +186,13 @@ export default function Expanded(props) {
             <td className={styles.xl00} />
           </tr>
           <tr height={21} style={{msoHeightSource: 'userset', height: '16.0pt'}}>
-            {nameRow(2)}
+            {nameRow(1)}
             <td className={styles.xl00} />
             <td className={styles.xl00} />
             {scoreRow(4)}
             <td className={styles.borderRightBottom}>&nbsp;</td>
             <td className={styles.xl00} />
-            {nameRow(3)}
+            {nameRow(8)}
             <td className={styles.borderRight}>&nbsp;</td>
             <td colSpan={3} style={{msoIgnore: 'colspan'}} />
             <td className={styles.xl00} />
@@ -255,7 +255,7 @@ export default function Expanded(props) {
             <td className={styles.xl00} />
             <td rowSpan={2} className={styles.xl00}>5</td>
             <td className={styles.borderBottomLeft}>&nbsp;</td>
-            {scoreRow(5)}
+            {scoreRow(10)}
             <td className={styles.xl00} />
             <td className={styles.xl00} />
             <td className={styles.xl00} />
@@ -266,7 +266,7 @@ export default function Expanded(props) {
             <td className={styles.xl00} />
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            {scoreRow(6)}
+            {scoreRow(2)}
             <td className={styles.borderBottom}>&nbsp;</td>
             <td className={styles.xl00} />
             <td className={styles.xl00} />
@@ -296,7 +296,7 @@ export default function Expanded(props) {
             <td className={styles.xl00} />
             <td className={styles.xl00} />
             <td className={styles.borderLeft}>&nbsp;</td>
-            {nameRow(5)}
+            {nameRow(10)}
             <td className={styles.xl00} />
             <td className={styles.xl00} />
             <td className={styles.xl00} />
@@ -307,8 +307,8 @@ export default function Expanded(props) {
             <td className={styles.xl00} />
           </tr>
           <tr height={21} style={{msoHeightSource: 'userset', height: '16.0pt'}}>
-            {nameRow(6)}
-            <td rowSpan={2} className={styles.borderRight}>2</td>
+            {nameRow(2)}
+            <td rowSpan={2} className={styles.borderRightExpanded}>2</td>
             <td className={styles.borderRightBottom}>&nbsp;</td>
             {scoreRow(7)}
             <td className={styles.xl00} />
@@ -350,7 +350,7 @@ export default function Expanded(props) {
             <td className={styles.xl00} />
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            {scoreRow(8)}
+            {scoreRow(3)}
             <td className={styles.borderRightBottom}>&nbsp;</td>
             <td className={styles.xl00} />
             {nameRow(7)}
@@ -390,10 +390,10 @@ export default function Expanded(props) {
             <td className={styles.xl00} />
           </tr>
           <tr height={21} style={{msoHeightSource: 'userset', height: '16.0pt'}}>
-            {nameRow(8)}
+            {nameRow(3)}
             <td className={styles.xl00} />
             <td className={styles.xl00} />
-            {scoreRow(10)}
+            {scoreRow(5)}
             <td className={styles.borderRight}>&nbsp;</td>
             <td className={styles.xl00} />
             {nameRow(9)}
@@ -437,7 +437,7 @@ export default function Expanded(props) {
             <td className={styles.xl00} />
             <td className={styles.xl00} />
             <td className={styles.xl00} />
-            {nameRow(10)}
+            {nameRow(5)}
             <td className={styles.xl00} />
             <td className={styles.xl00} />
             <td className={styles.xl00} />
