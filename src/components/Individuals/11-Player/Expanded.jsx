@@ -34,6 +34,7 @@ export default function Expanded(props){
     mode: props.mode ?? "view", // "view" | "fillable"
     textStyles: mergedTextStyles,
     scoreInputTransform: props.scoreInputTransform,
+    onPlayersChange: props.onPlayersChange,
   });
 
   const { nameRow, scoreRow } = useAdvanceExpandedRows({

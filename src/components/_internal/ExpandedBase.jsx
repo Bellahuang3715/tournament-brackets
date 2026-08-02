@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 function passthroughScoreInput(value) {
   return String(value ?? "");
@@ -16,6 +16,8 @@ export function ExpandedBase({
   textStyles, // { playerId, playerText }
   /** Optional: map raw SCORE input string → stored `player.score`. Omit to store text as-is. */
   scoreInputTransform,
+  /** Optional: called whenever the full slot array changes (edits, advances, clears). */
+  onPlayersChange,
 }) {
   const [players, setPlayers] = useState(() =>
     Array.from({ length: maxSlots }, (_, i) =>
@@ -24,6 +26,12 @@ export function ExpandedBase({
         : { id: "", name: "", club: "", score: "" },
     ),
   );
+
+  const onPlayersChangeRef = useRef(onPlayersChange);
+  onPlayersChangeRef.current = onPlayersChange;
+  useEffect(() => {
+    onPlayersChangeRef.current?.(players);
+  }, [players]);
 
   const updatePlayer = useCallback((index, patch) => {
     setPlayers((ps) => {

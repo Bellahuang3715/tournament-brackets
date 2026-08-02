@@ -99,6 +99,7 @@ Props differ by **layout** (expanded vs collapsed) and **entity** (teams vs indi
 | **`textStyles`** | No | `{ playerId, playerText }` — font family, `fontSize` (pt), `color` for ID and name/club. |
 | **`scoreInputTransform`** | No | `(rawInput: string) => string` — transform SCORE field input before storing on `player.score`. Default: store as typed. |
 | **`formatScoreDisplay`** | No | `(rawScore: string) => string` — how stored `player.score` appears in the SCORE cell. Default: plain text. |
+| **`onPlayersChange`** | No | `(players) => void` — called whenever the full slot array changes. Use this to mirror state for Save. |
 
 #### `CollapsedLeft` / `CollapsedRight` — teams
 
@@ -144,6 +145,32 @@ In **`mode="fillable"`**, expanded individual brackets support picking who advan
 4. After a pick, hover the name cell and use **Change** to clear the slot and pick again.
 
 Advance wiring is per bracket size (feeder pair → destination slot). Consumers only need `mode="fillable"`; the UI is built in.
+
+### Persisting bracket state (Save)
+
+`players` seeds the bracket on mount (uncontrolled after that). Pass **`onPlayersChange`** to receive the full slot array on every edit:
+
+```jsx
+const [bracket, setBracket] = useState(initialPlayers);
+
+<Expanded.Individuals
+  size={12}
+  mode="fillable"
+  players={initialPlayers}
+  onPlayersChange={setBracket}
+/>
+
+// Save: persist `bracket` to your DB
+```
+
+**Slot indexing**
+
+- Array index === bracket slot index (`bracket[0]`, `bracket[1]`, …).
+- Length is **`maxSlots`** for that size (opening round **plus** later-round slots), not only `size`. Empty later slots are `{ id: "", name: "", club: "", score: "" }`.
+- Opening players are typically `0 .. size-1`. Later indices are advance slots. For 12-player, the final is slot **22** (`bracket[22]` / `bracket.at(-1)` when length is 23).
+- Remount when loading a different saved bracket (`key={tournamentId}`) so `players` is re-seeded.
+
+Each slot object can include **`id`**, **`name`**, **`club`**, **`score`**, and **`noShow`**.
 
 ## License
 
