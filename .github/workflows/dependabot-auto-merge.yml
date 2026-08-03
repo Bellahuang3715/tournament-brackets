@@ -1,4 +1,4 @@
-# Auto-merge Dependabot patch PRs once required checks (if any) pass.
+# Auto-merge Dependabot patch/minor PRs once required checks (if any) pass.
 # Repo setting required: Settings → General → Allow auto-merge
 name: Dependabot auto-merge
 
@@ -16,12 +16,14 @@ jobs:
     steps:
       - name: Fetch Dependabot metadata
         id: metadata
-        uses: dependabot/fetch-metadata@v2
+        uses: dependabot/fetch-metadata@v3
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Approve and enable auto-merge for patch updates
-        if: steps.metadata.outputs.update-type == 'version-update:semver-patch'
+      - name: Approve and enable auto-merge for patch/minor updates
+        if: |
+          steps.metadata.outputs.update-type == 'version-update:semver-patch' ||
+          steps.metadata.outputs.update-type == 'version-update:semver-minor'
         run: |
           gh pr review --approve "$PR_URL"
           gh pr merge --auto --squash "$PR_URL"
