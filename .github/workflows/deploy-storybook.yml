@@ -1,0 +1,50 @@
+# Build Storybook and deploy to GitHub Pages.
+# Storybook will be available at: https://<username>.github.io/<repo-name>/
+name: Deploy Storybook to GitHub Pages
+
+on:
+  push:
+    branches: ["main"]   # or "master" if that's your default branch
+  workflow_dispatch:    # allow manual run from Actions tab
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: github-pages
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Storybook
+        run: npm run build-storybook
+        env:
+          # Project sites are served at https://<user>.github.io/<repo-name>/
+          BASE_PATH: /${{ github.event.repository.name }}/
+
+      - name: Upload Storybook artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: storybook-static
+
+      - name: Deploy to GitHub Pages
+        id: deploy
+        uses: actions/deploy-pages@v4
