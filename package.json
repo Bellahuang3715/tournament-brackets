@@ -51,7 +51,7 @@
     "@testing-library/user-event": "^14.6.1",
     "ajv": "^8.16.0",
     "ajv-keywords": "^5.1.0",
-    "eslint-plugin-storybook": "^0.12.0",
+    "eslint-plugin-storybook": "^10.5.5",
     "htmltojsx": "^0.3.0",
     "prop-types": "^15.8.1",
     "react": "^18 || ^19",
