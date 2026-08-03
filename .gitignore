@@ -9,6 +9,7 @@
 
 # sensitive
 /env
+commands.txt
 
 # production
 /build
