@@ -111,6 +111,9 @@ Props differ by **layout** (expanded vs collapsed) and **entity** (teams vs indi
 | **`textStyles`** | No | `{ playerId, playerText }` — font family, `fontSize` (pt), `color` for ID and name/club. |
 | **`scoreInputTransform`** | No | `(rawInput: string) => string` — transform SCORE field input before storing on `player.score`. Default: store as typed. |
 | **`formatScoreDisplay`** | No | `(rawScore: string) => string` — how stored `player.score` appears in the SCORE cell. Default: plain text. |
+| **`playerOptions`** | No | `{ id, name, club? }[]` — searchable roster for empty opening slots (fillable). |
+| **`openingSlotLabels`** | No | `string[]` — placeholder labels for empty opening name cells (e.g. `"Winner of Group 1"`). |
+| **`championLabel`** | No | Read-only SCORE-cell label for the final (champion) slot. Default `"WINNER"`. |
 | **`onPlayersChange`** | No | `(players) => void` — called whenever the full slot array changes. Use this to mirror state for Save. |
 
 #### `CollapsedLeft` / `CollapsedRight` — teams
@@ -146,6 +149,37 @@ const players = [
 ];
 <Expanded.Individuals size={8} players={players} />
 ```
+
+#### Searchable roster (`playerOptions`)
+
+In fillable mode, pass **`playerOptions`** when opening slots should be chosen from a list (e.g. group winners, a large entry list) instead of free-typing ID/name:
+
+```jsx
+const roster = [
+  { id: "G1", name: "Winner of Group 1" },
+  { id: "G2", name: "Winner of Group 2" },
+  // ...can be long; the picker is searchable
+];
+
+const openingSlotLabels = Array.from(
+  { length: 8 },
+  (_, i) => `Winner of Group ${i + 1}`,
+);
+
+<Expanded.Individuals
+  size={8}
+  mode="fillable"
+  players={[]} // empty opening slots
+  playerOptions={roster}
+  openingSlotLabels={openingSlotLabels}
+/>
+```
+
+- Empty **opening** slots show a **Pick** control with search (ID / name / club).
+- Optional **`openingSlotLabels`** show muted, non-editable text in the name cell (placeholder look) until a player is picked; then the real name/club replaces it.
+- After a pick, ID and name render as text; **Change** clears the slot to pick again.
+- Later-round advance picks (feeder winners) are unchanged.
+- Omit `playerOptions` to keep free-text ID and name inputs.
 
 ### Fillable individuals — advancing winners
 

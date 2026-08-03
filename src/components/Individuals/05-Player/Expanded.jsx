@@ -22,6 +22,7 @@ export default function Expanded(props) {
     handleScoreChange, handleIDChange, handleNameChange,
     setAdvanceSlot,
     clearPlayerSlot,
+    assignPlayerSlot,
   } = ExpandedBase({
     initialPlayers: props.players,
     maxSlots: 9,
@@ -43,6 +44,10 @@ export default function Expanded(props) {
     clearPlayerSlot,
     advanceMatches: ADVANCE_MATCHES,
     formatScoreDisplay: props.formatScoreDisplay,
+    playerOptions: props.playerOptions,
+    openingSlotLabels: props.openingSlotLabels,
+    championLabel: props.championLabel,
+    assignPlayerSlot,
   });
 
   return (

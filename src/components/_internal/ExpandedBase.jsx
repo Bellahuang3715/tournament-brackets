@@ -133,6 +133,22 @@ export function ExpandedBase({
     });
   }, []);
 
+  /** Assign a roster player into a slot (searchable picker). */
+  const assignPlayerSlot = useCallback((toIndex, src = {}) => {
+    setPlayers((ps) => {
+      const next = [...ps];
+      next[toIndex] = {
+        ...next[toIndex],
+        id: src.id ?? "",
+        name: src.name ?? "",
+        club: src.club ?? "",
+        score: "",
+      };
+      delete next[toIndex].noShow;
+      return next;
+    });
+  }, []);
+
   return {
     players,
     mode,
@@ -143,5 +159,6 @@ export function ExpandedBase({
     handleNameChange,
     setAdvanceSlot,
     clearPlayerSlot,
+    assignPlayerSlot,
   };
 }

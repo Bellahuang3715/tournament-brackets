@@ -1,5 +1,6 @@
 import styles from "./Individuals/stylesheet.module.css";
 import { AdvancePickMenu } from "./_internal/AdvancePickMenu";
+import { SearchablePlayerMenu } from "./_internal/SearchablePlayerMenu";
 
 const CIRCLED = { M: "Ⓜ", K: "Ⓚ", D: "Ⓓ", T: "Ⓣ" };
 const RAW = {
@@ -48,19 +49,22 @@ export function ScoreRowFillable({
   showTooltip = false,
   pendingAdvancePick,
   advanceSelect,
+  rosterSelect,
   formatScoreDisplay,
+  championLabel,
 }) {
   const raw = player?.score ?? "";
   const displayScore = formatScoreDisplay ? formatScoreDisplay(raw) : raw;
-  const scoreStrikethrough = raw === "-";
+  const isNoShow = Boolean(player?.noShow);
+  const scoreStrikethrough = raw === "-" || isNoShow;
 
   const scoreInputClass = scoreStrikethrough
     ? `${styles.inlineInput} ${styles.scoreStrikethrough}`
     : styles.inlineInput;
 
   const idCell =
-    player?.noShow ? (
-      "—"
+    isNoShow ? (
+      <span className={styles.scoreStrikethrough}>—</span>
     ) : player?.id ? (
       player.id
     ) : pendingAdvancePick && advanceSelect ? (
@@ -71,6 +75,13 @@ export function ScoreRowFillable({
         placeholder={advanceSelect.placeholder ?? "Pick"}
         groupLabel={advanceSelect.groupLabel ?? "Pick winner"}
       />
+    ) : rosterSelect ? (
+      <SearchablePlayerMenu
+        options={rosterSelect.options}
+        onSelect={rosterSelect.onSelect}
+        placeholder={rosterSelect.placeholder ?? "Pick"}
+        groupLabel={rosterSelect.groupLabel ?? "Select player"}
+      />
     ) : (
       <input
         type="text"
@@ -79,6 +90,31 @@ export function ScoreRowFillable({
         onChange={onIDChange}
       />
     );
+
+  const scoreCell = championLabel ? (
+    <span className={styles.championScoreLabel}>{championLabel}</span>
+  ) : showTooltip ? (
+    <div className={styles.tooltipWrapper}>
+      <input
+        type="text"
+        className={scoreInputClass}
+        placeholder="SCORE"
+        value={isNoShow ? "—" : displayScore}
+        readOnly={isNoShow}
+        onChange={isNoShow ? undefined : onScoreChange}
+      />
+      <div className={styles.tooltip}>Enter score, ex. M, K, D, ...</div>
+    </div>
+  ) : (
+    <input
+      type="text"
+      className={scoreInputClass}
+      placeholder="SCORE"
+      value={isNoShow ? "—" : displayScore}
+      readOnly={isNoShow}
+      onChange={isNoShow ? undefined : onScoreChange}
+    />
+  );
 
   return (
     <>
@@ -98,26 +134,7 @@ export function ScoreRowFillable({
         className={styles.borderTopRight}
         style={{ borderBottom: ".5pt solid var(--bracket-ink)" }}
       >
-        {showTooltip ? (
-          <div className={styles.tooltipWrapper}>
-            <input
-              type="text"
-              className={scoreInputClass}
-              placeholder="SCORE"
-              value={displayScore}
-              onChange={onScoreChange}
-            />
-            <div className={styles.tooltip}>Enter score, ex. M, K, D, ...</div>
-          </div>
-        ) : (
-          <input
-            type="text"
-            className={scoreInputClass}
-            placeholder="SCORE"
-            value={displayScore}
-            onChange={onScoreChange}
-          />
-        )}
+        {scoreCell}
       </td>
     </>
   );

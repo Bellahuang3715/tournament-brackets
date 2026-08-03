@@ -1,13 +1,21 @@
 import styles from "./Individuals/stylesheet.module.css";
 
+function formatPlayerLabel(player) {
+  const name = player?.name ?? "";
+  const club = player?.club?.trim();
+  return club ? `${name} (${club})` : name;
+}
+
 /**
  * @param {boolean} [emptySlotName] — leave name (club) cell blank until ID cell picks a winner/no-show.
+ * @param {string} [placeholderLabel] — non-editable label shown like a placeholder until a player is assigned.
  */
 export function NameRowFillable({
   player,
   onNameChange,
   playerNameStyle,
   emptySlotName,
+  placeholderLabel,
   onClearWinner,
 }) {
   const showChange = Boolean(onClearWinner && (player?.name || player?.noShow));
@@ -57,7 +65,7 @@ export function NameRowFillable({
           style={nameCellStyle}
         >
           <span className={styles.winnerNameText}>
-            {`${player.name} (${player.club})`}
+            {formatPlayerLabel(player)}
           </span>
           {onClearWinner ? (
             <button
@@ -83,7 +91,11 @@ export function NameRowFillable({
           className={styles.playerNameExpanded}
           style={{ height: "15.75pt", ...playerNameStyle }}
         >
-          &nbsp;
+          {placeholderLabel ? (
+            <span className={styles.slotPlaceholderLabel}>{placeholderLabel}</span>
+          ) : (
+            "\u00a0"
+          )}
         </td>
       </>
     );
