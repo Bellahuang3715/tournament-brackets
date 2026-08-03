@@ -50,6 +50,17 @@ Each accepts **`entity`** + **`size`** + data, or use the shorthand subcomponent
 
 The same pattern works for `CollapsedLeft` and `CollapsedRight`.
 
+### Theme
+
+Pass **`theme="dark"`** (default `"light"`) on any facade to switch bracket lines, text, and fillable controls:
+
+```jsx
+<Expanded.Individuals size={8} players={players} theme="dark" />
+<CollapsedLeft.Teams size={8} teams={teams} theme="dark" />
+```
+
+Optional `textStyles` / `teamIDColor` still override ink color when you set them explicitly.
+
 ### Supported bracket sizes
 
 Not every layout supports every size. Use the exported arrays (or `BRACKET_SIZES`) so your app stays aligned with the library.
@@ -81,6 +92,7 @@ Props differ by **layout** (expanded vs collapsed) and **entity** (teams vs indi
 | **`teams`** | **Yes** for team brackets | `string[]` — one entry per slot, length = `size`. |
 | **`players`** | **Yes** for individual brackets | Array of player objects (see [Data shape](#data-shape)), length = `size`. |
 | **`entity`** | No | `"teams"` \| `"individuals"`. Default on the main export is `"teams"`. Omitted when using `.Teams` / `.Individuals`. |
+| **`theme`** | No | `"light"` (default) or `"dark"` — bracket lines, text, and fillable chrome. |
 
 #### `Expanded` — teams
 

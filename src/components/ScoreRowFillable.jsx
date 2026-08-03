@@ -86,7 +86,7 @@ export function ScoreRowFillable({
         rowSpan={2}
         className={styles.playerIDExpanded}
         style={{
-          borderBottom: ".5pt solid black",
+          borderBottom: ".5pt solid var(--bracket-ink)",
           height: "31.5pt",
           ...playerIDStyle,
         }}
@@ -96,7 +96,7 @@ export function ScoreRowFillable({
       <td
         rowSpan="2"
         className={styles.borderTopRight}
-        style={{ borderBottom: ".5pt solid black" }}
+        style={{ borderBottom: ".5pt solid var(--bracket-ink)" }}
       >
         {showTooltip ? (
           <div className={styles.tooltipWrapper}>

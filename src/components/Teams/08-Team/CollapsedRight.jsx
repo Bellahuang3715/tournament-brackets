@@ -3,6 +3,7 @@ import styles from '../stylesheet.module.css';
 
 export default function CollapsedRight({
   teams,
+  theme = "light",
   teamIDFontFamily,
   teamIDColor,
   teamIDFontSize,
@@ -14,7 +15,7 @@ export default function CollapsedRight({
   };
   return (
     <>
-      <table className={styles.bracketTable} border={0} cellPadding={0} cellSpacing={0} width={1015}>
+      <table className={styles.bracketTable} data-theme={theme === "dark" ? "dark" : "light"} border={0} cellPadding={0} cellSpacing={0} width={1015}>
         <colgroup>
           <col width={35} span={4} style={{msoWidthSource: 'userset', msoWidthAlt: 1109, width: '26pt'}} />
           <col width={168} style={{msoWidthSource: 'userset', msoWidthAlt: 5376, width: '122pt'}} />

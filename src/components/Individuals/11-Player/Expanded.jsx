@@ -53,7 +53,7 @@ export default function Expanded(props){
 
   return (
     <>
-      <table className={styles.bracketTable}border={0} cellPadding={0} cellSpacing={0} width={2162}>
+      <table className={styles.bracketTable} data-theme={props.theme === "dark" ? "dark" : "light"}border={0} cellPadding={0} cellSpacing={0} width={2162}>
         <colgroup>
           <col width={57} style={{msoWidthSource: 'userset', msoWidthAlt: 1834, width: '43pt'}} />
           <col width={163} style={{msoWidthSource: 'userset', msoWidthAlt: 5205, width: '122pt'}} />

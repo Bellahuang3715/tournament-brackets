@@ -4,9 +4,10 @@ import styles from '../stylesheet.module.css';
 
 export default function CollapsedLeft({
   players,
+  theme = "light",
   textStyles = {
-    playerId:   { fontFamily: "Arial, sans-serif", fontSize: 11, color: "#000" },
-    playerText: { fontFamily: "Arial, sans-serif", fontSize: 11, color: "#000" },
+    playerId:   { fontFamily: "Arial, sans-serif", fontSize: 11 },
+    playerText: { fontFamily: "Arial, sans-serif", fontSize: 11 },
   },
 }) {
   const playerIDStyle = {
@@ -23,7 +24,7 @@ export default function CollapsedLeft({
 
   return (
     <>
-      <table className={styles.bracketTable} border={0} cellPadding={0} cellSpacing={0} width={1458}>
+      <table className={styles.bracketTable} data-theme={theme === "dark" ? "dark" : "light"} border={0} cellPadding={0} cellSpacing={0} width={1458}>
         <colgroup><col width={57} style={{msoWidthSource: 'userset', msoWidthAlt: 1834, width: '43pt'}} />
           <col width={168} style={{msoWidthSource: 'userset', msoWidthAlt: 5376, width: '122pt'}} />
           <col width={35} span={6} style={{msoWidthSource: 'userset', msoWidthAlt: 1109, width: '26pt'}} />

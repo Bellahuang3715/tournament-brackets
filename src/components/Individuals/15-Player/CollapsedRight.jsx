@@ -4,9 +4,10 @@ import styles from '../stylesheet.module.css';
 
 export default function CollapsedRight({
   players,
+  theme = "light",
   textStyles = {
-    playerId:   { fontFamily: "Arial, sans-serif", fontSize: 11, color: "#000" },
-    playerText: { fontFamily: "Arial, sans-serif", fontSize: 11, color: "#000" },
+    playerId:   { fontFamily: "Arial, sans-serif", fontSize: 11 },
+    playerText: { fontFamily: "Arial, sans-serif", fontSize: 11 },
   },
 }) {
   const playerIDStyle = {
@@ -23,7 +24,7 @@ export default function CollapsedRight({
   
   return (
     <>
-      <table className={styles.bracketTable} border={0} cellPadding={0} cellSpacing={0} width={1001}>
+      <table className={styles.bracketTable} data-theme={theme === "dark" ? "dark" : "light"} border={0} cellPadding={0} cellSpacing={0} width={1001}>
         <colgroup><col width={35} span={5} style={{msoWidthSource: 'userset', msoWidthAlt: 1109, width: '26pt'}} />
           <col width={57} style={{msoWidthSource: 'userset', msoWidthAlt: 1834, width: '43pt'}} />
           <col width={163} style={{msoWidthSource: 'userset', msoWidthAlt: 5205, width: '122pt'}} />

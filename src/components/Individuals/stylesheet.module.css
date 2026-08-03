@@ -15,7 +15,7 @@ br {
   mso-rotate: 0;
   mso-background-source: auto;
   mso-pattern: auto;
-  color: black;
+  color: var(--bracket-ink);
   font-size: 10pt;
   font-weight: 400;
   font-style: normal;
@@ -34,7 +34,7 @@ td {
   padding-right: 1px;
   padding-left: 1px;
   mso-ignore: padding;
-  color: black;
+  color: var(--bracket-ink);
   font-size: 10pt;
   font-weight: 400;
   font-style: normal;
@@ -54,11 +54,51 @@ td {
 }
 
 .bracketTable {
+  --bracket-ink: #111111;
+  --bracket-bg: #ffffff;
+  --bracket-muted: #888888;
+  --bracket-subtle: #555555;
+  --bracket-surface: #ffffff;
+  --bracket-surface-2: #f3f3f3;
+  --bracket-border-soft: rgba(0, 0, 0, 0.18);
+  --bracket-hover: rgba(0, 0, 0, 0.06);
+  --bracket-focus: rgba(0, 0, 0, 0.45);
+  --bracket-shadow: rgba(0, 0, 0, 0.12);
+  --bracket-placeholder: #aaaaaa;
+  --bracket-tooltip-bg: #f5f5f5;
+  --bracket-tooltip-ink: #333333;
+  --bracket-tooltip-border: rgba(0, 0, 0, 0.1);
+  --bracket-tooltip-arrow: #d3d3d3;
   border-collapse: collapse;
   table-layout: fixed;
   width: fit-content;
   max-width: 100%;
+  color: var(--bracket-ink);
+  background-color: var(--bracket-bg);
 }
+
+.bracketTable[data-theme="dark"],
+:global([data-bracket-theme="dark"]) .bracketTable {
+  --bracket-ink: #e8e8e8;
+  --bracket-bg: #1c1c1c;
+  --bracket-muted: #9a9a9a;
+  --bracket-subtle: #c0c0c0;
+  --bracket-surface: #2a2a2a;
+  --bracket-surface-2: #333333;
+  --bracket-border-soft: rgba(255, 255, 255, 0.22);
+  --bracket-hover: rgba(255, 255, 255, 0.08);
+  --bracket-focus: rgba(255, 255, 255, 0.55);
+  --bracket-shadow: rgba(0, 0, 0, 0.5);
+  --bracket-placeholder: #888888;
+  --bracket-tooltip-bg: #2f2f2f;
+  --bracket-tooltip-ink: #e8e8e8;
+  --bracket-tooltip-border: rgba(255, 255, 255, 0.15);
+  --bracket-tooltip-arrow: #2f2f2f;
+  color: var(--bracket-ink);
+  background-color: var(--bracket-bg);
+  color-scheme: dark;
+}
+
 .bracketTable td {
   line-height: 1;          /* key */
   padding: 0;              /* you currently have 1px top/right/left globally */
@@ -71,7 +111,7 @@ td {
 
 .groupTitle {
   mso-style-parent: style0;
-  color: black;
+  color: var(--bracket-ink);
   font-size: 24pt;
   font-weight: 700;
   font-family: Arial, sans-serif;
@@ -90,81 +130,81 @@ td {
   font-size: 12pt;
   font-family: Arial, sans-serif;
   mso-font-charset: 0;
-  border-top: 0.5pt solid black;
+  border-top: 0.5pt solid var(--bracket-ink);
   border-right: none;
   border-bottom: none;
   border-left: none;
 }
 .playerID {
   mso-style-parent: style0;
-  color: black;
+  color: var(--bracket-ink);
   font-size: 11pt;
   font-weight: 700;
   font-family: Arial, sans-serif;
   mso-font-charset: 0;
   text-align: center;
   vertical-align: middle;
-  border-top: 0.5pt solid black;
-  border-right: 0.5pt solid black;
+  border-top: 0.5pt solid var(--bracket-ink);
+  border-right: 0.5pt solid var(--bracket-ink);
   border-bottom: none;
-  border-left: 0.5pt solid black;
+  border-left: 0.5pt solid var(--bracket-ink);
 }
 .playerIDExpanded {
   mso-style-parent: style0;
-  color: black;
+  color: var(--bracket-ink);
   font-size: 14pt;
   font-weight: 700;
   font-family: Arial, sans-serif;
   mso-font-charset: 0;
   text-align: center;
   vertical-align: middle;
-  border-top: 0.5pt solid black;
-  border-right: 0.5pt solid black;
+  border-top: 0.5pt solid var(--bracket-ink);
+  border-right: 0.5pt solid var(--bracket-ink);
   border-bottom: none;
-  border-left: 0.5pt solid black;
+  border-left: 0.5pt solid var(--bracket-ink);
   overflow: visible;
 }
 .borderTop {
   mso-style-parent: style0;
-  color: black;
+  color: var(--bracket-ink);
   font-size: 12pt;
   font-family: Arial, sans-serif;
   mso-font-charset: 0;
   text-align: center;
   vertical-align: middle;
-  border-top: 0.5pt solid black;
+  border-top: 0.5pt solid var(--bracket-ink);
   border-right: none;
   border-bottom: none;
   border-left: none;
 }
 .borderRight {
   mso-style-parent: style0;
-  color: black;
+  color: var(--bracket-ink);
   font-size: 12pt;
   font-family: Arial, sans-serif;
   mso-font-charset: 0;
   text-align: center;
   vertical-align: middle;
   border-top: none;
-  border-right: 0.5pt solid black;
+  border-right: 0.5pt solid var(--bracket-ink);
   border-bottom: none;
   border-left: none;
 }
 .borderRightExpanded {
   mso-style-parent: style0;
-  color: black;
+  color: var(--bracket-ink);
   font-family: Arial, sans-serif;
   mso-font-charset: 0;
   text-align: center;
   vertical-align: middle;
   border-top: none;
-  border-right: 0.5pt solid black;
+  border-right: 0.5pt solid var(--bracket-ink);
   border-bottom: none;
   border-left: none;
 }
 .borderBottom {
   mso-style-parent: style0;
-  color: black;
+  color: var(--bracket-ink);
   font-size: 12pt;
   font-family: Arial, sans-serif;
   mso-font-charset: 0;
@@ -172,12 +212,12 @@ td {
   vertical-align: middle;
   border-top: none;
   border-right: none;
-  border-bottom: 0.5pt solid black;
+  border-bottom: 0.5pt solid var(--bracket-ink);
   border-left: none;
 }
 .borderLeft {
   mso-style-parent: style0;
-  color: black;
+  color: var(--bracket-ink);
   font-size: 12pt;
   font-family: Arial, sans-serif;
   mso-font-charset: 0;
@@ -186,37 +226,37 @@ td {
   border-top: none;
   border-right: none;
   border-bottom: none;
-  border-left: 0.5pt solid black;
+  border-left: 0.5pt solid var(--bracket-ink);
 }
 .borderTopRight {
   mso-style-parent: style0;
-  color: black;
+  color: var(--bracket-ink);
   font-size: 12pt;
   font-family: Arial, sans-serif;
   mso-font-charset: 0;
   text-align: center;
   vertical-align: middle;
-  border-top: 0.5pt solid black;
-  border-right: 0.5pt solid black;
+  border-top: 0.5pt solid var(--bracket-ink);
+  border-right: 0.5pt solid var(--bracket-ink);
   border-bottom: none;
   border-left: none;
 }
 .borderRightLeft {
   mso-style-parent: style0;
-  color: windowtext;
+  color: var(--bracket-ink);
   font-size: 12pt;
   font-family: Arial, sans-serif;
   mso-font-charset: 0;
   text-align: center;
   vertical-align: middle;
   border-top: none;
-  border-right: 0.5pt solid black;
+  border-right: 0.5pt solid var(--bracket-ink);
   border-bottom: none;
-  border-left: 0.5pt solid black;
+  border-left: 0.5pt solid var(--bracket-ink);
 }
 .borderBottomLeft {
   mso-style-parent: style0;
-  color: black;
+  color: var(--bracket-ink);
   font-size: 12pt;
   font-family: Arial, sans-serif;
   mso-font-charset: 0;
@@ -224,65 +264,65 @@ td {
   vertical-align: middle;
   border-top: none;
   border-right: none;
-  border-bottom: 0.5pt solid black;
-  border-left: 0.5pt solid black;
+  border-bottom: 0.5pt solid var(--bracket-ink);
+  border-left: 0.5pt solid var(--bracket-ink);
 }
 .borderRightBottom {
   mso-style-parent: style0;
-  color: black;
+  color: var(--bracket-ink);
   font-size: 12pt;
   font-family: Arial, sans-serif;
   mso-font-charset: 0;
   text-align: center;
   vertical-align: middle;
   border-top: none;
-  border-right: 0.5pt solid black;
-  border-bottom: 0.5pt solid black;
+  border-right: 0.5pt solid var(--bracket-ink);
+  border-bottom: 0.5pt solid var(--bracket-ink);
   border-left: none;
 }
 .borderTopLeft {
   mso-style-parent: style0;
-  color: black;
+  color: var(--bracket-ink);
   font-size: 12pt;
   font-family: Arial, sans-serif;
   mso-font-charset: 0;
   text-align: center;
   vertical-align: middle;
-  border-top: 0.5pt solid black;
+  border-top: 0.5pt solid var(--bracket-ink);
   border-right: none;
   border-bottom: none;
-  border-left: 0.5pt solid black;
+  border-left: 0.5pt solid var(--bracket-ink);
 }
 .borderRBL {
   mso-style-parent: style0;
-  color: black;
+  color: var(--bracket-ink);
   font-size: 12pt;
   font-family: Arial, sans-serif;
   mso-font-charset: 0;
   text-align: center;
   vertical-align: middle;
   border-top: none;
-  border-right: 0.5pt solid black;
-  border-bottom: 0.5pt solid black;
-  border-left: 0.5pt solid black;
+  border-right: 0.5pt solid var(--bracket-ink);
+  border-bottom: 0.5pt solid var(--bracket-ink);
+  border-left: 0.5pt solid var(--bracket-ink);
 }
 .borderTRL {
   mso-style-parent: style0;
-  color: black;
+  color: var(--bracket-ink);
   font-size: 12pt;
   font-family: Arial, sans-serif;
   mso-font-charset: 0;
   text-align: center;
   vertical-align: middle;
-  border-top: 0.5pt solid black;
-  border-right: 0.5pt solid black;
+  border-top: 0.5pt solid var(--bracket-ink);
+  border-right: 0.5pt solid var(--bracket-ink);
   border-bottom: none;
-  border-left: 0.5pt solid black;
+  border-left: 0.5pt solid var(--bracket-ink);
 }
 
 .xl00 {
   mso-style-parent: style0;
-  color: black;
+  color: var(--bracket-ink);
   font-family: Arial, sans-serif;
   mso-font-charset: 0;
   text-align: center;
@@ -290,7 +330,7 @@ td {
 }
 .xl01 {
   mso-style-parent: style0;
-  color: black;
+  color: var(--bracket-ink);
   font-size: 12pt;
   font-family: Arial, sans-serif;
   mso-font-charset: 0;
@@ -308,12 +348,19 @@ td {
   resize: none;
   overflow: hidden;
   font: inherit;
+  color: var(--bracket-ink);
+  background-color: transparent;
+  caret-color: var(--bracket-ink);
   text-align: center;
   line-height: 1;
 }
 .inlineInput::placeholder {
-  color: #aaa;
+  color: var(--bracket-placeholder);
   opacity: 1;
+}
+.inlineInput:focus {
+  outline: none;
+  background-color: var(--bracket-hover);
 }
 
 .scoreStrikethrough {
@@ -330,11 +377,18 @@ td {
   resize: none;
   overflow: hidden;
   font: inherit;
+  color: var(--bracket-ink);
+  background-color: transparent;
+  caret-color: var(--bracket-ink);
   line-height: 1;
 }
 .winnerNameInput::placeholder {
-  color: #aaa;
+  color: var(--bracket-placeholder);
   opacity: 1;
+}
+.winnerNameInput:focus {
+  outline: none;
+  background-color: var(--bracket-hover);
 }
 
 .winnerFillCell {
@@ -357,9 +411,10 @@ td {
   line-height: 1.2;
   padding: 2px 6px;
   cursor: pointer;
-  border: 1px solid #999;
-  background: #f5f5f5;
+  border: 1px solid var(--bracket-border-soft);
+  background: var(--bracket-surface-2);
   border-radius: 2px;
+  color: inherit;
 }
 
 .winnerNameCell {
@@ -387,7 +442,7 @@ td {
   font: inherit;
   font-size: 10px;
   line-height: 1;
-  color: #555;
+  color: var(--bracket-subtle);
   text-decoration: underline;
   text-underline-offset: 2px;
   cursor: pointer;
@@ -399,11 +454,11 @@ td {
 .winnerNameCell:focus-within .winnerChangeButton,
 .winnerChangeButton:focus-visible {
   opacity: 1;
-  color: #111;
+  color: var(--bracket-ink);
 }
 
 .winnerChangeButton:focus-visible {
-  outline: 1px solid rgba(0, 0, 0, 0.45);
+  outline: 1px solid var(--bracket-focus);
   outline-offset: 1px;
   border-radius: 2px;
 }
@@ -413,8 +468,9 @@ td {
   font-size: 12px;
   line-height: 1.2;
   padding: 2px 4px;
-  border: 1px solid rgba(0, 0, 0, 0.25);
-  background: #ffffff;
+  border: 1px solid var(--bracket-border-soft);
+  background: var(--bracket-surface);
+  color: inherit;
   width: 220px;
 }
 
@@ -445,21 +501,21 @@ td {
 }
 
 .slotAdvanceSelect:focus-visible {
-  outline: 1px solid rgba(0, 0, 0, 0.45);
+  outline: 1px solid var(--bracket-focus);
   outline-offset: -1px;
 }
 
 .slotAdvanceSelectPlaceholder {
-  color: #888;
+  color: var(--bracket-muted);
   font-weight: 400;
   font-style: italic;
-  background: rgba(0, 0, 0, 0.03);
-  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.18);
+  background: var(--bracket-hover);
+  box-shadow: inset 0 0 0 1px var(--bracket-border-soft);
 }
 
 .slotAdvanceSelectOpen {
-  background: rgba(0, 0, 0, 0.05);
-  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.28);
+  background: var(--bracket-hover);
+  box-shadow: inset 0 0 0 1px var(--bracket-border-soft);
 }
 
 .advancePickPopup {
@@ -471,14 +527,14 @@ td {
   min-width: 11.5rem;
   max-width: 16rem;
   padding: 6px 0;
-  background: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.18);
+  background: var(--bracket-surface);
+  border: 1px solid var(--bracket-border-soft);
   border-radius: 4px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 6px 18px var(--bracket-shadow);
   text-align: left;
   font-weight: 400;
   font-style: normal;
-  color: #111;
+  color: var(--bracket-ink);
 }
 
 .advancePickHeader {
@@ -486,7 +542,7 @@ td {
   font-size: 10px;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: #666;
+  color: var(--bracket-muted);
 }
 
 .advancePickList {
@@ -515,7 +571,7 @@ td {
 
 .advancePickOption:hover,
 .advancePickOption:focus-visible {
-  background: rgba(0, 0, 0, 0.06);
+  background: var(--bracket-hover);
   outline: none;
 }
 
@@ -526,7 +582,7 @@ td {
 
 .advancePickOptionName {
   font-size: 11px;
-  color: #444;
+  color: var(--bracket-subtle);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -537,11 +593,11 @@ td {
 .advancePickDivider {
   height: 1px;
   margin: 4px 0;
-  background: rgba(0, 0, 0, 0.1);
+  background: var(--bracket-border-soft);
 }
 
 .advancePickNoShow {
-  color: #555;
+  color: var(--bracket-subtle);
   font-size: 11px;
   font-style: italic;
 }
@@ -557,14 +613,14 @@ td {
   left: 50%;
   transform: translateX(-50%) translateY(-15px);
   padding: 6px 10px;
-  background: #f5f5f5;
-  color: #333;
+  background: var(--bracket-tooltip-bg);
+  color: var(--bracket-tooltip-ink);
   font-size: 12px;
   line-height: 1.2;
   white-space: nowrap;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--bracket-tooltip-border);
   border-radius: 6px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 6px var(--bracket-shadow);
 
   visibility: hidden;
   opacity: 0;
@@ -581,7 +637,7 @@ td {
   transform: translateX(-50%);
   border-width: 8px;
   border-style: solid;
-  border-color: #d3d3d3 transparent transparent transparent;
+  border-color: var(--bracket-tooltip-arrow) transparent transparent transparent;
 }
 
 /* show the tooltip when the input is focused */

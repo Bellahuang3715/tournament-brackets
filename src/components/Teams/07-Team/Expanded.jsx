@@ -29,7 +29,7 @@ export default function Expanded(props) {
 
   return (
     <>
-      <table className={styles.bracketTable} border={0} cellPadding={0} cellSpacing={0}>
+      <table className={styles.bracketTable} data-theme={props.theme === "dark" ? "dark" : "light"} border={0} cellPadding={0} cellSpacing={0}>
         <colgroup>
           <col width={168} style={{msoWidthSource: 'userset', msoWidthAlt: 5376, width: '122pt'}} />
           <col width={35} span={2} style={{msoWidthSource: 'userset', msoWidthAlt: 1109, width: '26pt'}} />
@@ -69,7 +69,7 @@ export default function Expanded(props) {
             <td height={21} className={styles.l01} style={{height: '16.0pt'}} />
             <td rowSpan={2} className={styles.xl00}>1</td>
             <td className={styles.borderBottomLeft}>&nbsp;</td>
-            <td rowSpan={2} className={styles.borderTRL} style={{borderBottom: '.5pt solid black'}}>&nbsp;</td>
+            <td rowSpan={2} className={styles.borderTRL} style={{borderBottom: '.5pt solid var(--bracket-ink)'}}>&nbsp;</td>
             <td className={styles.xl00} />
             <td className={styles.xl00} />
             <td className={styles.xl00} />
@@ -141,7 +141,7 @@ export default function Expanded(props) {
             <td className={styles.xl00} />
             <td rowSpan={2} className={styles.xl00}>4</td>
             <td className={styles.borderBottomLeft}>&nbsp;</td>
-            <td rowSpan={2} className={styles.borderTRL} style={{borderBottom: '.5pt solid black'}}>&nbsp;</td>
+            <td rowSpan={2} className={styles.borderTRL} style={{borderBottom: '.5pt solid var(--bracket-ink)'}}>&nbsp;</td>
             <td className={styles.xl00} />
             <td />
             <td className={styles.xl00} />
@@ -234,7 +234,7 @@ export default function Expanded(props) {
             <td height={20} className={styles.xl01} style={{height: '15.75pt'}} />
             <td rowSpan={2} className={styles.xl00}>2</td>
             <td className={styles.borderBottomLeft}>&nbsp;</td>
-            <td rowSpan={2} className={styles.borderTRL} style={{borderBottom: '.5pt solid black'}}>&nbsp;</td>
+            <td rowSpan={2} className={styles.borderTRL} style={{borderBottom: '.5pt solid var(--bracket-ink)'}}>&nbsp;</td>
             <td className={styles.borderBottom}>&nbsp;</td>
             <td className={styles.borderLeft}>&nbsp;</td>
             <td className={styles.xl00} />
@@ -318,7 +318,7 @@ export default function Expanded(props) {
             <td className={styles.xl00} />
             <td rowSpan={2} className={styles.xl00}>6</td>
             <td className={styles.borderBottomLeft}>&nbsp;</td>
-            <td rowSpan={2} className={styles.borderTRL} style={{borderBottom: '.5pt solid black'}}>&nbsp;</td>
+            <td rowSpan={2} className={styles.borderTRL} style={{borderBottom: '.5pt solid var(--bracket-ink)'}}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             <td height={20} colSpan={2} style={{height: '15.75pt', msoIgnore: 'colspan'}} />
@@ -354,7 +354,7 @@ export default function Expanded(props) {
             <td height={20} className={styles.xl01} style={{height: '15.75pt'}} />
             <td rowSpan={2} className={styles.xl00}>3</td>
             <td className={styles.borderBottomLeft}>&nbsp;</td>
-            <td rowSpan={2} className={styles.borderTRL} style={{borderBottom: '.5pt solid black'}}>&nbsp;</td>
+            <td rowSpan={2} className={styles.borderTRL} style={{borderBottom: '.5pt solid var(--bracket-ink)'}}>&nbsp;</td>
             <td className={styles.xl00} />
             <td className={styles.xl00} />
             <td className={styles.xl00} />
@@ -407,7 +407,7 @@ export default function Expanded(props) {
             <td className={styles.xl00} />
             <td rowSpan={2} className={styles.xl00}>5</td>
             <td className={styles.borderBottomLeft}>&nbsp;</td>
-            <td rowSpan={2} className={styles.borderTRL} style={{borderBottom: '.5pt solid black'}}>&nbsp;</td>
+            <td rowSpan={2} className={styles.borderTRL} style={{borderBottom: '.5pt solid var(--bracket-ink)'}}>&nbsp;</td>
             <td className={styles.xl00} />
             <td className={styles.borderLeft}>&nbsp;</td>
           </tr>

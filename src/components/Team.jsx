@@ -8,7 +8,7 @@ export function Team({ team, teamIDStyle }) {
         height={40}
         className={styles.teamIDExpanded}
         style={{
-          borderBottom: ".5pt solid black",
+          borderBottom: ".5pt solid var(--bracket-ink)",
           height: "31.5pt",
           ...teamIDStyle,
         }}

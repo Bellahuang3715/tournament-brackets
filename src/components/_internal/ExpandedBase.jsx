@@ -5,8 +5,8 @@ function passthroughScoreInput(value) {
 }
 
 export const TEXT_STYLES = {
-  playerId:   { fontFamily: "Arial, sans-serif", fontSize: 14, color: "#000000" },
-  playerText: { fontFamily: "Arial, sans-serif", fontSize: 12, color: "#000000" },
+  playerId:   { fontFamily: "Arial, sans-serif", fontSize: 14 },
+  playerText: { fontFamily: "Arial, sans-serif", fontSize: 12 },
 };
 
 export function ExpandedBase({

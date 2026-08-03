@@ -1,0 +1,46 @@
+/**
+ * Theme wrapper for all bracket facades.
+ * Descendants (Individuals/Teams CSS modules) use --bracket-* variables.
+ */
+.themeRoot {
+  --bracket-ink: #111111;
+  --bracket-bg: #ffffff;
+  --bracket-muted: #888888;
+  --bracket-subtle: #555555;
+  --bracket-surface: #ffffff;
+  --bracket-surface-2: #f3f3f3;
+  --bracket-border-soft: rgba(0, 0, 0, 0.18);
+  --bracket-hover: rgba(0, 0, 0, 0.06);
+  --bracket-focus: rgba(0, 0, 0, 0.45);
+  --bracket-shadow: rgba(0, 0, 0, 0.12);
+  --bracket-placeholder: #aaaaaa;
+  --bracket-tooltip-bg: #f5f5f5;
+  --bracket-tooltip-ink: #333333;
+  --bracket-tooltip-border: rgba(0, 0, 0, 0.1);
+  --bracket-tooltip-arrow: #d3d3d3;
+
+  color: var(--bracket-ink);
+  background-color: var(--bracket-bg);
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+}
+
+.themeRoot[data-theme="dark"] {
+  --bracket-ink: #e8e8e8;
+  --bracket-bg: #1c1c1c;
+  --bracket-muted: #9a9a9a;
+  --bracket-subtle: #c0c0c0;
+  --bracket-surface: #2a2a2a;
+  --bracket-surface-2: #333333;
+  --bracket-border-soft: rgba(255, 255, 255, 0.22);
+  --bracket-hover: rgba(255, 255, 255, 0.08);
+  --bracket-focus: rgba(255, 255, 255, 0.55);
+  --bracket-shadow: rgba(0, 0, 0, 0.5);
+  --bracket-placeholder: #888888;
+  --bracket-tooltip-bg: #2f2f2f;
+  --bracket-tooltip-ink: #e8e8e8;
+  --bracket-tooltip-border: rgba(255, 255, 255, 0.15);
+  --bracket-tooltip-arrow: #2f2f2f;
+  color-scheme: dark;
+}

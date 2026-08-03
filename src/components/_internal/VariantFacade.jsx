@@ -1,7 +1,8 @@
 import React, { Suspense } from "react";
+import themeStyles from "../bracketTheme.module.css";
 
 export function VariantFacade(registry, displayName) {
-  const Facade = ({ entity = "teams", size, ...props }) => {
+  const Facade = ({ entity = "teams", size, theme = "light", ...props }) => {
     const key = String(entity).toLowerCase();
     const Comp = registry[key]?.[size];
     if (!Comp) {
@@ -10,10 +11,17 @@ export function VariantFacade(registry, displayName) {
       }
       return null;
     }
+    const resolvedTheme = theme === "dark" ? "dark" : "light";
     return (
-      <Suspense fallback={null}>
-        <Comp {...props} />
-      </Suspense>
+      <div
+        className={themeStyles.themeRoot}
+        data-theme={resolvedTheme}
+        data-bracket-theme={resolvedTheme}
+      >
+        <Suspense fallback={null}>
+          <Comp {...props} theme={resolvedTheme} />
+        </Suspense>
+      </div>
     );
   };
   Facade.displayName = displayName;
