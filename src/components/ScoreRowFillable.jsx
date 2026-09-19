@@ -2,45 +2,6 @@ import styles from "./Individuals/stylesheet.module.css";
 import { AdvancePickMenu } from "./_internal/AdvancePickMenu";
 import { SearchablePlayerMenu } from "./_internal/SearchablePlayerMenu";
 
-const CIRCLED = { M: "Ⓜ", K: "Ⓚ", D: "Ⓓ", T: "Ⓣ" };
-const RAW = {
-  ...Object.fromEntries(Object.entries(CIRCLED).map(([k, v]) => [v, k])),
-  "▲": "H",
-  "—": "-",
-  "–": "-",
-};
-const ALLOWED = ["M", "K", "D", "T", "H", "-"];
-
-/** Optional: M/K/D/T → circled, H → ▲ — pass as `formatScoreDisplay={circledScoreDisplay}`. */
-export function circledScoreDisplay(score) {
-  const s = score || "";
-  if (!s) return "";
-  return Array.from(s)
-    .map((ch, i) => {
-      if (ch === "H") return "▲";
-      if (ch === "-") return "—";
-      if (i === 0 && CIRCLED[ch]) return CIRCLED[ch];
-      return ch;
-    })
-    .join(" ");
-}
-
-/** Optional: allow M/K/D/T/H/`-` (circled + ▲ accepted) — `scoreInputTransform`. */
-export function tournamentMkdtScoreInput(input = "") {
-  const noSpaces = String(input).replace(/\s+/g, "");
-  let first = "";
-  if (noSpaces) {
-    const c0 = noSpaces[0];
-    first = RAW[c0] || (c0 === "-" ? "-" : c0.toUpperCase());
-    if (!ALLOWED.includes(first)) first = "";
-  }
-  const rest = Array.from(noSpaces.slice(1))
-    .map((ch) => RAW[ch] || (ch === "-" ? "-" : ch.toUpperCase()))
-    .filter((ch) => ALLOWED.includes(ch))
-    .join("");
-  return first + rest;
-}
-
 export function ScoreRowFillable({
   player,
   onScoreChange,

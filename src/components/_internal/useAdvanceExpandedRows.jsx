@@ -118,6 +118,7 @@ export function useAdvanceExpandedRows({
       <ScoreRow
         player={players[i]}
         playerIDStyle={playerIDStyle}
+        formatScoreDisplay={formatScoreDisplay}
         championLabel={
           i === championSlotIndex && championLabel
             ? championLabel

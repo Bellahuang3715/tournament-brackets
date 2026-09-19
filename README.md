@@ -12,7 +12,7 @@ npm install tournament-brackets-ui
 
 ## Usage
 
-Import the components, optional helpers, and styles:
+Import the components and styles:
 
 ```jsx
 import {
@@ -21,8 +21,6 @@ import {
   CollapsedRight,
   BRACKET_SIZES,
   EXPANDED_SIZES_TEAMS,
-  circledScoreDisplay,
-  tournamentMkdtScoreInput,
 } from "tournament-brackets-ui";
 import "tournament-brackets-ui/style.css";
 
@@ -110,7 +108,7 @@ Props differ by **layout** (expanded vs collapsed) and **entity** (teams vs indi
 | **`mode`** | No | `"view"` (default) or `"fillable"`. |
 | **`textStyles`** | No | `{ playerId, playerText }` — font family, `fontSize` (pt), `color` for ID and name/club. |
 | **`scoreInputTransform`** | No | `(rawInput: string) => string` — transform SCORE field input before storing on `player.score`. Default: store as typed. |
-| **`formatScoreDisplay`** | No | `(rawScore: string) => string` — how stored `player.score` appears in the SCORE cell. Default: plain text. |
+| **`formatScoreDisplay`** | No | `(rawScore: string) => string` — how stored `player.score` appears in the SCORE cell (view and fillable). Default: plain text. |
 | **`playerOptions`** | No | `{ id, name, club? }[]` — searchable roster for empty opening slots (fillable). |
 | **`openingSlotLabels`** | No | `string[]` — placeholder labels for empty opening name cells (e.g. `"Winner of Group 1"`). |
 | **`championLabel`** | No | Read-only SCORE-cell label for the final (champion) slot. Default `"WINNER"`. |

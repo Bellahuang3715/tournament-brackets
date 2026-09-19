@@ -4,8 +4,26 @@ export function ScoreRow({
   player,
   playerIDStyle,
   championLabel,
+  formatScoreDisplay,
 }) {
   const isNoShow = Boolean(player?.noShow);
+  const raw = player?.score ?? "";
+  const displayScore = formatScoreDisplay ? formatScoreDisplay(raw) : raw;
+  const scoreStrikethrough = raw === "-" || isNoShow;
+
+  let scoreCell;
+  if (championLabel) {
+    scoreCell = (
+      <span className={styles.championScoreLabel}>{championLabel}</span>
+    );
+  } else if (isNoShow) {
+    scoreCell = "—";
+  } else if (displayScore) {
+    scoreCell = displayScore;
+  } else {
+    scoreCell = "\u00a0";
+  }
+
   return (
     <>
       <td
@@ -26,17 +44,11 @@ export function ScoreRow({
       <td
         rowSpan={2}
         className={`${styles.borderTopRight}${
-          isNoShow ? ` ${styles.scoreStrikethrough}` : ""
+          scoreStrikethrough ? ` ${styles.scoreStrikethrough}` : ""
         }`}
         style={{ borderBottom: ".5pt solid var(--bracket-ink)" }}
       >
-        {championLabel ? (
-          <span className={styles.championScoreLabel}>{championLabel}</span>
-        ) : isNoShow ? (
-          "—"
-        ) : (
-          "\u00a0"
-        )}
+        {scoreCell}
       </td>
     </>
   );
