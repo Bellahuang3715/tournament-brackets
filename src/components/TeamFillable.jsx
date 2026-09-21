@@ -80,7 +80,7 @@ export function TeamFillable({
         style={{
           borderBottom: ".5pt solid var(--bracket-ink)",
           height: "31.5pt",
-          ...(showChange ? { position: "relative", paddingRight: "3.25rem" } : {}),
+          ...(showChange ? { position: "relative" } : {}),
           ...teamIDStyle,
         }}
       >

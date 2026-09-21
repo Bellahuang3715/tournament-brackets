@@ -379,12 +379,12 @@ td {
 }
 
 .winnerNameText {
-  display: inline-block;
-  max-width: 100%;
+  display: block;
+  width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  vertical-align: middle;
+  text-align: center;
 }
 
 .winnerChangeButton {
@@ -405,6 +405,7 @@ td {
   cursor: pointer;
   opacity: 0.35;
   transition: opacity 0.15s ease, color 0.15s ease;
+  z-index: 1;
 }
 
 .winnerNameCell:hover .winnerChangeButton,
