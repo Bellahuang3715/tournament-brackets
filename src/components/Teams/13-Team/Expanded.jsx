@@ -1,12 +1,28 @@
 import { TeamsBase } from '../../_internal/TeamsBase';
-import { Team } from '../../Team';
-import { TeamFillable } from '../../TeamFillable';
+import { useAdvanceExpandedTeams } from '../../_internal/useAdvanceExpandedTeams';
 import styles from '../stylesheet.module.css';
+
+/** Feeder match → next-round slot (13-team expanded bracket). */
+const ADVANCE_MATCHES = [
+  { to: 13, from: [0, 1] },
+  { to: 14, from: [2, 3] },
+  { to: 15, from: [4, 5] },
+  { to: 16, from: [6, 7] },
+  { to: 17, from: [8, 9] },
+  { to: 18, from: [13, 14] },
+  { to: 19, from: [15, 10] },
+  { to: 20, from: [16, 11] },
+  { to: 21, from: [17, 12] },
+  { to: 22, from: [18, 19] },
+  { to: 23, from: [20, 21] },
+  { to: 24, from: [22, 23] },
+];
 
 export default function Expanded(props) {
   const {
     teams, mode,
     teamIDStyle, handleTeamChange,
+    setAdvanceSlot, clearTeamSlot,
   } = TeamsBase({
     initialTeams: props.teams,
     maxSlots: 25,
@@ -16,16 +32,15 @@ export default function Expanded(props) {
     teamIDFontSize: props.teamIDFontSize,
   });
 
-  const team = (i) => mode === "view" ? 
-    <Team
-      team={teams[i]}
-      teamIDStyle={teamIDStyle}
-    /> : 
-    <TeamFillable
-      team={teams[i]}
-      onTeamChange={handleTeamChange(i)}
-      teamIDStyle={teamIDStyle}
-    />;
+  const { team } = useAdvanceExpandedTeams({
+    teams,
+    mode,
+    teamIDStyle,
+    handleTeamChange,
+    setAdvanceSlot,
+    clearTeamSlot,
+    advanceMatches: ADVANCE_MATCHES,
+  });
 
   return (
     <>

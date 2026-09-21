@@ -373,3 +373,49 @@ td {
   outline: none;
   background-color: var(--bracket-hover);
 }
+
+.winnerNameCell {
+  position: relative;
+}
+
+.winnerNameText {
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.winnerChangeButton {
+  position: absolute;
+  right: 2px;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0;
+  padding: 4px 6px;
+  border: none;
+  background: transparent;
+  font: inherit;
+  font-size: 10px;
+  line-height: 1;
+  color: var(--bracket-subtle);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  cursor: pointer;
+  opacity: 0.35;
+  transition: opacity 0.15s ease, color 0.15s ease;
+}
+
+.winnerNameCell:hover .winnerChangeButton,
+.winnerNameCell:focus-within .winnerChangeButton,
+.winnerChangeButton:focus-visible {
+  opacity: 1;
+  color: var(--bracket-ink);
+}
+
+.winnerChangeButton:focus-visible {
+  outline: 1px solid var(--bracket-focus);
+  outline-offset: 1px;
+  border-radius: 2px;
+}

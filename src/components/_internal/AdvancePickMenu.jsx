@@ -86,9 +86,11 @@ export function AdvancePickMenu({
                   <span className={styles.advancePickOptionId}>
                     {o.id || "—"}
                   </span>
-                  <span className={styles.advancePickOptionName}>
-                    {o.name || o.label}
-                  </span>
+                  {o.name && o.name !== o.id ? (
+                    <span className={styles.advancePickOptionName}>
+                      {o.name}
+                    </span>
+                  ) : null}
                 </button>
               </li>
             ))}

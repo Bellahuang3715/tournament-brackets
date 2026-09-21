@@ -1,12 +1,20 @@
 import { TeamsBase } from '../../_internal/TeamsBase';
-import { Team } from '../../Team';
-import { TeamFillable } from '../../TeamFillable';
+import { useAdvanceExpandedTeams } from '../../_internal/useAdvanceExpandedTeams';
 import styles from '../stylesheet.module.css';
+
+/** Feeder match → next-round slot (05-team expanded bracket). */
+const ADVANCE_MATCHES = [
+  { to: 5, from: [0, 1] },
+  { to: 7, from: [2, 3] },
+  { to: 6, from: [5, 4] },
+  { to: 8, from: [6, 7] },
+];
 
 export default function Expanded(props) {
   const {
     teams, mode,
     teamIDStyle, handleTeamChange,
+    setAdvanceSlot, clearTeamSlot,
   } = TeamsBase({
     initialTeams: props.teams,
     maxSlots: 9,
@@ -16,16 +24,15 @@ export default function Expanded(props) {
     teamIDFontSize: props.teamIDFontSize,
   });
 
-  const team = (i) => mode === "view" ?
-    <Team
-      team={teams[i]}
-      teamIDStyle={teamIDStyle}
-    /> :
-    <TeamFillable
-      team={teams[i]}
-      onTeamChange={handleTeamChange(i)}
-      teamIDStyle={teamIDStyle}
-    />;
+  const { team } = useAdvanceExpandedTeams({
+    teams,
+    mode,
+    teamIDStyle,
+    handleTeamChange,
+    setAdvanceSlot,
+    clearTeamSlot,
+    advanceMatches: ADVANCE_MATCHES,
+  });
 
   return (
     <>
@@ -50,7 +57,7 @@ export default function Expanded(props) {
             <td height={21} className={styles.xl01} style={{height: '16.0pt'}} />
             <td rowSpan={2} className={styles.borderRight}>1</td>
             <td className={styles.borderRightBottom}>&nbsp;</td>
-            {team(1)}
+            {team(5)}
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             <td height={20} className={styles.borderBottom} style={{height: '15.75pt'}}>&nbsp;</td>
@@ -59,13 +66,13 @@ export default function Expanded(props) {
             <td className={styles.borderLeft}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
-            {team(2)}
+            {team(1)}
             <td className={styles.borderRightBottom}>&nbsp;</td>
             <td className={styles.xl00} />
             <td className={styles.xl01} />
             <td rowSpan={2} className={styles.xl00}>3</td>
             <td className={styles.borderBottomLeft}>&nbsp;</td>
-            {team(3)}
+            {team(6)}
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
@@ -115,7 +122,7 @@ export default function Expanded(props) {
             <td className={styles.xl00} />
             <td rowSpan={2} className={styles.xl00}>4</td>
             <td className={styles.borderBottomLeft}>&nbsp;</td>
-            {team(5)}
+            {team(8)}
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
@@ -139,7 +146,7 @@ export default function Expanded(props) {
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             <td height={20} colSpan={3} style={{height: '15.75pt', msoIgnore: 'colspan'}} />
-            {team(6)}
+            {team(2)}
             <td className={styles.xl00} />
             <td className={styles.xl00} />
             <td className={styles.xl00} />
@@ -174,7 +181,7 @@ export default function Expanded(props) {
             <td height={20} className={styles.xl00} style={{height: '15.75pt'}} />
             <td />
             <td className={styles.xl00} />
-            {team(8)}
+            {team(3)}
             <td className={styles.borderRight}>&nbsp;</td>
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>

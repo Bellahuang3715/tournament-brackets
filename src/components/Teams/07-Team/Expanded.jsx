@@ -1,31 +1,40 @@
 import { TeamsBase } from '../../_internal/TeamsBase';
-import { Team } from '../../Team';
-import { TeamFillable } from '../../TeamFillable';
+import { useAdvanceExpandedTeams } from '../../_internal/useAdvanceExpandedTeams';
 import styles from '../stylesheet.module.css';
+
+/** Feeder match → next-round slot (07-team expanded bracket). */
+const ADVANCE_MATCHES = [
+  { to: 7, from: [0, 1] },
+  { to: 8, from: [2, 3] },
+  { to: 9, from: [4, 5] },
+  { to: 10, from: [7, 8] },
+  { to: 11, from: [9, 6] },
+  { to: 12, from: [10, 11] },
+];
 
 export default function Expanded(props) {
   const {
     teams, mode,
     teamIDStyle, handleTeamChange,
+    setAdvanceSlot, clearTeamSlot,
   } = TeamsBase({
     initialTeams: props.teams,
-    maxSlots: 7,
+    maxSlots: 13,
     mode: props.mode ?? "view", // "view" | "fillable"
     teamIDFontFamily: props.fontFamily,
     teamIDColor: props.teamIDColor,
     teamIDFontSize: props.teamIDFontSize,
   });
 
-  const team = (i) => mode === "view" ?
-    <Team
-      team={teams[i]}
-      teamIDStyle={teamIDStyle}
-    /> :
-    <TeamFillable
-      team={teams[i]}
-      onTeamChange={handleTeamChange(i)}
-      teamIDStyle={teamIDStyle}
-    />;
+  const { team } = useAdvanceExpandedTeams({
+    teams,
+    mode,
+    teamIDStyle,
+    handleTeamChange,
+    setAdvanceSlot,
+    clearTeamSlot,
+    advanceMatches: ADVANCE_MATCHES,
+  });
 
   return (
     <>
@@ -69,7 +78,7 @@ export default function Expanded(props) {
             <td height={21} className={styles.l01} style={{height: '16.0pt'}} />
             <td rowSpan={2} className={styles.xl00}>1</td>
             <td className={styles.borderBottomLeft}>&nbsp;</td>
-            <td rowSpan={2} className={styles.borderTRL} style={{borderBottom: '.5pt solid var(--bracket-ink)'}}>&nbsp;</td>
+            {team(7)}
             <td className={styles.xl00} />
             <td className={styles.xl00} />
             <td className={styles.xl00} />
@@ -141,7 +150,7 @@ export default function Expanded(props) {
             <td className={styles.xl00} />
             <td rowSpan={2} className={styles.xl00}>4</td>
             <td className={styles.borderBottomLeft}>&nbsp;</td>
-            <td rowSpan={2} className={styles.borderTRL} style={{borderBottom: '.5pt solid var(--bracket-ink)'}}>&nbsp;</td>
+            {team(10)}
             <td className={styles.xl00} />
             <td />
             <td className={styles.xl00} />
@@ -234,7 +243,7 @@ export default function Expanded(props) {
             <td height={20} className={styles.xl01} style={{height: '15.75pt'}} />
             <td rowSpan={2} className={styles.xl00}>2</td>
             <td className={styles.borderBottomLeft}>&nbsp;</td>
-            <td rowSpan={2} className={styles.borderTRL} style={{borderBottom: '.5pt solid var(--bracket-ink)'}}>&nbsp;</td>
+            {team(8)}
             <td className={styles.borderBottom}>&nbsp;</td>
             <td className={styles.borderLeft}>&nbsp;</td>
             <td className={styles.xl00} />
@@ -318,7 +327,7 @@ export default function Expanded(props) {
             <td className={styles.xl00} />
             <td rowSpan={2} className={styles.xl00}>6</td>
             <td className={styles.borderBottomLeft}>&nbsp;</td>
-            <td rowSpan={2} className={styles.borderTRL} style={{borderBottom: '.5pt solid var(--bracket-ink)'}}>&nbsp;</td>
+            {team(12)}
           </tr>
           <tr height={20} style={{msoHeightSource: 'userset', height: '15.75pt'}}>
             <td height={20} colSpan={2} style={{height: '15.75pt', msoIgnore: 'colspan'}} />
@@ -354,7 +363,7 @@ export default function Expanded(props) {
             <td height={20} className={styles.xl01} style={{height: '15.75pt'}} />
             <td rowSpan={2} className={styles.xl00}>3</td>
             <td className={styles.borderBottomLeft}>&nbsp;</td>
-            <td rowSpan={2} className={styles.borderTRL} style={{borderBottom: '.5pt solid var(--bracket-ink)'}}>&nbsp;</td>
+            {team(9)}
             <td className={styles.xl00} />
             <td className={styles.xl00} />
             <td className={styles.xl00} />
@@ -407,7 +416,7 @@ export default function Expanded(props) {
             <td className={styles.xl00} />
             <td rowSpan={2} className={styles.xl00}>5</td>
             <td className={styles.borderBottomLeft}>&nbsp;</td>
-            <td rowSpan={2} className={styles.borderTRL} style={{borderBottom: '.5pt solid var(--bracket-ink)'}}>&nbsp;</td>
+            {team(11)}
             <td className={styles.xl00} />
             <td className={styles.borderLeft}>&nbsp;</td>
           </tr>

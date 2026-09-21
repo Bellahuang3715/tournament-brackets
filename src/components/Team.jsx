@@ -1,6 +1,9 @@
 import styles from "./Teams/stylesheet.module.css";
+import { teamLabel } from "./_internal/advanceTeamSlotHelpers";
 
 export function Team({ team, teamIDStyle }) {
+  const label = teamLabel(team);
+
   return (
     <>
       <td
@@ -13,7 +16,7 @@ export function Team({ team, teamIDStyle }) {
           ...teamIDStyle,
         }}
       >
-        {team}
+        {label}
       </td>
     </>
   );
