@@ -29,6 +29,7 @@ export default function Expanded(props) {
     teamIDFontFamily: props.fontFamily,
     teamIDColor: props.teamIDColor,
     teamIDFontSize: props.teamIDFontSize,
+    onTeamsChange: props.onTeamsChange,
   });
 
   const { team } = useAdvanceExpandedTeams({

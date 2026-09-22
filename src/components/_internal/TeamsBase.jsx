@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { normalizeTeamSlot } from "./advanceTeamSlotHelpers";
 
 export function TeamsBase({
@@ -11,12 +11,20 @@ export function TeamsBase({
   divisionID = "x",
   groupID = "x",
   courtID = "x",
+  /** Optional: called whenever the full slot array changes (edits, advances, clears). */
+  onTeamsChange,
 }) {
   const [teams, setTeams] = useState(() =>
     Array.from({ length: maxSlots }, (_, i) =>
       normalizeTeamSlot(initialTeams[i]),
     ),
   );
+
+  const onTeamsChangeRef = useRef(onTeamsChange);
+  onTeamsChangeRef.current = onTeamsChange;
+  useEffect(() => {
+    onTeamsChangeRef.current?.(teams);
+  }, [teams]);
 
   const teamIDStyle = useMemo(
     () => ({
